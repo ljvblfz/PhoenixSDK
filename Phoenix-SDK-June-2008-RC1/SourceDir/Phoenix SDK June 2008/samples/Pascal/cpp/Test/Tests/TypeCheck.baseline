@@ -1,0 +1,15 @@
+Compiling...
+TypeCheck.p
+TypeCheck.p(8) error P3051: 'A' already declared as type 'integer'.
+TypeCheck.p(11) error P3036: 'bar': undeclared identifier.
+TypeCheck.p(11) error P3003: variable 'A' of type 'integer' is being assigned an expression of type '(unknown)'.
+TypeCheck.p(22) error P3036: 'Z': undeclared identifier.
+TypeCheck.p(23) error P3004: 'c1': you cannot assign to a variable that is constant.
+TypeCheck.p(28) error P3003: variable 'b' of type 'boolean' is being assigned an expression of type 'integer'.
+TypeCheck.p(29) error P3003: variable 'A' of type 'integer' is being assigned an expression of type 'boolean'.
+TypeCheck.p(30) error P3003: variable 'B' of type 'integer' is being assigned an expression of type 'boolean'.
+TypeCheck.p(31) error P3003: variable 'A' of type 'integer' is being assigned an expression of type 'char'.
+TypeCheck.p(33) error P3003: variable 'c' of type 'char' is being assigned an expression of type 'integer'.
+
+TypeCheck.p - 10 error(s), 0 warning(s).
+

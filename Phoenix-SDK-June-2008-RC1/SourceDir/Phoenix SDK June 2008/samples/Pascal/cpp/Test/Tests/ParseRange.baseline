@@ -1,0 +1,7 @@
+ParseRange.p(8) error P2002: syntax error: token '3336402735171707160320 (out-of-range integer constant.)'.
+ParseRange.p(9) error P2002: syntax error: token '3336402735171707160320.3336402735171707160320 (out-of-range real constant.)'.
+Compiling...
+ParseRange.p
+
+ParseRange.p - 2 error(s), 0 warning(s).
+

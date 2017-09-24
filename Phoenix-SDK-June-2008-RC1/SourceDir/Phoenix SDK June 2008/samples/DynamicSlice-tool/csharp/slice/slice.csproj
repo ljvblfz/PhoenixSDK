@@ -1,0 +1,78 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6AA5A3DB-ED03-4C34-BFFE-20A3AF404CA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>slice</RootNamespace>
+    <AssemblyName>slice</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath Condition="'$(OutPath)' == ''">..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PHX_DEBUG_CHECKS;PHX_DEBUG_SUPPORT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath Condition="'$(OutPath)' == ''">..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE;PHX_DEBUG_SUPPORT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <Reference Include="architecture-msild" />
+    <Reference Include="architecture-x86d" />
+    <Reference Include="phxd" />
+    <Reference Include="runtime-vccrt-win-msild" />
+    <Reference Include="runtime-vccrt-win32-x86d" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <Reference Include="architecture-msil" />
+    <Reference Include="architecture-x86" />
+    <Reference Include="phx" />
+    <Reference Include="runtime-vccrt-win-msil" />
+    <Reference Include="runtime-vccrt-win32-x86" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicBlockVisitor.cs" />
+    <Compile Include="Evaluator.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Set.cs" />
+    <Compile Include="X86InsnLookupTable.cs" />
+    <Compile Include="FuncUnit.cs" />
+    <Compile Include="InstrNodeVisitor.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="PhoenixProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SliceInfo.cs" />
+    <Compile Include="SliceStrategy.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

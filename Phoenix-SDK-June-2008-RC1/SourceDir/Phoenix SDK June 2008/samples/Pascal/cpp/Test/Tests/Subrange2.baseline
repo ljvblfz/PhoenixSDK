@@ -1,0 +1,9 @@
+Compiling...
+Subrange2.p
+Subrange2.p(5) error P3013: expected ordinal type.
+Subrange2.p(5) error P3013: expected ordinal type.
+error P3012: type 'real_subrange' not found.
+fatal error P1005: unable to recover from previous error(s); stopping compilation.
+
+Subrange2.p - 3 error(s), 0 warning(s).
+

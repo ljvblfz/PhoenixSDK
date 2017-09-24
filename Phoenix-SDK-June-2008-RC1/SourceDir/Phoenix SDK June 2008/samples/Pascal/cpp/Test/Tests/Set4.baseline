@@ -1,0 +1,18 @@
+Compiling...
+Set4.p
+Set4.p(13) error P3003: variable 'c' of type '(unnamed) set of color' is being assigned an expression of type '(unnamed) set of fruit'.
+Set4.p(14) error P3009: '(unnamed) set of color = (unnamed) set of fruit': operand types are not compatible.
+Set4.p(16) error P3009: '(unnamed) set of color <> (unnamed) set of fruit': operand types are not compatible.
+Set4.p(18) error P3009: '(unnamed) set of color <= (unnamed) set of fruit': operand types are not compatible.
+Set4.p(20) error P3009: '(unnamed) set of color >= (unnamed) set of fruit': operand types are not compatible.
+Set4.p(22) error P3032: incompatible set types.
+Set4.p(22) error P3003: variable 'c' of type '(unnamed) set of color' is being assigned an expression of type '(unknown)'.
+Set4.p(23) error P3032: incompatible set types.
+Set4.p(23) error P3003: variable 'c' of type '(unnamed) set of color' is being assigned an expression of type '(unknown)'.
+Set4.p(24) error P3032: incompatible set types.
+Set4.p(24) error P3003: variable 'c' of type '(unnamed) set of color' is being assigned an expression of type '(unknown)'.
+Set4.p(26) error P3009: 'color in (unnamed) set of fruit': operand types are not compatible.
+Set4.p(29) error P3009: 'fruit in (unnamed) set of color': operand types are not compatible.
+
+Set4.p - 13 error(s), 0 warning(s).
+

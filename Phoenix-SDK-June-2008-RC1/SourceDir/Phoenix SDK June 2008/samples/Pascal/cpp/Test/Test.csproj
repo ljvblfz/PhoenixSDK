@@ -1,0 +1,476 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F631790-D966-4D64-B063-62DBECE0B2B2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>mspt</AssemblyName>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Log.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestPass.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="XmlReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema\Test.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\Test.xsx">
+      <DependentUpon>Test.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Tests\ArraysOfRecordsOfArrays.p">
+    </None>
+    <None Include="Tests\Array1.p">
+    </None>
+    <None Include="Tests\Array2.p">
+    </None>
+    <None Include="Tests\Array3.p">
+    </None>
+    <None Include="Tests\Assignment1.p">
+    </None>
+    <None Include="Tests\Assignment2.p">
+    </None>
+    <None Include="Tests\BadCall.p">
+    </None>
+    <None Include="Tests\BadLabelDecl.p">
+    </None>
+    <None Include="Tests\BadVarDecl.p">
+    </None>
+    <None Include="Tests\BeginEnd.p">
+    </None>
+    <None Include="Tests\bisect">
+    </None>
+    <None Include="Tests\Bisect.p">
+    </None>
+    <None Include="Tests\Boolean1.p">
+    </None>
+    <None Include="Tests\bubblesort">
+    </None>
+    <None Include="Tests\charfile">
+    </None>
+    <None Include="Tests\Char1.p">
+    </None>
+    <None Include="Tests\Complex.p">
+    </None>
+    <None Include="Tests\Convert.p">
+    </None>
+    <None Include="Tests\cosine">
+    </None>
+    <None Include="Tests\Cosine.p">
+    </None>
+    <None Include="Tests\EgFor.p">
+    </None>
+    <None Include="Tests\EgRepeat.p">
+    </None>
+    <None Include="Tests\EgWhile.p">
+    </None>
+    <None Include="Tests\Empty.p">
+    </None>
+    <None Include="Tests\Enum1.p">
+    </None>
+    <None Include="Tests\Enum2.p">
+    </None>
+    <None Include="Tests\exp">
+    </None>
+    <None Include="Tests\Expon2.p">
+    </None>
+    <None Include="Tests\Exponentiation1.p">
+    </None>
+    <None Include="Tests\Exponentiation2.p">
+    </None>
+    <None Include="Tests\Fcount.p">
+    </None>
+    <None Include="Tests\FileMerge.p">
+    </None>
+    <None Include="Tests\Function1.p">
+    </None>
+    <None Include="Tests\Function2.p">
+    </None>
+    <None Include="Tests\Function3.p">
+    </None>
+    <None Include="Tests\Function4.p">
+    </None>
+    <None Include="Tests\Function5.p">
+    </None>
+    <None Include="Tests\Function6.p">
+    </None>
+    <None Include="Tests\Function7.p">
+    </None>
+    <None Include="Tests\Function8-1.p">
+    </None>
+    <None Include="Tests\Function8-2.p">
+    </None>
+    <None Include="Tests\Function9-1.p">
+    </None>
+    <None Include="Tests\Graph1.p">
+    </None>
+    <None Include="Tests\Graph2.p">
+    </None>
+    <None Include="Tests\Hello1.p">
+    </None>
+    <None Include="Tests\Inflation.p">
+    </None>
+    <None Include="Tests\insert">
+    </None>
+    <None Include="Tests\Insert.p">
+    </None>
+    <None Include="Tests\Integer1.p">
+    </None>
+    <None Include="Tests\matrixmul">
+    </None>
+    <None Include="Tests\MatrixMul.p">
+    </None>
+    <None Include="Tests\minmax">
+    </None>
+    <None Include="Tests\Minmax.p">
+    </None>
+    <None Include="Tests\Minmax2.p">
+    </None>
+    <None Include="Tests\minmax3">
+    </None>
+    <None Include="Tests\Minmax3.p">
+    </None>
+    <None Include="Tests\OperatorPrecedence.p">
+    </None>
+    <None Include="Tests\Parameters.p">
+    </None>
+    <None Include="Tests\Pointer1.p">
+    </None>
+    <None Include="Tests\Pointer2.p">
+    </None>
+    <None Include="Tests\Pointer3.p">
+    </None>
+    <None Include="Tests\Pointer4.p">
+    </None>
+    <None Include="Tests\Pointer5.p">
+    </None>
+    <None Include="Tests\postfix">
+    </None>
+    <None Include="Tests\Postfix.p">
+    </None>
+    <None Include="Tests\Primes.p">
+    </None>
+    <None Include="Tests\ReadEnum.p">
+    </None>
+    <None Include="Tests\Real1.p">
+    </None>
+    <None Include="Tests\Record1.p">
+    </None>
+    <None Include="Tests\Record2.p">
+    </None>
+    <None Include="Tests\RecursiveGcd.p">
+    </None>
+    <None Include="Tests\Roman.p">
+    </None>
+    <None Include="Tests\RuntimeRangeCheck.p">
+    </None>
+    <None Include="Tests\Set1.p">
+    </None>
+    <None Include="Tests\Set2.p">
+    </None>
+    <None Include="Tests\Set3.p">
+    </None>
+    <None Include="Tests\Set4.p">
+    </None>
+    <None Include="Tests\Setop.p">
+    </None>
+    <None Include="Tests\SideEffect.p">
+    </None>
+    <None Include="Tests\Sieve.p">
+    </None>
+    <None Include="Tests\Sort.p">
+    </None>
+    <None Include="Tests\StaticRangeCheck.p">
+    </None>
+    <None Include="Tests\String1.p">
+    </None>
+    <None Include="Tests\Subrange1.p">
+    </None>
+    <None Include="Tests\Subrange2.p">
+    </None>
+    <None Include="Tests\Subrange3.p">
+    </None>
+    <None Include="Tests\subrange4">
+    </None>
+    <None Include="Tests\Subrange4.p">
+    </None>
+    <None Include="Tests\Summing.p">
+    </None>
+    <None Include="Tests\TextFile.p">
+    </None>
+    <None Include="Tests\traversal">
+    </None>
+    <None Include="Tests\Traversal.p">
+    </None>
+    <None Include="Tests\Ugly.p">
+    </None>
+    <None Include="Tests\VariantRecord1.p">
+    </None>
+    <None Include="Tests\WidthParameters1.p">
+    </None>
+    <None Include="Tests\WidthParameters2.p">
+    </None>
+    <None Include="Tests\With1.p">
+    </None>
+    <None Include="Tests\With2.p">
+    </None>
+    <None Include="Tests\With3.p">
+    </None>
+    <None Include="Tests\With4.p">
+    </None>
+    <None Include="Tests\With5.p">
+    </None>
+    <None Include="Tests\With6.p">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tests\Array1.baseline" />
+    <None Include="Tests\Array2.baseline" />
+    <None Include="Tests\Array3.baseline" />
+    <None Include="Tests\Array4.baseline" />
+    <None Include="Tests\Array4.p">
+    </None>
+    <None Include="Tests\ArraysOfRecordsOfArrays.baseline" />
+    <None Include="Tests\Assignment1.baseline" />
+    <None Include="Tests\Assignment2.baseline" />
+    <None Include="Tests\BadCall.baseline" />
+    <None Include="Tests\BadLabelDecl.baseline" />
+    <None Include="Tests\BadVarDecl.baseline" />
+    <None Include="Tests\BeginEnd.baseline" />
+    <None Include="Tests\Bisect.baseline" />
+    <None Include="Tests\Boolean1.baseline" />
+    <None Include="Tests\Case1.baseline" />
+    <None Include="Tests\Case1.p">
+    </None>
+    <None Include="Tests\Case2.baseline" />
+    <None Include="Tests\Case2.p" />
+    <None Include="Tests\Char1.baseline" />
+    <None Include="Tests\Complex.baseline" />
+    <None Include="Tests\Convert.baseline" />
+    <None Include="Tests\ConvertReal.p">
+    </None>
+    <None Include="Tests\ConvertTypes.baseline" />
+    <None Include="Tests\ConvertTypes.p" />
+    <None Include="Tests\Cosine.baseline" />
+    <None Include="Tests\EgFor.baseline" />
+    <None Include="Tests\EgRepeat.baseline" />
+    <None Include="Tests\EgWhile.baseline" />
+    <None Include="Tests\Empty.baseline" />
+    <None Include="Tests\Enum1.baseline" />
+    <None Include="Tests\Enum2.baseline" />
+    <None Include="Tests\Exclude.txt">
+    </None>
+    <None Include="Tests\Expon2.baseline" />
+    <None Include="Tests\Exponentiation1.baseline" />
+    <None Include="Tests\Exponentiation2.baseline" />
+    <None Include="Tests\Fcount.baseline" />
+    <None Include="Tests\FileMerge.baseline" />
+    <None Include="Tests\Function1.baseline" />
+    <None Include="Tests\Function10-1.baseline" />
+    <None Include="Tests\Function10-1.p">
+    </None>
+    <None Include="Tests\Function11.baseline" />
+    <None Include="Tests\Function11.p">
+    </None>
+    <None Include="Tests\Function2.baseline" />
+    <None Include="Tests\Function3.baseline" />
+    <None Include="Tests\Function4.baseline" />
+    <None Include="Tests\Function5.baseline" />
+    <None Include="Tests\Function6.baseline" />
+    <None Include="Tests\Function7.baseline" />
+    <None Include="Tests\Function8-1.baseline" />
+    <None Include="Tests\Function9-1.baseline" />
+    <None Include="Tests\Function9-2.c">
+    </None>
+    <None Include="Tests\Goto1.baseline" />
+    <None Include="Tests\Goto1.p" />
+    <None Include="Tests\Graph1.baseline" />
+    <None Include="Tests\Graph2.baseline" />
+    <None Include="Tests\hanoi" />
+    <None Include="Tests\Hello1.baseline" />
+    <None Include="Tests\If1.baseline" />
+    <None Include="Tests\If1.p">
+    </None>
+    <None Include="Tests\iffile">
+    </None>
+    <None Include="Tests\Inflation.baseline" />
+    <None Include="Tests\Insert.baseline" />
+    <None Include="Tests\Integer1.baseline" />
+    <None Include="Tests\Label1.baseline" />
+    <None Include="Tests\Label1.p">
+    </None>
+    <None Include="Tests\Label2.baseline" />
+    <None Include="Tests\Label2.p">
+    </None>
+    <None Include="Tests\Label3.baseline" />
+    <None Include="Tests\Label3.p">
+    </None>
+    <None Include="Tests\Label4.baseline" />
+    <None Include="Tests\Label4.p">
+    </None>
+    <None Include="Tests\lbl">
+    </None>
+    <None Include="Tests\LoopBounds.baseline" />
+    <None Include="Tests\LoopBounds.p">
+    </None>
+    <None Include="Tests\MatrixMul.baseline" />
+    <None Include="Tests\Minmax.baseline" />
+    <None Include="Tests\Minmax2.baseline" />
+    <None Include="Tests\Minmax3.baseline" />
+    <None Include="Tests\Nested1.baseline" />
+    <None Include="Tests\Nested1.p">
+    </None>
+    <None Include="Tests\Nested2.baseline" />
+    <None Include="Tests\Nested2.p">
+    </None>
+    <None Include="Tests\Nested3.baseline" />
+    <None Include="Tests\Nested3.p">
+    </None>
+    <None Include="Tests\OperatorPrecedence.baseline" />
+    <None Include="Tests\OptimizeExpression.baseline" />
+    <None Include="Tests\OptimizeExpression.p">
+    </None>
+    <None Include="Tests\Parameters.baseline" />
+    <None Include="Tests\Parameters1.baseline" />
+    <None Include="Tests\Parameters1.p">
+    </None>
+    <None Include="Tests\Parameters2.baseline" />
+    <None Include="Tests\Parameters2.p">
+    </None>
+    <None Include="Tests\Parameters3.baseline" />
+    <None Include="Tests\Parameters3.p">
+    </None>
+    <None Include="Tests\Parameters4.baseline" />
+    <None Include="Tests\Parameters4.p">
+    </None>
+    <None Include="Tests\ParseRange.baseline" />
+    <None Include="Tests\ParseRange.p">
+    </None>
+    <None Include="Tests\Pointer1.baseline" />
+    <None Include="Tests\Pointer2.baseline" />
+    <None Include="Tests\Pointer3.baseline" />
+    <None Include="Tests\Pointer4.baseline" />
+    <None Include="Tests\Pointer5.baseline" />
+    <None Include="Tests\Postfix.baseline" />
+    <None Include="Tests\Primes.baseline" />
+    <None Include="Tests\ReadEnum.baseline" />
+    <None Include="Tests\Real1.baseline" />
+    <None Include="Tests\Record1.baseline" />
+    <None Include="Tests\Record2.baseline" />
+    <None Include="Tests\RecursiveGcd.baseline" />
+    <None Include="Tests\Roman.baseline" />
+    <None Include="Tests\RuntimeRangeCheck.baseline" />
+    <None Include="Tests\Set1.baseline" />
+    <None Include="Tests\Set2.baseline" />
+    <None Include="Tests\Set3.baseline" />
+    <None Include="Tests\Set4.baseline" />
+    <None Include="Tests\Setop.baseline" />
+    <None Include="Tests\SideEffect.baseline" />
+    <None Include="Tests\Sieve.baseline" />
+    <None Include="Tests\Sort.baseline" />
+    <None Include="Tests\StaticRangeCheck.baseline" />
+    <None Include="Tests\String1.baseline" />
+    <None Include="Tests\String2.baseline" />
+    <None Include="Tests\String2.p">
+    </None>
+    <None Include="Tests\String3.baseline" />
+    <None Include="Tests\String3.p">
+    </None>
+    <None Include="Tests\String4.baseline" />
+    <None Include="Tests\String4.p">
+    </None>
+    <None Include="Tests\strings">
+    </None>
+    <None Include="Tests\Subrange1.baseline" />
+    <None Include="Tests\Subrange2.baseline" />
+    <None Include="Tests\Subrange3.baseline" />
+    <None Include="Tests\Subrange4.baseline" />
+    <None Include="Tests\sudoku">
+    </None>
+    <None Include="Tests\SudokuSolver.baseline" />
+    <None Include="Tests\SudokuSolver.p">
+    </None>
+    <None Include="Tests\Summing.baseline" />
+    <None Include="Tests\TextFile.baseline" />
+    <None Include="Tests\TowersOfHanoi.baseline" />
+    <None Include="Tests\TowersOfHanoi.p" />
+    <None Include="Tests\Traversal.baseline" />
+    <None Include="Tests\TypeCheck.baseline" />
+    <None Include="Tests\TypeCheck.p">
+    </None>
+    <None Include="Tests\Ugly.baseline" />
+    <None Include="Tests\VariantRecord1.baseline" />
+    <None Include="Tests\While1.baseline" />
+    <None Include="Tests\While1.p">
+    </None>
+    <None Include="Tests\WidthParameters.baseline" />
+    <None Include="Tests\WidthParameters.p" />
+    <None Include="Tests\WidthParameters1.baseline" />
+    <None Include="Tests\WidthParameters2.baseline" />
+    <None Include="Tests\With1.baseline" />
+    <None Include="Tests\With2.baseline" />
+    <None Include="Tests\With3.baseline" />
+    <None Include="Tests\With4.baseline" />
+    <None Include="Tests\With5.baseline" />
+    <None Include="Tests\With6.baseline" />
+    <None Include="Tests\With7.baseline" />
+    <None Include="Tests\With7.p">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tests\Function10-1.xml" />
+    <Content Include="Tests\Function10-2.c">
+    </Content>
+    <Content Include="Tests\Function8-1.xml" />
+    <Content Include="Tests\Function9-1.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)$(ConfigurationName)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

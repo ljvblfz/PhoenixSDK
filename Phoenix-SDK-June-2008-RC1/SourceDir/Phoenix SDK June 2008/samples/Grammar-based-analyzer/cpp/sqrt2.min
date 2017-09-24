@@ -1,0 +1,18 @@
+
+sqrt(int a, int result)
+{
+   if (a / result == result) 
+      Print(result);
+   else
+   {
+      otherQuotient = a / result;
+      sqrt(a, (result + otherQuotient) / 2);
+   }
+}
+
+Main()
+{
+   n = 123;
+   Print("The square root of ", n, " is:");
+   sqrt(n, n/2);
+}

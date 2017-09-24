@@ -1,0 +1,6 @@
+Compiling...
+Function4.p
+Function4.p(5) error P3051: 'f0' already declared as type 'function : integer'.
+
+Function4.p - 1 error(s), 0 warning(s).
+

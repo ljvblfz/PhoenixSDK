@@ -1,0 +1,4 @@
+(LETREC append
+  (append LAMBDA (x y) 
+    (IF (EQ x (QUOTE NIL)) y 
+      (CONS (CAR x) (append (CDR x) y)))))

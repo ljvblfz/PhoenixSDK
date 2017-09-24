@@ -1,0 +1,108 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Reachind-Defs Sample</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:14.0pt;font-family:Arial'>Reaching Defs Sample</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Sample
+Name</span></b><span style='font-size:10.0pt;font-family:Arial'>: Reaching Defs</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Sample
+Category:</span></b><span style='font-size:10.0pt;font-family:Arial'> Code
+Analysis Plug-In</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Description</span></b><span
+style='font-size:10.0pt;font-family:Arial'>: It computes the reaching
+definitions for all the basic blocks in a function.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Source
+Language</span></b><span style='font-size:10.0pt;font-family:Arial'>: C++/CLI</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Sample
+Location</span></b><span style='font-size:10.0pt;font-family:Arial'>: <a
+href="../../Samples/reaching-defs/cpp">Samples\reaching-defs\cpp</a></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:10.0pt;
+font-family:Arial'>Usage</span></b><span style='font-size:10.0pt;font-family:
+Arial'>: Uses the standard Phoenix plugin model for c2.  Example:</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>cl
+-d2plugin:&lt;path to reaching-defs.dll&gt;  ...</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Detailed
+Description</span></b><span style='font-size:10.0pt;font-family:Arial'>: The Reaching
+Defs plugin sample demonstrates
+dynamic extensibility through plugins, controls, and phases.
+It is an example of a program which analyzes the IR.  A phase (Reaching
+Definitions Phase) is added after the MIR Lower phase. Execute() creates a
+control flow graph, identifies the definitions to be tracked and then computes
+the in and out set for each basic block in the function. 
+</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>
+The sample will produce an output without any switches and will add an extra info with
+-d2verbosetrace:ReachingDefs switch for debug and release.
+</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

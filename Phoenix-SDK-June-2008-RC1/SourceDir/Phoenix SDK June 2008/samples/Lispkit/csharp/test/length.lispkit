@@ -1,0 +1,5 @@
+(LETREC length
+  (length LAMBDA (list)
+    (IF (EQ list (QUOTE NIL)) (QUOTE 0)
+      (IF (ATOM list) (QUOTE 1) 
+        (ADD (length (CAR list)) (length (CDR list)))))))

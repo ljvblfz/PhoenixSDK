@@ -1,0 +1,153 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>LoopNesting Sample</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:14.0pt;font-family:"Arial","sans-serif"'>Loop Nesting</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Sample
+Name</span></b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>:
+LoopNesting</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Sample
+Category</span></b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>:
+plugin</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Description</span></b><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>: This plugin
+identifies loop headers, bodies and exits. In addition, it builds a parent-of
+relation between loops to represent loop nesting.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Source
+Language</span></b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>:
+C++</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Sample
+Location</span></b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>:
+<a href="../../Samples/LoopNesting/cpp">Samples\LoopNesting\cpp</a></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>Usage</span></b><span style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>: Uses the standard Phoenix plugin model for
+C2.&nbsp; Example:</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;
+cd %PhoenixSdkUserRoot%\samples\LoopNesting\cpp</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;
+devenv LoopNesting.vcproj /build</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;
+cl -nologo -c
+%PhoenixSdkUserRoot%Applications\tests\src\cpp\SimpleNestedLoops.cpp -d2
+plugin:debug\LoopNesting.dll</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Detailed
+Description</span></b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>:
+</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Loop
+headers are identified using back-edges.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Loop
+bodies are identified as the sets of nodes reachable backward from back-edge
+predecessors. </span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Loop
+exits are identified as sources of edges leading to non-loop nodes.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>The
+parent-of relation between loop headers is built “inside out”: the procedure
+that computes loop bodies is invoked in post-order (by which nodes furthest
+away from the start node are processed first), so that the header of a nested
+loop appears as a body member which is itself a loop header.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Once
+this relation is available, the plugin also computes loop nesting levels and
+exclusive bodies, i.e. sets of proper loop members (exclusive of members of
+nested loops).</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

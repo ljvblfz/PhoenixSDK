@@ -1,0 +1,15 @@
+Compiling...
+BadCall.p
+BadCall.p(9) error P3055: 'f1': undeclared procedure or function.
+BadCall.p(10) error P3055: 'f2': undeclared procedure or function.
+BadCall.p(17) error P3055: 'p2': undeclared procedure or function.
+BadCall.p(27) error P3055: 'f2': undeclared procedure or function.
+BadCall.p(28) error P3054: 'f1': function not reachable from current scope.
+BadCall.p(35) error P3054: 'p1': procedure not reachable from current scope.
+BadCall.p(47) error P3054: 'p1': procedure not reachable from current scope.
+BadCall.p(48) error P3054: 'f1': function not reachable from current scope.
+BadCall.p(50) error P3054: 'p2': procedure not reachable from current scope.
+BadCall.p(52) error P3054: 'f2': function not reachable from current scope.
+
+BadCall.p - 10 error(s), 0 warning(s).
+

@@ -1,0 +1,5 @@
+(LETREC inclist
+  (inclist LAMBDA(x)
+    (IF (EQ x (QUOTE NIL)) (QUOTE NIL)
+      (CONS (ADD (CAR x) (QUOTE 1))
+        (inclist (CDR x))))))

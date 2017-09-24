@@ -1,0 +1,10 @@
+Compiling...
+BadLabelDecl.p
+BadLabelDecl.p(5) error P3024: '67890': labels may contain at most 4 digits.
+BadLabelDecl.p(9) warning P3025: label '333' was declared but never defined.
+BadLabelDecl.p(9) warning P3025: label '67890' was declared but never defined.
+BadLabelDecl.p(9) warning P3026: label '333' was declared but never referenced.
+BadLabelDecl.p(9) warning P3026: label '67890' was declared but never referenced.
+
+BadLabelDecl.p - 1 error(s), 4 warning(s).
+

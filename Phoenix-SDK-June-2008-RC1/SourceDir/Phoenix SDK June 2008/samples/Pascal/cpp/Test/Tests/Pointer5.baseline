@@ -1,0 +1,7 @@
+Compiling...
+Pointer5.p
+Pointer5.p(12) error P3018: expected pointer access symbol '^' or '->'.
+Pointer5.p(15) error P3018: expected pointer access symbol '^' or '->'.
+
+Pointer5.p - 2 error(s), 0 warning(s).
+

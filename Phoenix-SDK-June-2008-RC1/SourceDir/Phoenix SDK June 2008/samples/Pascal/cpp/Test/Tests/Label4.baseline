@@ -1,0 +1,7 @@
+Compiling...
+Label4.p
+Label4.p(4) error P3022: label '100' already declared.
+Label4.p(4) error P3024: '10000': labels may contain at most 4 digits.
+
+Label4.p - 2 error(s), 0 warning(s).
+

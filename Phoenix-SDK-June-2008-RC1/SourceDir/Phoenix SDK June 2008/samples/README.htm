@@ -1,0 +1,280 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>How to Use the Phoenix Samples</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-right:0in;
+	margin-left:0in;
+	font-size:24.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-link:"Document Map Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:navy;
+	font-size:10.0pt;
+	font-family:"Tahoma","sans-serif";}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:x-small;
+	font-family:Arial, Helvetica, sans-serif;
+    }
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria","serif";
+	color:#365F91;
+	font-weight:bold;}
+span.DocumentMapChar
+	{mso-style-name:"Document Map Char";
+	mso-style-link:"Document Map";
+	font-family:"Tahoma","sans-serif";}
+p.bulletedlist1, li.bulletedlist1, div.bulletedlist1
+	{mso-style-name:bulletedlist1;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:13.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:black;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=blue>
+
+<div class=Section1>
+
+<h1>How to Use the Phoenix Samples </h1>
+
+<p>To build any of the Phoenix samples, simply open the sample's solution file
+(.sln) with Visual Studio and choose <b>Build | Build Solution</b>.&nbsp;
+The solution files, as shipped, reference debug versions of Phoenix libraries
+in debug mode and reference the release version of the libraries in release
+mode.&nbsp; These libraries are on the path defined by the <b>Phoenix SDK
+Command Prompt &#8211; Debug</b> or the <b>Phoenix SDK Command Prompt &#8211;
+Release</b> Start menu item, as a convenience for running your software.</p>
+
+<p>Note that all samples are implemented for the .NET Framework (i.e., are
+managed).&nbsp; Samples which had previously been only in C# have also been
+translated to C++.&nbsp; The C++ versions are in the new C++/CLI syntax.</p>
+
+<p>Some samples are plugins that work under the auspices of the cl compiler,
+specifically, inside the Phoenix version of the c2 backend.&nbsp; These
+currently work on non-C++/CLI syntax, i.e., on standard C++ input.&nbsp; To
+test a plugin, pass the option -d2plugin:&lt;path&nbsp;of&nbsp;your&nbsp;plugin&nbsp;dll&gt;
+to cl in an SDK command prompt. To <em>build</em> a plugin, or for that matter
+any type of sample, use the sample's Visual Studio solution file, as explained
+above.</p>
+
+<p><b>Caveat:</b> When cl is invoked from the SDK command prompt, it will
+select the Phoenix c2 backend. This is currently not suitable for <em>building</em>
+Phoenix applications. Samples should be built using the Visual Studio solution
+that is provided with each of them.</p>
+
+<p>Some samples instrument or transform PE binaries.&nbsp; Such input binaries
+must be compiled with a Phoenix-based compiler using the /Zi option, and linked
+with /debug.&nbsp; Alternatively, they may be compiled with the Visual C or C++
+compiler included with Visual Studio, using the /Zi option and linked with
+/profile.&nbsp; Usually, the associated PDB file is also required, as generated
+with the /debug switch.</p>
+
+<p>Reviewing the source code of a sample is a good way to get additional
+information about what the sample does and how to run it.&nbsp; For information
+about a particular sample, and links to its source code and Visual Studio
+project, select it below:</p>
+
+<p><a href="../doc/../doc/samples/AddCall.htm">AddCall</a>&nbsp;<span style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>opens a native (unmanaged) x86 binary and
+writes out a new binary that contains a call, inserted at the beginning of a
+specified local method, to an external method in a DLL.</span></p>
+
+<p><a href="../doc/../doc/samples/addnop-plug-in.htm">AddNop-plug-in</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>inserts Nop
+instructions before every real instruction in the IR.</span></p>
+
+<p><a href="../doc/samples/addnop-tool.htm">AddNop-tool</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>takes as input a
+Phoenix-compatible x86 binary and produces as output an x86 binary in which an
+x86 Nop instruction has been added before each x86 instruction in the source
+file.</span></p>
+
+<p><a href="../doc/samples/bbcount.htm">BBCount</a>&nbsp;<span style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>takes as input a list of MSIL
+assemblies/modules, and produces as output a list of new MSIL assemblies/modules
+in which a basic block counting routine has been inserted before the entry
+point of every basic block in the input assemblies/modules.</span></p>
+
+<p><a href="../doc/samples/DepthFirstSearch.htm">DepthFirstSearch</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Visits blocks in
+depth first order and assigns visit numbers (prenumbers and postnumbers) as a
+preliminary step for loop analysis.</span></p>
+
+<p><a href="../doc/samples/Dominators.htm">Dominators</a>&nbsp;<span style='font-size:
+10.0pt;font-family:"Arial","sans-serif"'>Builds the dominance relation in a
+flow graph by solving a dataflow problem.</span></p>
+
+<p><a href="../doc/samples/EasyPlugin.htm">EasyPlugin</a>&nbsp;<span style='font-size:
+10.0pt;font-family:"Arial","sans-serif"'>illustrates how to dump information
+about each function unit in a compiler plugin.</span></p>
+
+<p><a href="../doc/samples/FlowGraph.htm">FlowGraph</a>&nbsp;<span style='font-size:
+10.0pt;font-family:"Arial","sans-serif"'>shows how to build a function unit's
+flow graph from information contained in the IR.</span></p>
+
+<p><a href="../doc/samples/FuncNames.htm">FuncNames</a>&nbsp;<span style='font-size:
+10.0pt;font-family:"Arial","sans-serif"'>reports the name of each function as
+it is being compiled by the c2 backend.</span></p>
+
+<p><a href="../doc/samples/Grammar-based-analyzer.htm">GrammarBasedAnalyzer</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>builds a front-end
+from a yacc grammar and outputs ilasm, which can then be pipe-lined through
+ilasm.exe into the PEReader phase of another Phoenix tool.</span></p>
+
+<p><a href="../doc/samples/Hello.htm">Hello</a>&nbsp;<span style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>creates an object file from scratch for a
+simple C++ program.</span></p>
+
+<p><a href="../doc/samples/ipo-plug-in.htm">IPOPlugin</a>&nbsp;demonstrates how to create a 
+	new Phoenix pass to do interprocedural analysis</p>
+
+<p><a href="../doc/samples/ir-longevity.htm">IRLongevity</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>tracks the lifetimes of
+instructions and operands.&nbsp; At the end of compilation, a report is
+presented which indicates the lifetimes of the objects as a birth/death matrix
+of phases.</span></p>
+
+<p><a href="../doc/samples/localopt.htm">LocalOpt</a>&nbsp;<span style='font-size:
+10.0pt;font-family:"Arial","sans-serif"'>is a c2 plugin that injects an
+optimization phase after MIR Lower. This phase performs DAG-based local
+optimizations, including copy propagation, constant propagation, constant
+folding, CSE, simple scalar promotion and dead code elimination, etc. This
+sample is based on the DAG construction and code generation algorithms provided
+in Section 9.8 of the red dragon compiler book. The purpose of this sample is
+to demonstrate how to implement classic, &#8220;textbook&#8221;, code
+optimizations using the Phoenix infrastructure.</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>LispKit is a LISP compiler that uses Phoenix as
+the backend code generator.</span></p>
+
+<p><a href="../doc/samples/LoopIdentification.htm">LoopIdentification</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>identifies backedges
+in the flow graph to identify loop headers and print their line numbers.</span></p>
+
+<p><a href="../doc/samples/LoopInstrumentation.htm">LoopInstrumentation</a>&nbsp; <span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>inserts trace code to
+report loop entries and exits, and report the number of loop iterations on loop
+exits.</span></p>
+
+<p><a href="../doc/samples/LoopNesting.htm">LoopNesting</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>builds complete
+descriptors for each loop in a function unit: header, parent loop if any,
+inclusive members, proper members, and exit points.</span></p>
+
+<p><a href="../doc/samples/LoopPreheaderAndPostExit.htm">LoopPreheaderAndPostExit</a>&nbsp;
+<span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Identifies
+critical edges leading into and out of loops and inserts empty blocks along
+those edges (i.e. performs edge splitting) to allow the insertion of preheader
+and postexit instrumentation code.</span></p>
+
+<p><a href="../doc/samples/mtrace.htm">MTrace</a>&nbsp;<span style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>injects tracing code into a managed
+application.</span></p>
+
+<p><a href="../doc/samples/NaturalLoopBodies.htm">NaturalLoopBodies</a>&nbsp; <span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>identifies loop
+headers and computes for each loop header the set of nodes reachable from
+back-edges in the inverse graph.</span></p>
+
+<p><a href="../doc/samples/NaturalLoopBodiesAndExits.htm">NaturalLoopBodiesAndExits</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>collects the sets of
+blocks of natural loops (i.e. loop bodies) and identifies loop blocks with
+successors not in the loop.</span></p>
+
+<p><a href="../doc/samples/NaturalLoops.htm">NaturalLoops</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>uses Phoenix's
+built-in dominance relation to identify natural loops.</span></p>
+
+<p><a href="../doc/samples/Pascal.htm">Pascal</a>&nbsp;<span style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>is a sample end-to-end compiler that uses
+Phoenix to perform back end code generation.</span></p>
+
+<p><a href="../doc/samples/Phoenix-Explorer.htm">PE-Explorer</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'> GUI application for
+exploring PE files.</span></p>
+
+<p><a href="../doc/samples/ProcTrace.htm">ProcTrace</a>&nbsp;<span style='font-size:
+10.0pt;font-family:"Arial","sans-serif"'>instruments a native (unmanaged) x86
+binary by adding, to the beginning of every function, a call to a function in a
+DLL.</span></p>
+
+<p><a href="../doc/samples/reaching-defs.htm">ReachingDefs</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>computes the reaching
+definitions for all the basic blocks in a function.</span></p>
+
+<p><a href="../doc/samples/UninitializedLocal.htm">UninitializedLocal</a>&nbsp;<span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>checks for uses of
+uninitialized local variables.</span></p>
+
+<p><a href="../doc/samples/XML-plugin.htm">XML-plugin</a>&nbsp;<span style='font-size:
+10.0pt;font-family:"Arial","sans-serif"'>dumps each function&#8217;s IR as XML
+after every phase of C2.</span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

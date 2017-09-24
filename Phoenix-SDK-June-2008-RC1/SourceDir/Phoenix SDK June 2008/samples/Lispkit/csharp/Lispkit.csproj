@@ -1,0 +1,130 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F949BDF1-26CF-4F88-80D2-4BF4E225BB3C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lispkit</RootNamespace>
+    <AssemblyName>Lispkit</AssemblyName>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <DefineConstants>LISPKIT_COMPILER</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LISPKIT_COMPILER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>LISPKIT_COMPILER</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <Reference Include="architecture-msild">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="architecture-x86d">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="phxd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="runtime-vccrt-win-msild">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="runtime-vccrt-win32-x86d">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <Reference Include="architecture-msil">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="architecture-x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="phx">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="runtime-vccrt-win-msil">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="runtime-vccrt-win32-x86">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ast.cs" />
+    <Compile Include="AstVisitor.cs" />
+    <Compile Include="Evaluator.cs" />
+    <Compile Include="Output.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SExp.cs" />
+    <Compile Include="Scanner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Parser.y" />
+    <None Include="Scanner.l" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
+    <Compile Include="Babel\IScanner.cs" />
+    <Compile Include="Babel\LexDefs.cs" />
+    <Compile Include="Babel\ParserStack.cs" />
+    <Compile Include="Babel\Rule.cs" />
+    <Compile Include="Babel\ShiftReduceParser.cs" />
+    <Compile Include="Babel\State.cs" />
+    <Compile Include="ClassBuilder.cs" />
+    <Compile Include="Compiler.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="Msil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Secd.cs" />
+    <Compile Include="SExpReader.cs" />
+    <Compile Include="TailCallPhase.cs" />
+    <Content Include="Resources\BaseListing.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

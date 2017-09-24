@@ -1,0 +1,6 @@
+Compiling...
+Function6.p
+Function6.p(8) error P3058: 'f0': function is forward-declared; repetition of parameter list not allowed.
+
+Function6.p - 1 error(s), 0 warning(s).
+

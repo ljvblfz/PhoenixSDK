@@ -1,0 +1,10 @@
+Compiling...
+Parameters1.p
+Parameters1.p(9) error P3036: 'c': undeclared identifier.
+Parameters1.p(10) error P3006: 'add': you cannot assign to a function or procedure.
+Parameters1.p(11) error P3049: 'add': expected 2 arguments; 0 provided.
+Parameters1.p(12) error P3049: 'add': expected 2 arguments; 1 provided.
+Parameters1.p(13) error P3049: 'add': expected 2 arguments; 3 provided.
+
+Parameters1.p - 5 error(s), 0 warning(s).
+

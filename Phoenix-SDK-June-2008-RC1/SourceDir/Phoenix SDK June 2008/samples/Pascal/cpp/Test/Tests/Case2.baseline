@@ -1,0 +1,7 @@
+Compiling...
+Case2.p
+Case2.p(9) error P3011: '15': value already appears in case statement list.
+Case2.p(10) error P3011: '20': value already appears in case statement list.
+
+Case2.p - 2 error(s), 0 warning(s).
+

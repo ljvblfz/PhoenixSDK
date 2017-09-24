@@ -1,0 +1,9 @@
+<configuration xmlns="urn:test-schema">
+  <files>
+    <file-name>Function8-1.p</file-name>
+    <file-name>Function8-2.p</file-name>
+  </files>
+  <custom-action/>
+  <command-line>/Oe /d -dumpchktype</command-line>
+  <exe-file>Function8.exe</exe-file>
+</configuration>

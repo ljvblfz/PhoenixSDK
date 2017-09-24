@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+   <!-- These properties are required by Settings.targets -->
+   <PropertyGroup>
+      <OutputName>msp</OutputName>
+      <ClientCustomConfig>cpp</ClientCustomConfig>
+   </PropertyGroup>
+
+   <Import Project="..\..\..\Settings.targets"/>
+
+   <PropertyGroup>
+      <!-- this is PROGRAM for exe, LIBRARY for lib, DYNLINK for dll-->
+      <TargetType>PROGRAM</TargetType>
+      <ManagedCppApplicationType>mixed</ManagedCppApplicationType>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <VCProject Include="frontend.vcproj"/>
+   </ItemGroup>
+
+   <Import Project="..\..\..\Build.targets"/>
+
+</Project>

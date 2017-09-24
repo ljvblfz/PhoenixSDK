@@ -1,0 +1,6 @@
+Compiling...
+Function5.p
+Function5.p(9) error P3057: 'f0': definition of external function must occur in separate module.
+
+Function5.p - 1 error(s), 0 warning(s).
+

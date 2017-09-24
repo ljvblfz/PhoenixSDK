@@ -1,0 +1,6 @@
+Compiling...
+Function7.p
+Function7.p(7) error P3052: there is already a function named 'f0'.
+
+Function7.p - 1 error(s), 0 warning(s).
+

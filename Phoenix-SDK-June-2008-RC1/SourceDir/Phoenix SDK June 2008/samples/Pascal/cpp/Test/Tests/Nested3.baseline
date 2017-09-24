@@ -1,0 +1,6 @@
+Compiling...
+Nested3.p
+Nested3.p(11) error P3004: 'n': you cannot assign to a variable that is constant.
+
+Nested3.p - 1 error(s), 0 warning(s).
+

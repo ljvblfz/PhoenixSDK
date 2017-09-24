@@ -1,1 +1,5 @@
 Phoenix-SDK-June-2008-RC1.msi filter=lfs diff=lfs merge=lfs -text
+Phoenix-SDK-June-2008-RC1/SourceDir/Phoenix[[:space:]]SDK[[:space:]]June[[:space:]]2008/bin/common filter=lfs diff=lfs merge=lfs -text
+Phoenix-SDK-June-2008-RC1/SourceDir/Phoenix[[:space:]]SDK[[:space:]]June[[:space:]]2008/bin/debug filter=lfs diff=lfs merge=lfs -text
+Phoenix-SDK-June-2008-RC1/SourceDir/Phoenix[[:space:]]SDK[[:space:]]June[[:space:]]2008/bin/release filter=lfs diff=lfs merge=lfs -text
+Phoenix-SDK-June-2008-RC1/SourceDir/Phoenix[[:space:]]SDK[[:space:]]June[[:space:]]2008/doc/Phoenix.chm filter=lfs diff=lfs merge=lfs -text

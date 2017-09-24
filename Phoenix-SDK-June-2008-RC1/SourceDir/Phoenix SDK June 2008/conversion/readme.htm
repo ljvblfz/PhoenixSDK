@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<title>SDK Source Conversion Tool</title>
+
+<style type="text/css">
+.style1 {
+	margin-left: 40px;
+}
+.style2 {
+	margin-left: 80px;
+}
+</style>
+</head>
+
+<body>
+<h1>
+SDK Source Code Conversion Tool</h1>
+<p>
+Since the last release of the Microsoft Codename &quot;Phoenix&quot; SDK, the framework has undergone some
+major changes that will break existing user code.  The most prolific change is to the Phoenix
+naming conventions.  Many names have been expanded to encourage readability as well as achieve
+parity with other Microsoft managed frameworks such as the .NET base class library.
+While we think that the new "look" is a big improvement, it is unlikely
+your code will make a smooth transition to the new version without assistance.  Included 
+in this release of the SDK is 
+a tool that will attempt to update your source code.
+The tool looks for names that have been expanded in the Phoenix source base and 
+replaces them.  Please understand that while this tool is as complete as
+possible, it may not update your source code correctly in all cases.  Compilation issues may arise if 
+your source code contains a name that collides with an unexpanded Phoenix name.  Additionally, the tool 
+may not
+make all changes necessary depending on when a given name change or expansion was
+applied.&nbsp; Known issues are listed at the end of the file.&nbsp; It is 
+recommended that you back up your files before proceeding.</p>
+<h2>
+Usage</h2>
+<p>
+Location: &lt;SDK Installation Directory&gt;\conversion\SourceTransformTool.exe</p>
+<p>
+The conversion tool has two operating modes:</p>
+<ul>
+	<li>Replace all files with extensions (*.cpp, *.inl, *.h, *.cs, *.hpp, *.vb) 
+	starting with a root path.&nbsp; If the path is a file, the file is replaced 
+	if it matches one of the file types listed.&nbsp; If the path is a 
+	directory, matching files are recursively replaced under that directory.</li>
+	<li>Replace files and directories listed in a text file with extensions (*.cpp, 
+	*.inl, *.h, *.cs, *.hpp, *.vb).&nbsp; The list should have one path per 
+	line.&nbsp; If the path is a directory, files are recursively replaced under 
+	that directory.</li>
+</ul>
+<p>The conversion tool operates off a list of whole token mappings between the 
+&quot;old&quot; name and the &quot;new&quot; name.&nbsp; The stock mapping is located at &lt;SDK 
+Installation Directory&gt;\conversion\SDKMapping.txt.&nbsp; If you encounter a 
+particularly problematic mapping, you may find it useful to locate and remove it 
+from the list.</p>
+<p>Any files that are replaced are first backed up as &lt;filename&gt;.old.&nbsp; If 
+this file already exists or cannot be created, replacements are skipped.&nbsp; A 
+log of replacements is created in outputtransformlog.txt, located in the 
+directory from which SourceTransformTool.exe is run.</p>
+<h3>Examples</h3>
+<p>Recursively replaces files under the myproj directory:</p>
+<pre class="style1">SourceTransformTool.exe SDKMapping.txt -path <a>c:\myproj</a></pre>
+<p>Replace files and directories listed in a file:</p>
+<pre class="style1">SourceTransformTool.exe SDKMapping.txt -list mylist.txt</pre>
+<p class="style1">Contents of mylist.txt</p>
+<pre class="style2">c:\myproj\parser.cpp
+c:\myproj\parser.h
+c:\myproj\testcode
+<a>c:\myproj\codeinserter.cs</a></pre>
+<h2>Possible Issues With Conversion</h2>
+<p>In some instances, it will not be possible to 100% correctly convert existing 
+source code to the new naming conventions.&nbsp; In particular, problems may 
+arise if it exhibits any of the following qualities:</p>
+<ul>
+	<li><strong>General Issue:</strong> Contains names that collide with 
+	unexpanded Phoenix names.&nbsp; Both names will be expanded, possibly 
+	leading to expansions that break dependencies on other libraries.<ul>
+		<li><strong>Fix: </strong>Examine compilation errors to determine 
+		incorrectly replaced names.</li>
+		<li><strong>Fix: </strong>Examine source code differences for 
+		incorrectly replaced names.</li>
+	</ul>
+	</li>
+	<li><strong>General Issue: </strong>Visual Basic source code is not case 
+	sensitive, but the replacement is.&nbsp; If Phoenix names are cased 
+	differently, some tokens may not be replaced.<ul>
+		<li><strong>Fix: </strong>Examine compilation errors to identify names 
+		that were not replaced.</li>
+	</ul>
+	</li>
+	<li><strong>Specific Issue: </strong>
+	System.ComponentModel.ISupportInitialize contains methods named BeginInit 
+	and EndInit.&nbsp; These will be incorrectly replaced as BeginInitialization 
+	and EndInitialization.&nbsp; These methods are commonly used in generated 
+	Windows Forms initialization code (InitializateComponent).<ul>
+		<li><strong>Fix: </strong>Undo incorrect change</li>
+	</ul>
+	</li>
+	<li><strong>Specific Issue: </strong>System.Windows.Forms.TextBox contains a 
+	property called ReadOnly.&nbsp; This property may be incorrectly changed to 
+	Readonly.&nbsp; This property is commonly used in generated Windows Forms 
+	initialization code (InitializateComponent).</li>
+</ul>
+</body>
+</html>

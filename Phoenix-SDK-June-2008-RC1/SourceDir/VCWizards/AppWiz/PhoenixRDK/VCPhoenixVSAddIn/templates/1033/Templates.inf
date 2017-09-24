@@ -1,0 +1,23 @@
+CopyOnly | app.ico
+CopyOnly | app.rc
+assemblyinfo.cpp
+CopyOnly | commandbar.resx
+OpenFile | connect.cpp
+connect.h
+[!if TOOLS_MENU_ITEM || OTHER_WINDOWS_MENU_ITEM || TOOLBAR_ITEM]
+iconconverter.h
+iconconverter.cpp
+[!endif]
+OpenFile | phoenixprovider.cpp
+phoenixprovider.h
+CopyOnly | phxiconmain.bmp
+CopyOnly | phxiconmainmask.bmp
+resource.h
+stdafx.cpp
+stdafx.h
+[!if TOOL_WINDOW]
+OpenFile | toolwindowcontrol.cpp
+toolwindowcontrol.h
+[!endif]
+DeploymentLocalCopy.AddIn
+DeploymentVSCopy.AddIn

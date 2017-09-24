@@ -1,0 +1,602 @@
+Compiling...
+Array4.p
+
+IR after Type Checker (control chktype)
+
+Function Unit #1
+$L1: (references=0)                                                          #0
+                       START _main(T)                                        #0
+_main: (references=1)                                                        #0
+                       ENTERFUNCTION                                         #0
+   input.HANDLE (up32->void).a32 = CALL &_file_get_std_input.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 89(0x00000059).i32                       #0
+   t143.HANDLE (up32->void) = CALL &_file_get_std_output.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 89(0x00000059).i32                           #0
+   output.HANDLE (up32->void).a32 = ASSIGN t143.HANDLE (up32->void)          #0
+   [&true.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 1.i32                                                                         #0
+   [&false.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 0.i32                                                                        #0
+                       CALL &_runtime_init.CDecl.Function()->(void)          #0
+                       CALL &Array4.CDecl.Function()->(void)                 #0
+                       CALL &_runtime_exit.CDecl.Function()->(void)          #0
+                       RETURN 0.i32, $L4(T)                                  #0
+$L4: (references=1)                                                          #0
+                       EXITFUNCTION                                          #0
+$L2: (references=0)                                                          #0
+                       END                                                   #0
+
+IR after Type Checker (control chktype)
+
+Function Unit #2
+$L1: (references=0)                                                          #3
+                       START Array4(T)                                       #3
+Array4: (references=1)                                                       #3
+                       ENTERFUNCTION                                         #3
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG105.up32->char (i8), 0.i32, 2.i32, 20(0x00000014).i32, &n.up32->integer (i32), &a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96), &A.up32->$$unnamed101`1 (Enum32), &B.up32->$$unnamed101`1 (Enum32), &C.up32->$$unnamed101`1 (Enum32), &b.up32->$$unnamed101 (UnmgdArr[integer (i32)]96), &D.up32->$$unnamed102`2 (Enum32), &E.up32->$$unnamed102`2 (Enum32), &c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128), &d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256), &e.up32->$$unnamed104 (UnmgdArr[char (i8)]321600), &i.up32->integer (i32), &j.up32->integer (i32), &k.up32->integer (i32), &l.up32->integer (i32), &next.up32->char (i8), &first.up32->Boolean (Enum32), &x.up32->$$unnamed105 (UnmgdArr[complex (Aggregate128)]1280), &re.up32->real (f64), &im.up32->real (f64)                  #88
+   n.integer (i32).a32 = ASSIGN 3.integer (i32)                              #4
+   A"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32 = ASSIGN 0.integer (i32)                                                                           #7
+   B"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32 = ASSIGN 1.integer (i32)                                                                           #7
+   C"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32 = ASSIGN 2.integer (i32)                                                                           #7
+   D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32 = ASSIGN 0.integer (i32)                                                                           #8
+   E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32 = ASSIGN 1.integer (i32)                                                                           #8
+   tv187-.i32        = ASSIGN 0.i32                                         #17
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv187-.i32, 0.i32, 17(0x00000011).i32                                                                         #17
+   [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv187-.i32].integer (i32).a32 = ASSIGN 0.integer (i32)                                               #17
+   tv197-.i32        = ASSIGN 4.i32                                         #18
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv197-.i32, 0.i32, 18(0x00000012).i32                                                                         #18
+   [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv197-.i32].integer (i32).a32 = ASSIGN 1.integer (i32)                                               #18
+   tv207-.i32        = ASSIGN 8.i32                                         #19
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv207-.i32, 0.i32, 19(0x00000013).i32                                                                         #19
+   [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv207-.i32].integer (i32).a32 = ASSIGN 2.integer (i32)                                               #19
+   tv217-.i32        = ASSIGN 12(0x0000000c).i32                            #20
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv217-.i32, 0.i32, 20(0x00000014).i32                                                                         #20
+   [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv217-.i32].integer (i32).a32 = ASSIGN 3.integer (i32)                                               #20
+   tv227-.i32        = ASSIGN 16(0x00000010).i32                            #21
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv227-.i32, 0.i32, 21(0x00000015).i32                                                                         #21
+   [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv227-.i32].integer (i32).a32 = ASSIGN 4.integer (i32)                                               #21
+   tv237-.i32        = ASSIGN 20(0x00000014).i32                            #22
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv237-.i32, 0.i32, 22(0x00000016).i32                                                                         #22
+   [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv237-.i32].integer (i32).a32 = ASSIGN 5.integer (i32)                                               #22
+   tv247-.i32        = ASSIGN 24(0x00000018).i32                            #23
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv247-.i32, 0.i32, 23(0x00000017).i32                                                                         #23
+   [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv247-.i32].integer (i32).a32 = ASSIGN 6.integer (i32)                                               #23
+   tv257-.i32        = ASSIGN 28(0x0000001c).i32                            #24
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv257-.i32, 0.i32, 24(0x00000018).i32                                                                         #24
+   [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv257-.i32].integer (i32).a32 = ASSIGN 7.integer (i32)                                               #24
+   tv267-.i32        = ASSIGN 0.i32                                         #25
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv267-.i32, 0.i32, 25(0x00000019).i32                                                                         #25
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv267-.i32].integer (i32).a32         #25
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 25(0x00000019).i32                                                           #25
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #25
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 25(0x00000019).i32                                                                       #25
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #25
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 25(0x00000019).i32                                                                       #25
+   tv278-.i32        = ASSIGN 4.i32                                         #26
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv278-.i32, 0.i32, 26(0x0000001a).i32                                                                         #26
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv278-.i32].integer (i32).a32         #26
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 26(0x0000001a).i32                                                           #26
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #26
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 26(0x0000001a).i32                                                                       #26
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #26
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 26(0x0000001a).i32                                                                       #26
+   tv288-.i32        = ASSIGN 8.i32                                         #27
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv288-.i32, 0.i32, 27(0x0000001b).i32                                                                         #27
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv288-.i32].integer (i32).a32         #27
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 27(0x0000001b).i32                                                           #27
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #27
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 27(0x0000001b).i32                                                                       #27
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #27
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 27(0x0000001b).i32                                                                       #27
+   tv298-.i32        = ASSIGN 12(0x0000000c).i32                            #28
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv298-.i32, 0.i32, 28(0x0000001c).i32                                                                         #28
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv298-.i32].integer (i32).a32         #28
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 28(0x0000001c).i32                                                           #28
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #28
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 28(0x0000001c).i32                                                                       #28
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #28
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 28(0x0000001c).i32                                                                       #28
+   tv308-.i32        = ASSIGN 16(0x00000010).i32                            #29
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv308-.i32, 0.i32, 29(0x0000001d).i32                                                                         #29
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv308-.i32].integer (i32).a32         #29
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 29(0x0000001d).i32                                                           #29
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #29
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 29(0x0000001d).i32                                                                       #29
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #29
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 29(0x0000001d).i32                                                                       #29
+   tv318-.i32        = ASSIGN 20(0x00000014).i32                            #30
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv318-.i32, 0.i32, 30(0x0000001e).i32                                                                         #30
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv318-.i32].integer (i32).a32         #30
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 30(0x0000001e).i32                                                           #30
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #30
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 30(0x0000001e).i32                                                                       #30
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #30
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 30(0x0000001e).i32                                                                       #30
+   tv328-.i32        = ASSIGN 24(0x00000018).i32                            #31
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv328-.i32, 0.i32, 31(0x0000001f).i32                                                                         #31
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv328-.i32].integer (i32).a32         #31
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 31(0x0000001f).i32                                                           #31
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #31
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 31(0x0000001f).i32                                                                       #31
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #31
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 31(0x0000001f).i32                                                                       #31
+   tv338-.i32        = ASSIGN 28(0x0000001c).i32                            #32
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 28(0x0000001c).i32, tv338-.i32, 0.i32, 32(0x00000020).i32                                                                         #32
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [&d.up32->$$unnamed103 (UnmgdArr[integer (i32)]256)+tv338-.i32].integer (i32).a32         #32
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 32(0x00000020).i32                                                           #32
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #32
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 32(0x00000020).i32                                                                       #32
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #32
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 32(0x00000020).i32                                                                       #32
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #33
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 33(0x00000021).i32                                                                       #33
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #33
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 33(0x00000021).i32                                                                       #33
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 1.i32, D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32, 35(0x00000023).i32                                          #35
+   tv345-.i32        = MULTIPLY 4.i32, D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32                                                               #35
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv345-.i32, 0.i32, 35(0x00000023).i32                                                                         #35
+   [&c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128)+tv345-.i32].integer (i32).a32 = ASSIGN 1.integer (i32)                                               #35
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 1.i32, D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32, 36(0x00000024).i32                                          #36
+   t581.i32          = MULTIPLY 4.i32, D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32                                                               #36
+   tv352-.i32        = ADD 8.i32, t581.i32                                  #36
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv352-.i32, 0.i32, 36(0x00000024).i32                                                                         #36
+   [&c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128)+tv352-.i32].integer (i32).a32 = ASSIGN 2.integer (i32)                                               #36
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 1.i32, E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32, 37(0x00000025).i32                                          #37
+   t353.i32          = SUBTRACT E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32                                                               #37
+   t354.i32          = MULTIPLY 1.i32, t353.i32                             #37
+   t355.i32          = ADD t354.i32, 0.i32                                  #37
+   t356.i32          = SUBTRACT 1.integer (i32), 1.i32                      #37
+   t357.i32          = MULTIPLY 2.i32, t356.i32                             #37
+   t358.i32          = ADD t357.i32, t355.i32                               #37
+   tv359-.i32        = MULTIPLY 4.i32, t358.i32                             #37
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv359-.i32, 0.i32, 37(0x00000025).i32                                                                         #37
+   [&c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128)+tv359-.i32].integer (i32).a32 = ASSIGN 3.integer (i32)                                               #37
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 1.i32, E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32, 38(0x00000026).i32                                          #38
+   t360.i32          = SUBTRACT E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32                                                               #38
+   t361.i32          = MULTIPLY 1.i32, t360.i32                             #38
+   t362.i32          = ADD t361.i32, 0.i32                                  #38
+   t363.i32          = SUBTRACT 2.integer (i32), 1.i32                      #38
+   t364.i32          = MULTIPLY 2.i32, t363.i32                             #38
+   t365.i32          = ADD t364.i32, t362.i32                               #38
+   tv366-.i32        = MULTIPLY 4.i32, t365.i32                             #38
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv366-.i32, 0.i32, 38(0x00000026).i32                                                                         #38
+   [&c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128)+tv366-.i32].integer (i32).a32 = ASSIGN 4.integer (i32)                                               #38
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 1.i32, D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32, 39(0x00000027).i32                                          #39
+   t367.i32          = SUBTRACT D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32                                                               #39
+   t368.i32          = MULTIPLY 1.i32, t367.i32                             #39
+   t369.i32          = ADD t368.i32, 0.i32                                  #39
+   t370.i32          = SUBTRACT 1.integer (i32), 1.i32                      #39
+   t371.i32          = MULTIPLY 2.i32, t370.i32                             #39
+   t372.i32          = ADD t371.i32, t369.i32                               #39
+   tv373-.i32        = MULTIPLY 4.i32, t372.i32                             #39
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv373-.i32, 0.i32, 39(0x00000027).i32                                                                         #39
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128)+tv373-.i32].integer (i32).a32  #39
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 39(0x00000027).i32                                                    #39
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #39
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 39(0x00000027).i32                                                                #39
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #39
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 39(0x00000027).i32                                                                #39
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 1.i32, D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32, 40(0x00000028).i32                                          #40
+   t374.i32          = SUBTRACT D"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32                                                               #40
+   t375.i32          = MULTIPLY 1.i32, t374.i32                             #40
+   t376.i32          = ADD t375.i32, 0.i32                                  #40
+   t377.i32          = SUBTRACT 2.integer (i32), 1.i32                      #40
+   t378.i32          = MULTIPLY 2.i32, t377.i32                             #40
+   t379.i32          = ADD t378.i32, t376.i32                               #40
+   tv380-.i32        = MULTIPLY 4.i32, t379.i32                             #40
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv380-.i32, 0.i32, 40(0x00000028).i32                                                                         #40
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128)+tv380-.i32].integer (i32).a32  #40
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 40(0x00000028).i32                                                    #40
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #40
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 40(0x00000028).i32                                                                #40
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #40
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 40(0x00000028).i32                                                                #40
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 1.i32, E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32, 41(0x00000029).i32                                          #41
+   t381.i32          = SUBTRACT E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32                                                               #41
+   t382.i32          = MULTIPLY 1.i32, t381.i32                             #41
+   t383.i32          = ADD t382.i32, 0.i32                                  #41
+   t384.i32          = SUBTRACT 1.integer (i32), 1.i32                      #41
+   t385.i32          = MULTIPLY 2.i32, t384.i32                             #41
+   t386.i32          = ADD t385.i32, t383.i32                               #41
+   tv387-.i32        = MULTIPLY 4.i32, t386.i32                             #41
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv387-.i32, 0.i32, 41(0x00000029).i32                                                                         #41
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128)+tv387-.i32].integer (i32).a32  #41
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 41(0x00000029).i32                                                    #41
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #41
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 41(0x00000029).i32                                                                #41
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #41
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 41(0x00000029).i32                                                                #41
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 1.i32, E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32, 42(0x0000002a).i32                                          #42
+   t388.i32          = SUBTRACT E"$$data"($$unnamed102`2 (Enum32)+0).integer (i32).a32, 0.i32                                                               #42
+   t389.i32          = MULTIPLY 1.i32, t388.i32                             #42
+   t390.i32          = ADD t389.i32, 0.i32                                  #42
+   t391.i32          = SUBTRACT 2.integer (i32), 1.i32                      #42
+   t392.i32          = MULTIPLY 2.i32, t391.i32                             #42
+   t393.i32          = ADD t392.i32, t390.i32                               #42
+   tv394-.i32        = MULTIPLY 4.i32, t393.i32                             #42
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv394-.i32, 0.i32, 42(0x0000002a).i32                                                                         #42
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&c.up32->$$unnamed102 (UnmgdArr[integer (i32)]128)+tv394-.i32].integer (i32).a32  #42
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 42(0x0000002a).i32                                                    #42
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #42
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 42(0x0000002a).i32                                                                #42
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #42
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 42(0x0000002a).i32                                                                #42
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 2.i32, A"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32, 44(0x0000002c).i32                                          #44
+   t395.i32          = SUBTRACT A"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32                                                               #44
+   t396.i32          = MULTIPLY 1.i32, t395.i32                             #44
+   t397.i32          = ADD t396.i32, 0.i32                                  #44
+   tv398-.i32        = MULTIPLY 4.i32, t397.i32                             #44
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv398-.i32, 0.i32, 44(0x0000002c).i32      #44
+   [&b.up32->$$unnamed101 (UnmgdArr[integer (i32)]96)+tv398-.i32].integer (i32).a32 = ASSIGN 0.integer (i32)                                                #44
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 2.i32, B"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32, 45(0x0000002d).i32                                          #45
+   t399.i32          = SUBTRACT B"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32                                                               #45
+   t400.i32          = MULTIPLY 1.i32, t399.i32                             #45
+   t401.i32          = ADD t400.i32, 0.i32                                  #45
+   tv402-.i32        = MULTIPLY 4.i32, t401.i32                             #45
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv402-.i32, 0.i32, 45(0x0000002d).i32      #45
+   [&b.up32->$$unnamed101 (UnmgdArr[integer (i32)]96)+tv402-.i32].integer (i32).a32 = ASSIGN 1.integer (i32)                                                #45
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 2.i32, C"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32, 46(0x0000002e).i32                                          #46
+   t403.i32          = SUBTRACT C"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32                                                               #46
+   t404.i32          = MULTIPLY 1.i32, t403.i32                             #46
+   t405.i32          = ADD t404.i32, 0.i32                                  #46
+   tv406-.i32        = MULTIPLY 4.i32, t405.i32                             #46
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv406-.i32, 0.i32, 46(0x0000002e).i32      #46
+   [&b.up32->$$unnamed101 (UnmgdArr[integer (i32)]96)+tv406-.i32].integer (i32).a32 = ASSIGN 2.integer (i32)                                                #46
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 2.i32, A"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32, 47(0x0000002f).i32                                          #47
+   t407.i32          = SUBTRACT A"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32                                                               #47
+   t408.i32          = MULTIPLY 1.i32, t407.i32                             #47
+   t409.i32          = ADD t408.i32, 0.i32                                  #47
+   tv410-.i32        = MULTIPLY 4.i32, t409.i32                             #47
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv410-.i32, 0.i32, 47(0x0000002f).i32      #47
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&b.up32->$$unnamed101 (UnmgdArr[integer (i32)]96)+tv410-.i32].integer (i32).a32   #47
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 47(0x0000002f).i32                                                    #47
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #47
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 47(0x0000002f).i32                                                                #47
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #47
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 47(0x0000002f).i32                                                                #47
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 2.i32, C"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32, 48(0x00000030).i32                                          #48
+   t411.i32          = SUBTRACT C"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32                                                               #48
+   t412.i32          = MULTIPLY 1.i32, t411.i32                             #48
+   t413.i32          = ADD t412.i32, 0.i32                                  #48
+   tv414-.i32        = MULTIPLY 4.i32, t413.i32                             #48
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv414-.i32, 0.i32, 48(0x00000030).i32      #48
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&b.up32->$$unnamed101 (UnmgdArr[integer (i32)]96)+tv414-.i32].integer (i32).a32   #48
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 48(0x00000030).i32                                                    #48
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #48
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 48(0x00000030).i32                                                                #48
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #48
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 48(0x00000030).i32                                                                #48
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 2.i32, B"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32, 49(0x00000031).i32                                          #49
+   t415.i32          = SUBTRACT B"$$data"($$unnamed101`1 (Enum32)+0).integer (i32).a32, 0.i32                                                               #49
+   t416.i32          = MULTIPLY 1.i32, t415.i32                             #49
+   t417.i32          = ADD t416.i32, 0.i32                                  #49
+   tv418-.i32        = MULTIPLY 4.i32, t417.i32                             #49
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv418-.i32, 0.i32, 49(0x00000031).i32      #49
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&b.up32->$$unnamed101 (UnmgdArr[integer (i32)]96)+tv418-.i32].integer (i32).a32   #49
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 49(0x00000031).i32                                                    #49
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #49
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 49(0x00000031).i32                                                                #49
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #49
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 49(0x00000031).i32                                                                #49
+   i.integer (i32).a32 = ASSIGN 1.integer (i32)                             #51
+   tv419-.integer (i32) = ADD i.integer (i32).a32, 1.integer (i32)          #52
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 3.i32, tv419-.integer (i32), 0.i32, 52(0x00000034).i32                                                                            #52
+   t420.i32          = SUBTRACT tv419-.integer (i32), 1.i32                 #52
+   t421.i32          = MULTIPLY 1.i32, t420.i32                             #52
+   t422.i32          = ADD t421.i32, 0.i32                                  #52
+   tv423-.i32        = MULTIPLY 4.i32, t422.i32                             #52
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv423-.i32, 0.i32, 52(0x00000034).i32      #52
+   [&a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96)+tv423-.i32].integer (i32).a32 = ASSIGN 35(0x00000023).integer (i32)                                   #52
+   t424.i32          = SUBTRACT 2.integer (i32), 1.i32                      #53
+   t425.i32          = MULTIPLY 1.i32, t424.i32                             #53
+   t426.i32          = ADD t425.i32, 0.i32                                  #53
+   tv427-.i32        = MULTIPLY 4.i32, t426.i32                             #53
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv427-.i32, 0.i32, 53(0x00000035).i32      #53
+   [&a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96)+tv427-.i32].integer (i32).a32 = ASSIGN -68(0xffffffbc).integer (i32)                                  #53
+   t428.i32          = SUBTRACT 3.integer (i32), 1.i32                      #54
+   t429.i32          = MULTIPLY 1.i32, t428.i32                             #54
+   t430.i32          = ADD t429.i32, 0.i32                                  #54
+   tv431-.i32        = MULTIPLY 4.i32, t430.i32                             #54
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv431-.i32, 0.i32, 54(0x00000036).i32      #54
+   [&a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96)+tv431-.i32].integer (i32).a32 = ASSIGN 94(0x0000005e).integer (i32)                                   #54
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 3.i32, i.integer (i32).a32, 0.i32, 55(0x00000037).i32 #55
+   t432.i32          = SUBTRACT i.integer (i32).a32, 1.i32                  #55
+   t433.i32          = MULTIPLY 1.i32, t432.i32                             #55
+   t434.i32          = ADD t433.i32, 0.i32                                  #55
+   tv435-.i32        = MULTIPLY 4.i32, t434.i32                             #55
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv435-.i32, 0.i32, 55(0x00000037).i32      #55
+   [&a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96)+tv435-.i32].integer (i32).a32 = ASSIGN 22(0x00000016).integer (i32)                                   #55
+   tv436-.integer (i32) = ADD i.integer (i32).a32, 1.integer (i32)          #56
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 3.i32, tv436-.integer (i32), 0.i32, 56(0x00000038).i32                                                                            #56
+   t437.i32          = SUBTRACT tv436-.integer (i32), 1.i32                 #56
+   t438.i32          = MULTIPLY 1.i32, t437.i32                             #56
+   t439.i32          = ADD t438.i32, 0.i32                                  #56
+   tv440-.i32        = MULTIPLY 4.i32, t439.i32                             #56
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv440-.i32, 0.i32, 56(0x00000038).i32      #56
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96)+tv440-.i32].integer (i32).a32   #56
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 56(0x00000038).i32                                                    #56
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #56
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 56(0x00000038).i32                                                                #56
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #56
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 56(0x00000038).i32                                                                #56
+   t441.i32          = SUBTRACT 2.integer (i32), 1.i32                      #57
+   t442.i32          = MULTIPLY 1.i32, t441.i32                             #57
+   t443.i32          = ADD t442.i32, 0.i32                                  #57
+   tv444-.i32        = MULTIPLY 4.i32, t443.i32                             #57
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv444-.i32, 0.i32, 57(0x00000039).i32      #57
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96)+tv444-.i32].integer (i32).a32   #57
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 57(0x00000039).i32                                                    #57
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #57
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 57(0x00000039).i32                                                                #57
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #57
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 57(0x00000039).i32                                                                #57
+   t445.i32          = SUBTRACT 3.integer (i32), 1.i32                      #58
+   t446.i32          = MULTIPLY 1.i32, t445.i32                             #58
+   t447.i32          = ADD t446.i32, 0.i32                                  #58
+   tv448-.i32        = MULTIPLY 4.i32, t447.i32                             #58
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv448-.i32, 0.i32, 58(0x0000003a).i32      #58
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96)+tv448-.i32].integer (i32).a32   #58
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 58(0x0000003a).i32                                                    #58
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #58
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 58(0x0000003a).i32                                                                #58
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #58
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 58(0x0000003a).i32                                                                #58
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 3.i32, i.integer (i32).a32, 0.i32, 59(0x0000003b).i32 #59
+   t449.i32          = SUBTRACT i.integer (i32).a32, 1.i32                  #59
+   t450.i32          = MULTIPLY 1.i32, t449.i32                             #59
+   t451.i32          = ADD t450.i32, 0.i32                                  #59
+   tv452-.i32        = MULTIPLY 4.i32, t451.i32                             #59
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv452-.i32, 0.i32, 59(0x0000003b).i32      #59
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [&a.up32->$$unnamed100 (UnmgdArr[integer (i32)]96)+tv452-.i32].integer (i32).a32   #59
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 59(0x0000003b).i32                                                    #59
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #59
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 59(0x0000003b).i32                                                                #59
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #59
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 59(0x0000003b).i32                                                                #59
+   first.Boolean (Enum32).a32 = ASSIGN true.Boolean (Enum32).a32            #61
+   i.integer (i32).a32 = ASSIGN 1.integer (i32)                             #62
+   tv454-.integer (i32) = ASSIGN i.integer (i32).a32                        #62
+                       GOTO $L4                                             #62
+$L4: (references=2)                                                         #62
+   t455.i32          = COMPARE(GT) tv454-.integer (i32), 2.integer (i32)    #62
+                       CONDITIONALBRANCH(True) t455.i32, $L5, $L6           #62
+$L5: (references=1)                                                         #62
+   tv457-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #62
+                       GOTO $L7                                             #62
+$L6: (references=1)                                                         #62
+   tv457-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #62
+                       GOTO $L7                                             #62
+$L7: (references=2)                                                         #62
+                       CONDITIONALBRANCH(True) tv457"$$data"(Boolean (Enum32)+0).i32, $L8, $L9                                                              #62
+$L9: (references=1)                                                         #62
+   i.integer (i32).a32 = ASSIGN tv454-.integer (i32)                        #62
+   j.integer (i32).a32 = ASSIGN 100(0x00000064).integer (i32)               #64
+   tv458-.integer (i32) = ASSIGN j.integer (i32).a32                        #64
+                       GOTO $L10                                            #64
+$L10: (references=2)                                                        #64
+   t459.i32          = COMPARE(GT) tv458-.integer (i32), 300(0x0000012c).integer (i32)                                                                      #64
+                       CONDITIONALBRANCH(True) t459.i32, $L11, $L12         #64
+$L11: (references=1)                                                        #64
+   tv460-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #64
+                       GOTO $L13                                            #64
+$L12: (references=1)                                                        #64
+   tv460-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #64
+                       GOTO $L13                                            #64
+$L13: (references=2)                                                        #64
+                       CONDITIONALBRANCH(True) tv460"$$data"(Boolean (Enum32)+0).i32, $L14, $L15                                                            #64
+$L15: (references=1)                                                        #64
+   j.integer (i32).a32 = ASSIGN tv458-.integer (i32)                        #64
+   k.integer (i32).a32 = ASSIGN 1.integer (i32)                             #66
+   tv461-.integer (i32) = ASSIGN k.integer (i32).a32                        #66
+                       GOTO $L16                                            #66
+$L16: (references=2)                                                        #66
+   t462.i32          = COMPARE(GT) tv461-.integer (i32), 20(0x00000014).integer (i32)                                                                       #66
+                       CONDITIONALBRANCH(True) t462.i32, $L17, $L18         #66
+$L17: (references=1)                                                        #66
+   tv463-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #66
+                       GOTO $L19                                            #66
+$L18: (references=1)                                                        #66
+   tv463-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #66
+                       GOTO $L19                                            #66
+$L19: (references=2)                                                        #66
+                       CONDITIONALBRANCH(True) tv463"$$data"(Boolean (Enum32)+0).i32, $L20, $L21                                                            #66
+$L21: (references=1)                                                        #66
+   k.integer (i32).a32 = ASSIGN tv461-.integer (i32)                        #66
+   next.char (i8).a8 = ASSIGN 65(0x41).char (i8)                            #68
+   l.integer (i32).a32 = ASSIGN 1.integer (i32)                             #69
+   tv464-.integer (i32) = ASSIGN l.integer (i32).a32                        #69
+                       GOTO $L22                                            #69
+$L22: (references=2)                                                        #69
+   t465.i32          = COMPARE(GT) tv464-.integer (i32), 5.integer (i32)    #69
+                       CONDITIONALBRANCH(True) t465.i32, $L23, $L24         #69
+$L23: (references=1)                                                        #69
+   tv466-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #69
+                       GOTO $L25                                            #69
+$L24: (references=1)                                                        #69
+   tv466-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #69
+                       GOTO $L25                                            #69
+$L25: (references=2)                                                        #69
+                       CONDITIONALBRANCH(True) tv466"$$data"(Boolean (Enum32)+0).i32, $L26, $L27                                                            #69
+$L27: (references=1)                                                        #69
+   l.integer (i32).a32 = ASSIGN tv464-.integer (i32)                        #69
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 5.i32, l.integer (i32).a32, 0.i32, 71(0x00000047).i32 #71
+   t467.i32          = SUBTRACT l.integer (i32).a32, 1.i32                  #71
+   t468.i32          = MULTIPLY 1.i32, t467.i32                             #71
+   t469.i32          = ADD t468.i32, 0.i32                                  #71
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 20(0x00000014).i32, k.integer (i32).a32, 0.i32, 71(0x00000047).i32                                                                #71
+   t470.i32          = SUBTRACT k.integer (i32).a32, 1.i32                  #71
+   t471.i32          = MULTIPLY 5.i32, t470.i32                             #71
+   t472.i32          = ADD t471.i32, t469.i32                               #71
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 100(0x00000064).i32, 300(0x0000012c).i32, j.integer (i32).a32, 0.i32, 71(0x00000047).i32                                                 #71
+   t473.i32          = SUBTRACT j.integer (i32).a32, 100(0x00000064).i32    #71
+   t474.i32          = MULTIPLY 100(0x00000064).i32, t473.i32               #71
+   t475.i32          = ADD t474.i32, t472.i32                               #71
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 2.i32, i.integer (i32).a32, 0.i32, 71(0x00000047).i32 #71
+   t476.i32          = SUBTRACT i.integer (i32).a32, 1.i32                  #71
+   t477.i32          = MULTIPLY 20100(0x00004e84).i32, t476.i32             #71
+   t478.i32          = ADD t477.i32, t475.i32                               #71
+   tv479-.i32        = MULTIPLY 1.i32, t478.i32                             #71
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 40199(0x00009d07).i32, tv479-.i32, 0.i32, 71(0x00000047).i32                                                                      #71
+   [&e.up32->$$unnamed104 (UnmgdArr[char (i8)]321600)+tv479-.i32].char (i8).a8 = ASSIGN next.char (i8).a8                                                   #71
+                       CONDITIONALBRANCH(True) first"$$data"(Boolean (Enum32)+0).i32.a32, $L28, $L29                                                        #72
+$L28: (references=1)                                                        #72
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 5.i32, l.integer (i32).a32, 0.i32, 72(0x00000048).i32 #72
+   t480.i32          = SUBTRACT l.integer (i32).a32, 1.i32                  #72
+   t481.i32          = MULTIPLY 1.i32, t480.i32                             #72
+   t482.i32          = ADD t481.i32, 0.i32                                  #72
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 20(0x00000014).i32, k.integer (i32).a32, 0.i32, 72(0x00000048).i32                                                                #72
+   t483.i32          = SUBTRACT k.integer (i32).a32, 1.i32                  #72
+   t484.i32          = MULTIPLY 5.i32, t483.i32                             #72
+   t485.i32          = ADD t484.i32, t482.i32                               #72
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 100(0x00000064).i32, 300(0x0000012c).i32, j.integer (i32).a32, 0.i32, 72(0x00000048).i32                                                 #72
+   t486.i32          = SUBTRACT j.integer (i32).a32, 100(0x00000064).i32    #72
+   t487.i32          = MULTIPLY 100(0x00000064).i32, t486.i32               #72
+   t488.i32          = ADD t487.i32, t485.i32                               #72
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 2.i32, i.integer (i32).a32, 0.i32, 72(0x00000048).i32 #72
+   t489.i32          = SUBTRACT i.integer (i32).a32, 1.i32                  #72
+   t490.i32          = MULTIPLY 20100(0x00004e84).i32, t489.i32             #72
+   t491.i32          = ADD t490.i32, t488.i32                               #72
+   tv492-.i32        = MULTIPLY 1.i32, t491.i32                             #72
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 40199(0x00009d07).i32, tv492-.i32, 0.i32, 72(0x00000048).i32                                                                      #72
+                       CALL &_file_set_modifier.CDecl.Function(HANDLE (up32->void),i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, 0.i32, 2.integer (i32)                                    #72
+   [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8 = ASSIGN [&e.up32->$$unnamed104 (UnmgdArr[char (i8)]321600)+tv492-.i32].char (i8).a8             #72
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 72(0x00000048).i32                                                                #72
+                       GOTO $L29                                            #72
+$L29: (references=2)                                                        #72
+   t493.integer (i32) = CONVERT next.char (i8).a8                           #73
+   t494.i32          = CALL &_succ.CDecl.Function(i32)->(i32), t493.integer (i32)                                                                           #73
+   t496.char (i8)    = CONVERT t494.i32                                     #73
+   t495.char (i8)    = ASSIGN t496.char (i8)                                #73
+   next.char (i8).a8 = ASSIGN t495.char (i8)                                #73
+   t497.integer (i32) = ADD l.integer (i32).a32, 1.integer (i32)            #73
+   tv464-.integer (i32) = ASSIGN t497.integer (i32)                         #73
+                       GOTO $L22                                            #73
+$L26: (references=1)                                                        #69
+                       CONDITIONALBRANCH(True) first"$$data"(Boolean (Enum32)+0).i32.a32, $L30, $L31                                                        #75
+$L30: (references=1)                                                        #75
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #75
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 75(0x0000004b).i32                                                                #75
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #75
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 75(0x0000004b).i32                                                                #75
+                       GOTO $L31                                            #75
+$L31: (references=2)                                                        #75
+   first.Boolean (Enum32).a32 = ASSIGN false.Boolean (Enum32).a32           #76
+   t498.integer (i32) = ADD k.integer (i32).a32, 1.integer (i32)            #77
+   tv461-.integer (i32) = ASSIGN t498.integer (i32)                         #77
+                       GOTO $L16                                            #77
+$L20: (references=1)                                                        #66
+   t499.integer (i32) = ADD j.integer (i32).a32, 1.integer (i32)            #78
+   tv458-.integer (i32) = ASSIGN t499.integer (i32)                         #78
+                       GOTO $L10                                            #78
+$L14: (references=1)                                                        #64
+   t500.integer (i32) = ADD i.integer (i32).a32, 1.integer (i32)            #79
+   tv454-.integer (i32) = ASSIGN t500.integer (i32)                         #79
+                       GOTO $L4                                             #79
+$L8: (references=1)                                                         #62
+   re.real (f64).a64 = ASSIGN 0.real (f64)                                  #81
+   im.real (f64).a64 = ASSIGN 1.real (f64)                                  #82
+   i.integer (i32).a32 = ASSIGN 1.integer (i32)                             #83
+   tv501-.integer (i32) = ASSIGN i.integer (i32).a32                        #83
+                       GOTO $L32                                            #83
+$L32: (references=2)                                                        #83
+   t502.i32          = COMPARE(GT) tv501-.integer (i32), 10(0x0000000a).integer (i32)                                                                       #83
+                       CONDITIONALBRANCH(True) t502.i32, $L33, $L34         #83
+$L33: (references=1)                                                        #83
+   tv503-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #83
+                       GOTO $L35                                            #83
+$L34: (references=1)                                                        #83
+   tv503-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #83
+                       GOTO $L35                                            #83
+$L35: (references=2)                                                        #83
+                       CONDITIONALBRANCH(True) tv503"$$data"(Boolean (Enum32)+0).i32, $L36, $L37                                                            #83
+$L37: (references=1)                                                        #83
+   i.integer (i32).a32 = ASSIGN tv501-.integer (i32)                        #83
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 10(0x0000000a).i32, i.integer (i32).a32, 0.i32, 85(0x00000055).i32                                                                #85
+   t504.i32          = SUBTRACT i.integer (i32).a32, 1.i32                  #85
+   t505.i32          = MULTIPLY 1.i32, t504.i32                             #85
+   t506.i32          = ADD t505.i32, 0.i32                                  #85
+   tv507-.i32        = MULTIPLY 16(0x00000010).i32, t506.i32                #85
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 144(0x00000090).i32, tv507-.i32, 0.i32, 85(0x00000055).i32                                                                        #85
+   t508.up32->complex (Aggregate128) = ASSIGN &[&x.up32->$$unnamed105 (UnmgdArr[complex (Aggregate128)]1280)+tv507-.i32].up32->complex (Aggregate128)       #85
+   [t508.up32->complex (Aggregate128)].real (f64).a64 = ASSIGN re.real (f64).a64                                                                            #85
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 10(0x0000000a).i32, i.integer (i32).a32, 0.i32, 85(0x00000055).i32                                                                #85
+   t509.i32          = SUBTRACT i.integer (i32).a32, 1.i32                  #85
+   t510.i32          = MULTIPLY 1.i32, t509.i32                             #85
+   t511.i32          = ADD t510.i32, 0.i32                                  #85
+   tv512-.i32        = MULTIPLY 16(0x00000010).i32, t511.i32                #85
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 144(0x00000090).i32, tv512-.i32, 0.i32, 85(0x00000055).i32                                                                        #85
+   t513.up32->complex (Aggregate128) = ASSIGN &[&x.up32->$$unnamed105 (UnmgdArr[complex (Aggregate128)]1280)+tv512-.i32].up32->complex (Aggregate128)       #85
+   [t513.up32->complex (Aggregate128)+8].real (f64).a64 = ASSIGN im.real (f64).a64                                                                          #85
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 10(0x0000000a).i32, i.integer (i32).a32, 0.i32, 86(0x00000056).i32                                                                #86
+   t514.i32          = SUBTRACT i.integer (i32).a32, 1.i32                  #86
+   t515.i32          = MULTIPLY 1.i32, t514.i32                             #86
+   t516.i32          = ADD t515.i32, 0.i32                                  #86
+   tv517-.i32        = MULTIPLY 16(0x00000010).i32, t516.i32                #86
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 144(0x00000090).i32, tv517-.i32, 0.i32, 86(0x00000056).i32                                                                        #86
+   t518.up32->complex (Aggregate128) = ASSIGN &[&x.up32->$$unnamed105 (UnmgdArr[complex (Aggregate128)]1280)+tv517-.i32].up32->complex (Aggregate128)       #86
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 10(0x0000000a).i32, i.integer (i32).a32, 0.i32, 86(0x00000056).i32                                                                #86
+   t519.i32          = SUBTRACT i.integer (i32).a32, 1.i32                  #86
+   t520.i32          = MULTIPLY 1.i32, t519.i32                             #86
+   t521.i32          = ADD t520.i32, 0.i32                                  #86
+   tv522-.i32        = MULTIPLY 16(0x00000010).i32, t521.i32                #86
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 144(0x00000090).i32, tv522-.i32, 0.i32, 86(0x00000056).i32                                                                        #86
+   t523.up32->complex (Aggregate128) = ASSIGN &[&x.up32->$$unnamed105 (UnmgdArr[complex (Aggregate128)]1280)+tv522-.i32].up32->complex (Aggregate128)       #86
+   [&output.up32->$stdfile (Aggregate2080)+4].real (f64).a64 = ASSIGN [t518.up32->complex (Aggregate128)].real (f64).a64                                    #86
+                       CALL &_file_put_double.CDecl.Function(HANDLE (up32->void),f64,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].real (f64).a64, 0.i32, 86(0x00000056).i32                                                    #86
+   [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8 = ASSIGN 46(0x2e).char (i8)                                                                      #86
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8, 0.i32, 86(0x00000056).i32                                                         #86
+   [&output.up32->$stdfile (Aggregate2080)+4].real (f64).a64 = ASSIGN [t523.up32->complex (Aggregate128)+8].real (f64).a64                                  #86
+                       CALL &_file_put_double.CDecl.Function(HANDLE (up32->void),f64,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].real (f64).a64, 0.i32, 86(0x00000056).i32                                                    #86
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #86
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 86(0x00000056).i32                                                                #86
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #86
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 86(0x00000056).i32                                                                #86
+   t524.real (f64)   = ADD re.real (f64).a64, 0.5.real (f64)                #87
+   re.real (f64).a64 = ASSIGN t524.real (f64)                               #87
+   t525.real (f64)   = ADD im.real (f64).a64, re.real (f64).a64             #88
+   im.real (f64).a64 = ASSIGN t525.real (f64)                               #88
+   t526.integer (i32) = ADD i.integer (i32).a32, 1.integer (i32)            #88
+   tv501-.integer (i32) = ASSIGN t526.integer (i32)                         #88
+                       GOTO $L32                                            #88
+$L36: (references=1)                                                        #83
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 2.i32                                                                   #88
+                       RETURN $L38(T)                                       #89
+$L38: (references=1)                                                        #89
+                       EXITFUNCTION                                         #89
+$L2: (references=0)                                                         #89
+                       END                                                  #89
+Writing Array4.obj...
+
+Array4.p - 0 error(s), 0 warning(s).
+
+Linking...
+
+Array4.exe - 0 error(s), 0 warning(s).
+
+0
+1
+2
+3
+4
+5
+6
+7
+
+1
+2
+3
+4
+0
+2
+1
+-68
+-68
+94
+22
+ A B C D E
+0.000000.1.000000
+0.500000.1.500000
+1.000000.2.500000
+1.500000.4.000000
+2.000000.6.000000
+2.500000.8.500000
+3.000000.11.500000
+3.500000.15.000000
+4.000000.19.000000
+4.500000.23.500000

@@ -1,0 +1,10 @@
+Compiling...
+Parameters4.p
+Parameters4.p(12) error P3046: 'a': array parameters must be specified as var-parameters.
+Parameters4.p(12) error P3046: 's': string parameters must be specified as var-parameters.
+Parameters4.p(22) error P3046: 'f': file parameters must be specified as var-parameters.
+Parameters4.p(30) error P3047: 'q': var-parameter 'i' must be non-constant.
+Parameters4.p(31) error P3047: 'q': var-parameter 'i' must be non-constant.
+
+Parameters4.p - 5 error(s), 0 warning(s).
+

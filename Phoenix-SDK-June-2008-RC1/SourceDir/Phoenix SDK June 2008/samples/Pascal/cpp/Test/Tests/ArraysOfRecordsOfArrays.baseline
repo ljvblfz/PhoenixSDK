@@ -1,0 +1,78 @@
+Compiling...
+ArraysOfRecordsOfArrays.p
+
+IR after Type Checker (control chktype)
+
+Function Unit #1
+$L1: (references=0)                                                          #0
+                       START _main(T)                                        #0
+_main: (references=1)                                                        #0
+                       ENTERFUNCTION                                         #0
+   input.HANDLE (up32->void).a32 = CALL &_file_get_std_input.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 19(0x00000013).i32                       #0
+   t143.HANDLE (up32->void) = CALL &_file_get_std_output.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 19(0x00000013).i32                           #0
+   output.HANDLE (up32->void).a32 = ASSIGN t143.HANDLE (up32->void)          #0
+   [&true.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 1.i32                                                                         #0
+   [&false.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 0.i32                                                                        #0
+                       CALL &_runtime_init.CDecl.Function()->(void)          #0
+                       CALL &ArraysOfRecordsOfArrays.CDecl.Function()->(void) #0
+                       CALL &_runtime_exit.CDecl.Function()->(void)          #0
+                       RETURN 0.i32, $L4(T)                                  #0
+$L4: (references=1)                                                          #0
+                       EXITFUNCTION                                          #0
+$L2: (references=0)                                                          #0
+                       END                                                   #0
+
+IR after Type Checker (control chktype)
+
+Function Unit #2
+$L1: (references=0)                                                          #3
+                       START ArraysOfRecordsOfArrays(T)                      #3
+ArraysOfRecordsOfArrays: (references=1)                                      #3
+                       ENTERFUNCTION                                         #3
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG105.up32->char (i8), 0.i32, 2.i32, 1.i32, &c.up32->$$unnamed102 (UnmgdArr[C (Aggregate288)]576)                                           #18
+   tv149-.i32        = ASSIGN 0.i32                                         #14
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 36(0x00000024).i32, tv149-.i32, 0.i32, 14(0x0000000e).i32                                                                         #14
+   t150.up32->C (Aggregate288) = ASSIGN &[&c.up32->$$unnamed102 (UnmgdArr[C (Aggregate288)]576)+tv149-.i32].up32->C (Aggregate288)                          #14
+   [t150.up32->C (Aggregate288)].integer (i32).a32 = ASSIGN 88(0x00000058).integer (i32)                                                                    #14
+   tv154-.i32        = ASSIGN 0.i32                                         #15
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 36(0x00000024).i32, tv154-.i32, 0.i32, 15(0x0000000f).i32                                                                         #15
+   t155.up32->C (Aggregate288) = ASSIGN &[&c.up32->$$unnamed102 (UnmgdArr[C (Aggregate288)]576)+tv154-.i32].up32->C (Aggregate288)                          #15
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [t155.up32->C (Aggregate288)].integer (i32).a32                                           #15
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 15(0x0000000f).i32                                                           #15
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #15
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 15(0x0000000f).i32                                                                       #15
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #15
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 15(0x0000000f).i32                                                                       #15
+   tv160-.i32        = ASSIGN 36(0x00000024).i32                            #17
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 36(0x00000024).i32, tv160-.i32, 0.i32, 17(0x00000011).i32                                                                         #17
+   t161.up32->C (Aggregate288) = ASSIGN &[&c.up32->$$unnamed102 (UnmgdArr[C (Aggregate288)]576)+tv160-.i32].up32->C (Aggregate288)                          #17
+   tv168-.i32        = ASSIGN 0.i32                                         #17
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv168-.i32, 0.i32, 17(0x00000011).i32                                                                         #17
+   [t161.up32->C (Aggregate288)+tv168-.i32+20]($$unnamed101 (UnmgdArr[integer (i32)]128)+0).integer (i32).a128 = ASSIGN 55(0x00000037).integer (i32)        #17
+   tv172-.i32        = ASSIGN 36(0x00000024).i32                            #18
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 36(0x00000024).i32, tv172-.i32, 0.i32, 18(0x00000012).i32                                                                         #18
+   t173.up32->C (Aggregate288) = ASSIGN &[&c.up32->$$unnamed102 (UnmgdArr[C (Aggregate288)]576)+tv172-.i32].up32->C (Aggregate288)                          #18
+   tv180-.i32        = ASSIGN 0.i32                                         #18
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 12(0x0000000c).i32, tv180-.i32, 0.i32, 18(0x00000012).i32                                                                         #18
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = ASSIGN [t173.up32->C (Aggregate288)+tv180-.i32+20]($$unnamed101 (UnmgdArr[integer (i32)]128)+0).integer (i32).a128                                                               #18
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).integer (i32).a32, 0.i32, 18(0x00000012).i32                                                           #18
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8           #18
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 18(0x00000012).i32                                                                       #18
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8           #18
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 18(0x00000012).i32                                                                       #18
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 2.i32                                                                   #18
+                       RETURN $L4(T)                                        #19
+$L4: (references=1)                                                         #19
+                       EXITFUNCTION                                         #19
+$L2: (references=0)                                                         #19
+                       END                                                  #19
+Writing ArraysOfRecordsOfArrays.obj...
+
+ArraysOfRecordsOfArrays.p - 0 error(s), 0 warning(s).
+
+Linking...
+
+ArraysOfRecordsOfArrays.exe - 0 error(s), 0 warning(s).
+
+88
+55

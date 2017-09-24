@@ -1,0 +1,74 @@
+Compiling...
+Exponentiation2.p
+
+IR after Type Checker (control chktype)
+
+Function Unit #1
+$L1: (references=0)                                                          #0
+                       START _main(T)                                        #0
+_main: (references=1)                                                        #0
+                       ENTERFUNCTION                                         #0
+   input.HANDLE (up32->void).a32 = CALL &_file_get_std_input.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 14(0x0000000e).i32                       #0
+   t143.HANDLE (up32->void) = CALL &_file_get_std_output.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 14(0x0000000e).i32                           #0
+   output.HANDLE (up32->void).a32 = ASSIGN t143.HANDLE (up32->void)          #0
+   [&true.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 1.i32                                                                         #0
+   [&false.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 0.i32                                                                        #0
+                       CALL &_runtime_init.CDecl.Function()->(void)          #0
+                       CALL &Exponentiation2.CDecl.Function()->(void)        #0
+                       CALL &_runtime_exit.CDecl.Function()->(void)          #0
+                       RETURN 0.i32, $L4(T)                                  #0
+$L4: (references=1)                                                          #0
+                       EXITFUNCTION                                          #0
+$L2: (references=0)                                                          #0
+                       END                                                   #0
+
+IR after Type Checker (control chktype)
+
+Function Unit #2
+$L1: (references=0)                                                          #4
+                       START Exponentiation2(T)                              #4
+Exponentiation2: (references=1)                                              #4
+                       ENTERFUNCTION                                         #4
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 2.i32, 5.i32, &y.up32->integer (i32), &x.up32->real (f64), &t.up32->real (f64), &z.up32->real (f64), &exp.up32->$$unnamed100 (Aggregate96)                                                    #14
+   exp"$runtime_handle"($$unnamed100 (Aggregate96)+0).HANDLE (up32->void).a32 = CALL &_file_open.CDecl.Function(up32->i8,i32,i32,i32)->(HANDLE (up32->void)), &$SG105.up32->char (i8), 0.i32, 0.i32, 7.i32                                   #7
+   t145.f64          = CALL &_file_get_double.CDecl.Function(HANDLE (up32->void),i32,i32)->(f64), exp"$runtime_handle"($$unnamed100 (Aggregate96)+0).HANDLE (up32->void).a32, 0.i32, 7.i32                                                   #7
+   [&exp.up32->$$unnamed100 (Aggregate96)+4].real (f64).a64 = ASSIGN t145.f64 #7
+                       CALL &_file_reset.CDecl.Function(HANDLE (up32->void),i32,i32)->(void), exp"$runtime_handle"($$unnamed100 (Aggregate96)+0).HANDLE (up32->void).a32, 0.i32, 9.i32                                                       #9
+   t146.f64          = CALL &_file_get_double.CDecl.Function(HANDLE (up32->void),i32,i32)->(f64), exp"$runtime_handle"($$unnamed100 (Aggregate96)+0).HANDLE (up32->void).a32, 0.i32, 9.i32                                                   #9
+   [&exp.up32->$$unnamed100 (Aggregate96)+4].real (f64).a64 = ASSIGN t146.f64 #9
+   x.real (f64).a64  = ASSIGN exp"$current_value"($$unnamed100 (Aggregate96)+32).real (f64).a64                                                             #10
+   t147.f64          = CALL &_file_get_double.CDecl.Function(HANDLE (up32->void),i32,i32)->(f64), exp"$runtime_handle"($$unnamed100 (Aggregate96)+0).HANDLE (up32->void).a32, 0.i32, 10(0x0000000a).i32                                     #10
+   [&exp.up32->$$unnamed100 (Aggregate96)+4].real (f64).a64 = ASSIGN t147.f64 #10
+   t.real (f64).a64  = ASSIGN exp"$current_value"($$unnamed100 (Aggregate96)+32).real (f64).a64                                                             #10
+   t148.f64          = CALL &_file_get_double.CDecl.Function(HANDLE (up32->void),i32,i32)->(f64), exp"$runtime_handle"($$unnamed100 (Aggregate96)+0).HANDLE (up32->void).a32, 0.i32, 10(0x0000000a).i32                                     #10
+   [&exp.up32->$$unnamed100 (Aggregate96)+4].real (f64).a64 = ASSIGN t148.f64 #10
+   t149.i32          = CALL &_round.CDecl.Function(f64)->(i32), t.real (f64).a64                                                                            #11
+   y.integer (i32).a32 = ASSIGN t149.i32                                    #11
+   t150.real (f64)   = CONVERT y.integer (i32).a32                          #12
+   t151.f64          = CALL &_pow.CDecl.Function(f64,f64)->(f64), x.real (f64).a64, t150.real (f64)                                                         #12
+   z.real (f64).a64  = ASSIGN t151.f64                                      #12
+   [&output.up32->$stdfile (Aggregate2080)+4].real (f64).a64 = ASSIGN x.real (f64).a64                                                                      #13
+                       CALL &_file_put_double.CDecl.Function(HANDLE (up32->void),f64,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].real (f64).a64, 0.i32, 13(0x0000000d).i32                                                    #13
+   [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8 = ASSIGN 9.char (i8) #13
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8, 0.i32, 13(0x0000000d).i32                                                         #13
+   [&output.up32->$stdfile (Aggregate2080)+4].real (f64).a64 = ASSIGN z.real (f64).a64                                                                      #13
+                       CALL &_file_put_double.CDecl.Function(HANDLE (up32->void),f64,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].real (f64).a64, 0.i32, 13(0x0000000d).i32                                                    #13
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #13
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 13(0x0000000d).i32                                                                #13
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #13
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 13(0x0000000d).i32                                                                #13
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 2.i32                                                                   #14
+                       RETURN $L4(T)                                        #14
+$L4: (references=1)                                                         #14
+                       EXITFUNCTION                                         #14
+$L2: (references=0)                                                         #14
+                       END                                                  #14
+Writing Exponentiation2.obj...
+
+Exponentiation2.p - 0 error(s), 0 warning(s).
+
+Linking...
+
+Exponentiation2.exe - 0 error(s), 0 warning(s).
+
+2.000000	128.000000

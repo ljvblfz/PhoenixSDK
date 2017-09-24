@@ -1,0 +1,532 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+xmlns:a="urn:schemas-microsoft-com:office:access"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882"
+xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema"
+xmlns:b="urn:schemas-microsoft-com:office:publisher"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet"
+xmlns:oa="urn:schemas-microsoft-com:office:activation"
+xmlns:html="http://www.w3.org/TR/REC-html40"
+xmlns:q="http://schemas.xmlsoap.org/soap/envelope/" xmlns:D="DAV:"
+xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml"
+xmlns:ois="http://schemas.microsoft.com/sharepoint/soap/ois/"
+xmlns:dir="http://schemas.microsoft.com/sharepoint/soap/directory/"
+xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+xmlns:dsp="http://schemas.microsoft.com/sharepoint/dsp"
+xmlns:udc="http://schemas.microsoft.com/data/udc"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:sps="http://schemas.microsoft.com/sharepoint/soap/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:udcxf="http://schemas.microsoft.com/data/udc/xmlfile"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="Pascal_files/filelist.xml">
+<title>The Phoenix Pascal Compiler</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="City"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackRevisions/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-name:"Comment Text\,ct\,Used by Word for text of author queries";
+	mso-style-noshow:yes;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	mso-line-height-rule:exactly;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.MsoCommentReference
+	{mso-style-name:"Comment Reference\,cr\,Used by Word to flag author queries";
+	mso-style-noshow:yes;
+	mso-bidi-font-size:8.0pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-noshow:yes;
+	mso-style-parent:"Comment Text\,ct\,Used by Word for text of author queries";
+	mso-style-next:"Comment Text\,ct\,Used by Word for text of author queries";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+span.Token
+	{mso-style-name:"Token\,tok";
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:navy;
+	position:relative;
+	top:0pt;
+	mso-text-raise:0pt;
+	font-style:italic;
+	mso-bidi-font-style:normal;
+	mso-no-proof:yes;}
+span.Placeholder
+	{mso-style-name:"Placeholder\,ph";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.msoIns
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:underline;
+	text-underline:single;
+	color:teal;}
+span.msoDel
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:line-through;
+	color:red;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1860511344;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2083574760 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'><b><span style='font-size:14.0pt;font-family:Arial'>The <st1:place w:st="on"><st1:City
+ w:st="on">Phoenix</st1:City></st1:place> Pascal Compiler</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><b><span style='font-size:10.0pt;
+font-family:Arial'>Sample Name</span></b><span style='font-size:10.0pt;
+font-family:Arial'>: Pascal</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><b><span style='font-size:10.0pt;
+font-family:Arial'>Sample Category</span></b><span style='font-size:10.0pt;
+font-family:Arial'>: Compiler.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Description</span></b><span
+style='font-size:10.0pt;font-family:Arial'>: The Phoenix Pascal compiler is a
+sample end-to-end compiler that uses <st1:City w:st="on"><st1:place w:st="on">Phoenix</st1:place></st1:City>
+to perform back end code generation.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><b><span lang=FR
+style='font-size:10.0pt;font-family:Arial;mso-ansi-language:FR'>Source Language</span></b><span
+lang=FR style='font-size:10.0pt;font-family:Arial;mso-ansi-language:FR'>:
+C++/CLI</span><span lang=FR style='mso-ansi-language:FR'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=FR style='font-size:10.0pt;font-family:Arial;
+mso-ansi-language:FR'>&nbsp;</span><span lang=FR style='mso-ansi-language:FR'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><b><span style='font-size:10.0pt;
+font-family:Arial'>Sample Location</span></b><span style='font-size:10.0pt;
+font-family:Arial'>: <a
+href="../../Samples/Pascal/cpp">Samples\Pascal\cpp</a>
+</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Documentation</span></b><span
+style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>:<b> </b></span><span
+style='font-size:10.0pt;font-family:Arial'>For details about the implementation
+of the compiler, see <i style='mso-bidi-font-style:normal'>The Pascal Sample
+Compiler</i> in the <st1:City w:st="on"><st1:place w:st="on">Phoenix</st1:place></st1:City>
+documentation.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Detailed
+Description</span></b><span style='font-size:10.0pt;font-family:Arial'>: The
+Phoenix Pascal compiler is based on the specification that is described in <span
+class=Placeholder>Pascal User Manual and Report</span>, Second Edition, by
+Kathleen Jensen and Niklaus Wirth. The compiler implements all the language
+features that the specification outlines, and the following language
+extensions:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:
+-.25in;mso-list:l0 level1 lfo2;mso-list-change:\F0B7 "Thomas Petchel" 20070525T1712;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Arial'>An
+exponentiation (</span><span style='font-size:10.0pt;font-family:"Courier New"'>**</span><span
+style='font-size:10.0pt;font-family:Arial'>) operator<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:
+-.25in;mso-list:l0 level1 lfo2;mso-list-change:\F0B7 "Thomas Petchel" 20070525T1712;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Arial'>An
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>external</span><span
+style='font-size:10.0pt;font-family:Arial'> directive for procedures and
+functions<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:
+-.25in;mso-list:l0 level1 lfo2;mso-list-change:\F0B7 "Thomas Petchel" 20070525T1712;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Arial'>An
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>otherwise</span><span
+style='font-size:10.0pt;font-family:Arial'> target for </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>case</span><span
+style='font-size:10.0pt;font-family:Arial'> statements<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:
+-.25in;mso-list:l0 level1 lfo2;mso-list-change:\F0B7 "Thomas Petchel" 20070525T1712;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Arial'>The
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>-&gt;</span><span
+style='font-size:10.0pt;font-family:Arial'> operator, which can be used instead
+of the </span><span style='font-size:10.0pt;font-family:"Courier New"'>^</span><span
+style='font-size:10.0pt;font-family:Arial'> operator<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:
+-.25in;mso-list:l0 level1 lfo2;mso-list-change:\F0B7 "Thomas Petchel" 20070525T1712;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Arial'>Multiple
+source file modules<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span style='font-size:10.0pt;
+font-family:Arial'>You can compile and run the compiler by opening the solution
+file Pascal.sln from the Visual Studio IDE, or by using MSBuild at the command
+prompt.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>After you
+have built the compiler, you can compile Pascal programs. The following shows
+the command-line options that are available to the compiler. Arguments that are
+enclosed in </span><span style='font-size:10.0pt;font-family:"Courier New"'>[]</span><span
+style='font-size:10.0pt;font-family:Arial'> are optional.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;&nbsp;&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>msp.exe [/c] [/clr] [/d]
+[/nc] [/Oe] [/p] [/v] &lt;source-file(s)&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>The
+following table describes the available command-line options:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:Arial'>&nbsp;<o:p></o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCCCCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Option<span
+  style='background:silver;mso-highlight:silver'><o:p></o:p></span></span></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;background:#CCCCCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Description<span
+  style='background:silver;mso-highlight:silver'><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>/c<o:p></o:p></span></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Compile
+  without linking.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>/clr</span></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Enable
+  common language runtime (CLR) support. This option is not implemented.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>/d</span></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Generate
+  debug information.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>/nc</span></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Skip
+  compilation.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>/Oe</span></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Enable
+  expression optimization.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>/p</span></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Pretty-print
+  source listing.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;mso-yfti-lastrow:yes'>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>/v</span></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Report
+  AST visit tracking.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:Arial'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>If you want
+to change the grammar files (pascal.l or pascal.y), you will need the tools
+Flex and Yacc. You will also have to enable the custom build steps that are
+associated with these files.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

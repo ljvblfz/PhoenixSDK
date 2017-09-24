@@ -1,0 +1,7 @@
+Compiling...
+Assignment2.p
+Assignment2.p(8) error P3003: variable 'empty_file1' of type '(unnamed) file of integer' is being assigned an expression of type '(unnamed) file of integer'.
+Assignment2.p(8) error P3005: 'empty_file1': you cannot assign to a file variable.
+
+Assignment2.p - 2 error(s), 0 warning(s).
+

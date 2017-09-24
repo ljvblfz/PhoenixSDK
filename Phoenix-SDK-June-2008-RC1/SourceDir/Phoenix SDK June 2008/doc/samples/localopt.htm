@@ -1,0 +1,774 @@
+<head>
+    <style type="text/css">
+
+div.Section1
+	{page:Section1;}
+ p.MsoNormal
+	{margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	        margin-left: 0in;
+            margin-right: 0in;
+            margin-top: 0in;
+        }
+ul
+	{margin-bottom:0in;}
+ li.MsoNormal
+	{margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	        margin-left: 0in;
+            margin-right: 0in;
+            margin-top: 0in;
+        }
+    </style>
+</head>
+<div class="Section1">
+    <p align="center" class="MsoNormal" style="TEXT-ALIGN: center">
+        <span class="SpellE"><b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 14pt; FONT-FAMILY: Arial">LocalOpt</span></b></span><b 
+            style="mso-bidi-font-weight: normal"><span 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Arial"> Sample<o:p></o:p></span></b></p>
+    <p align="center" class="MsoNormal" style="TEXT-ALIGN: center">
+        <span style="FONT-SIZE: 14pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Sample Name</span></b><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">: <span class="SpellE">LocalOpt</span><o:p></o:p></span></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Sample Category</span></b><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">: C2 plug-in/optimization/Code 
+        Transformation<o:p></o:p></span></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal" style="mso-layout-grid-align: none">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Description</span></b><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">: <span class="SpellE">LocalOpt</span> 
+        is a c2 plugin that injects an optimization phase after MIR Lower. This phase 
+        performs DAG-based local optimizations, including copy propagation, constant 
+        propagation, constant folding, CSE, simple scalar promotion and dead code 
+        elimination, etc. This sample is based on the DAG construction and code 
+        generation algorithms provided in Section 9.8 of the red dragon compiler book. 
+        The purpose of this sample is to demonstrate how to implement classic, 
+        “textbook”, code optimizations using the Phoenix infrastructure. 
+<o:p></o:p></span>
+    </p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Sample Location</span></b><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">:<br />
+        </span><span style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">
+        <span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><a href="../../Samples/localopt/csharp/">\<span class="SpellE">src\samples\LocalOpt\csharp</span></a><br />
+        <span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span><a 
+            href="../../Samples/localopt/cpp">\<span class="SpellE">src\samples\LocalOpt\cpp</span></a><o:p></o:p></span></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal"><span lang="FR" 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial; mso-ansi-language: FR">Source</span><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> Language</span></b><span 
+            lang="FR" style="FONT-SIZE: 10pt; FONT-FAMILY: Arial; mso-ansi-language: FR">: 
+        C#, C++/CLI<o:p></o:p></span></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal"><span lang="FR" 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial; mso-ansi-language: FR"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <b style="mso-bidi-font-weight: normal"><span lang="FR" 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial; mso-ansi-language: FR">Usage</span></b><span 
+            lang="FR" style="FONT-SIZE: 10pt; FONT-FAMILY: Arial; mso-ansi-language: FR">:</span><span 
+            lang="FR" style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> </span>
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Uses the standard Phoenix
+        <span class="SpellE">plugin</span> model for c2. Example:</span><span lang="FR" 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial; mso-ansi-language: FR"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <span lang="FR" 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial; mso-ansi-language: FR"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span class="SpellE"><span class="GramE">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">cl</span></span></span><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"> -d2plugin:&lt;path to 
+        LocalOpt.dll&gt;<span style="mso-spacerun: yes">&nbsp; </span>...<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Right now, optimizations 
+        available in the <span class="SpellE">LocalOpt</span> plug-in are:<o:p></o:p></span></p>
+    <ul style="MARGIN-TOP: 0in" type="disc">
+        <li class="MsoNormal" 
+            style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l1 level1 lfo2; tab-stops: list .5in">
+            <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Common <span class="SpellE">
+            Subexpression</span> Elimination<o:p></o:p></span> </li>
+        <li class="MsoNormal" 
+            style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l1 level1 lfo2; tab-stops: list .5in">
+            <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Constant Propagation<o:p></o:p></span>
+        </li>
+        <li class="MsoNormal" 
+            style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l1 level1 lfo2; tab-stops: list .5in">
+            <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Copy Propagation<o:p></o:p></span>
+        </li>
+        <li class="MsoNormal" 
+            style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l1 level1 lfo2; tab-stops: list .5in">
+            <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Dead Code Elimination<o:p></o:p></span>
+        </li>
+        <li class="MsoNormal" 
+            style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l1 level1 lfo2; tab-stops: list .5in">
+            <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Strength Reduction (e.g. MUL X 
+            4 =&gt; SHL X 2)<o:p></o:p></span> </li>
+    </ul>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Detailed Description</span></b><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">: Directed acyclic graphs (<span 
+            class="SpellE">DAGs</span>) are useful data structure for implement 
+        optimizations at the basic block level. This sample implements the DAG 
+        construction and code generation algorithms provided in Section 9.8 of the red 
+        dragon compiler book. Please read this book for more background knowledge. To 
+        correctly handle “real world” programs which contain pointers, arrays, 
+        side-effect instructions, our implementation is slightly different from the 
+        basic algorithms provided in the textbook. It gives readers a good demonstration 
+        of how to implement textbook algorithms using the Phoenix infrastructure, and 
+        how to handle all the subtle issues of real programs.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">There are four files in this 
+        sample: <span class="SpellE">localopt-plug-in.cs</span>, <span class="SpellE">
+        dag.cs</span>, <span class="SpellE">dagwalker.cs</span>, and
+        <span class="SpellE">util.cs</span>, each contains certain functionalities.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-INDENT: -0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l0 level1 lfo1; tab-stops: list .25in">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol">
+        <span style="mso-list: Ignore">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span></span><span class="SpellE">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Localopt-plug-in.cs</span></b></span><b 
+            style="mso-bidi-font-weight: normal"><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p></o:p></span></b></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span class="SpellE"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">
+        Localopt-plug-in.cs</span></span><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> is the entry point of this 
+        sample. It implements three classes: <span class="SpellE">PlugIn</span>,
+        <span class="SpellE">LocalOptPhase</span>, and Opt. The <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">PlugIn</i></span> class is a subclass of 
+        the <span class="SpellE"><i style="mso-bidi-font-style: normal">Phx.PlugIn</i></span> 
+        class. It registers static objects, such as component controls, and creates a 
+        new <span class="SpellE">LocalOptPhase</span> to execute. Also, it parses the 
+        command line options for the local optimization phase. <o:p></o:p></span>
+    </p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">The main point of the
+        <span class="SpellE"><i style="mso-bidi-font-style: normal">LocalOptPhase</i></span> 
+        class is the <i style="mso-bidi-font-style: normal">Execute</i> method, which 
+        iterates each basic block in a function unit and calls the <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">DoRange</i></span><i 
+            style="mso-bidi-font-style: normal"> </i>method in the Opt class to
+        <span class="GramE">performs</span> the DAG-based optimizations.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">The
+        <i style="mso-bidi-font-style: normal">Opt</i> class is the major body of this 
+        file. See <span class="SpellE"><i style="mso-bidi-font-style: normal">DoRange</i></span> 
+        for the highest level of algorithm. Basically, it builds DAG for the given range 
+        of instructions (<span class="SpellE"><i style="mso-bidi-font-style: normal">BuildDAG</i></span><i 
+            style="mso-bidi-font-style: normal">)</i>, and replaces the original 
+        instruction list with the new code sequence that is generated based on the 
+        result DAG (<span class="SpellE"><i style="mso-bidi-font-style: normal">GenCodeFromDag</i></span>). 
+        One problem is that DAG cannot handle some types of instructions, such as CMP, 
+        MULTTIBYTE, either because that they have special evaluation order constraints 
+        which are not caught by data dependency, or they have more than one explicit 
+        destination operand. For such instructions, we first process all instructions 
+        before them, delete the DAG, handle these special instructions one by one (<i 
+            style="mso-bidi-font-style: normal">Transfer</i>), and restart a new DAG 
+        once we find another sequence of candidate instructions.
+        <b style="mso-bidi-font-weight: normal"><o:p></o:p></b></span>
+    </p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-INDENT: -0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l0 level1 lfo1; tab-stops: list .25in">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol">
+        <span style="mso-list: Ignore">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span></span><span class="SpellE">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">dag.cs</span></b></span><b 
+            style="mso-bidi-font-weight: normal"><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p></o:p></span></b></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span class="SpellE"><span class="GramE">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">dag.cs</span></span></span><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> implements data structures that 
+        handles constructions of <span class="SpellE">DAGs</span>. The
+        <span class="SpellE"><i style="mso-bidi-font-style: normal">DagNode</i></span> 
+        class represents a node in the DAG. There are three kinds of
+        <span class="SpellE">DagNode</span>: Use node, Def node and <span class="SpellE">
+        Expr</span> node. Use nodes represent a usage of a location, Def nodes represent 
+        a definition of a location, and <span class="SpellE">Expr</span> nodes represent 
+        a computation. A Use node or a Def node can also be a <span class="SpellE">Mem</span> 
+        node if it represents a memory operand. 
+<o:p></o:p></span>
+    </p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">The <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">DagEdge</i></span> class represents a 
+        directed edge in the DAG. It connects two <span class="SpellE">DagNodes</span>, 
+        the <span class="SpellE">FromNode</span> and the <span class="SpellE">ToNode</span>. 
+        There are also three kinds of <span class="SpellE">DagEdge</span>:
+        <span class="SpellE">ValueDep</span>, <span class="SpellE">OrderDep</span>, and
+        <span class="SpellE">AssignDep</span>. A ValueDep edge represents the true value 
+        dependent relationship between the <span class="SpellE">FromNode</span> and the
+        <span class="SpellE">ToNode</span>, e.g., the edge between an expression node 
+        and its src operands nodes, or the memory node and its base/index/seg node. An 
+        OrderDep edge represents the enforced evaluation order between two nodes. An 
+        AssignDep edge indicates the assignment relationship between the two nodes, 
+        i.e., the <span class="SpellE">FromNode</span> will be assigned the value of the
+        <span class="SpellE">ToNode</span>.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">For example, the following 
+        simple Phoenix IR sequence<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-INDENT: 0.5in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">t139<span 
+            style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>= ADD [_F], 3<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><o:p></o:p></span>
+    </p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-INDENT: 0.5in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">[_F]<span 
+            style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>= ASSIGN t139<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">
+        <span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span class="GramE"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">will</span></span><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> be constructed to the following 
+        DAG:<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><v:group id=_x0000_s1030 
+style="WIDTH: 369pt; HEIGHT: 153pt; mso-position-horizontal-relative: char; mso-position-vertical-relative: line" 
+editas="canvas" coordsize = "7380,3060" coordorigin = "5400,1440"><o:lock 
+aspectratio="t" v:ext="edit"></o:lock><v:shapetype id=_x0000_t75 coordsize = 
+"21600,21600" o:preferrelative = "t" o:spt = "75" filled = "f" stroked = "f" 
+path = " m@4@5 l@4@11@9@11@9@5 xe"><v:stroke joinstyle = 
+"miter"></v:stroke><v:formulas><v:f eqn = 
+"if lineDrawn pixelLineWidth 0 "></v:f><v:f eqn = "sum @0 1 0 "></v:f><v:f eqn = 
+"sum 0 0 @1 "></v:f><v:f eqn = "prod @2 1 2 "></v:f><v:f eqn = 
+"prod @3 21600 pixelWidth "></v:f><v:f eqn = 
+"prod @3 21600 pixelHeight "></v:f><v:f eqn = "sum @0 0 1 "></v:f><v:f eqn = 
+"prod @6 1 2 "></v:f><v:f eqn = "prod @7 21600 pixelWidth "></v:f><v:f eqn = 
+"sum @8 21600 0 "></v:f><v:f eqn = "prod @7 21600 pixelHeight "></v:f><v:f eqn = 
+"sum @10 21600 0 "></v:f></v:formulas><v:path o:extrusionok = "f" 
+gradientshapeok = "t" o:connecttype = "rect"></v:path><o:lock aspectratio="t" 
+v:ext="edit"></o:lock></v:shapetype><v:shape id=_x0000_s1029 
+style="LEFT: 5400px; WIDTH: 7380px; POSITION: absolute; TOP: 1440px; HEIGHT: 3060px" 
+type = "#_x0000_t75" coordsize = "21600,21600" o:preferrelative = "f"><v:fill 
+o:detectmouseclick="t"></v:fill><v:path o:extrusionok = "t" o:connecttype = 
+"none"></v:path><o:lock v:ext="edit" text="t"></o:lock></v:shape><v:oval 
+id=_x0000_s1038 
+style="LEFT: 5580px; WIDTH: 649px; POSITION: absolute; TOP: 3780px; HEIGHT: 484px" 
+coordsize = "21600,21600">
+        <v:textbox inset="0,,0" 
+            style="MARGIN-TOP: 7.125pt; LEFT: auto; MARGIN-LEFT: 5.75pt; WIDTH: 22.406pt; TOP: auto; HEIGHT: 11.437pt; mso-next-textbox: #_x0000_s1038; mso-fit-shape-to-text: t" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p align="center" class="MsoNormal" style="TEXT-ALIGN: center">
+                            <span style="FONT-SIZE: 10pt">_F<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:oval><v:oval 
+id=_x0000_s1039 
+style="LEFT: 8280px; WIDTH: 649px; POSITION: absolute; TOP: 1440px; HEIGHT: 484px" 
+coordsize = "21600,21600"><v:stroke dashstyle = "dash"></v:stroke>
+        <v:textbox inset="0,,0" 
+            style="MARGIN-TOP: 7.125pt; LEFT: auto; MARGIN-LEFT: 5.781pt; WIDTH: 22.375pt; TOP: auto; HEIGHT: 11.437pt; mso-next-textbox: #_x0000_s1039; mso-fit-shape-to-text: t" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p align="center" class="MsoNormal" style="TEXT-ALIGN: center">
+                            <span style="FONT-SIZE: 10pt">t139<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:oval><v:oval 
+id=_x0000_s1041 
+style="LEFT: 6480px; WIDTH: 720px; POSITION: absolute; TOP: 3060px; HEIGHT: 484px" 
+coordsize = "21600,21600">
+        <v:textbox inset="0,,0" 
+            style="MARGIN-TOP: 7.125pt; LEFT: auto; MARGIN-LEFT: 6.312pt; WIDTH: 24.875pt; TOP: auto; HEIGHT: 11.437pt; mso-next-textbox: #_x0000_s1041; mso-fit-shape-to-text: t" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p align="center" class="MsoNormal" style="TEXT-ALIGN: center">
+                            <span style="FONT-SIZE: 10pt">[_F]<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:oval><v:shapetype 
+id=_x0000_t32 coordsize = "21600,21600" o:oned = "t" o:spt = "32" filled = "f" 
+path = " m0,0 l21600,21600 e"><v:path arrowok = "t" fillok = "f" o:connecttype = 
+"none"></v:path><o:lock v:ext="edit" 
+shapetype="t"></o:lock></v:shapetype><v:shape id=_x0000_s1046 
+style="LEFT: 6134px; WIDTH: 451px; POSITION: absolute; TOP: 3473px; HEIGHT: 378px; flip: x" 
+type = "#_x0000_t32" o:connectortype = "straight" coordsize = 
+"21600,21600"><v:stroke endarrow = "block"></v:stroke></v:shape><v:oval 
+id=_x0000_s1047 
+style="LEFT: 8100px; WIDTH: 649px; POSITION: absolute; TOP: 3060px; HEIGHT: 484px" 
+coordsize = "21600,21600">
+        <v:textbox inset="0,,0" 
+            style="MARGIN-TOP: 7.125pt; LEFT: auto; MARGIN-LEFT: 5.781pt; WIDTH: 22.375pt; TOP: auto; HEIGHT: 11.437pt; mso-next-textbox: #_x0000_s1047; mso-fit-shape-to-text: t" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p align="center" class="MsoNormal" style="TEXT-ALIGN: center">
+                            <span style="FONT-SIZE: 10pt">3<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:oval><v:oval 
+id=_x0000_s1048 
+style="LEFT: 7200px; WIDTH: 900px; POSITION: absolute; TOP: 2340px; HEIGHT: 484px" 
+coordsize = "21600,21600" fillcolor = "silver">
+        <v:textbox inset="0,,0" 
+            style="MARGIN-TOP: 7.125pt; LEFT: auto; MARGIN-LEFT: 7.625pt; WIDTH: 31.25pt; TOP: auto; HEIGHT: 11.437pt; mso-next-textbox: #_x0000_s1048; mso-fit-shape-to-text: t" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p align="center" class="MsoNormal" style="TEXT-ALIGN: center">
+                            <span style="FONT-SIZE: 10pt">ADD<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:oval><v:shape 
+id=_x0000_s1049 
+style="LEFT: 6840px; WIDTH: 492px; POSITION: absolute; TOP: 2753px; HEIGHT: 307px; flip: x" 
+type = "#_x0000_t32" o:connectortype = "straight" coordsize = 
+"21600,21600"><v:stroke endarrow = "block"></v:stroke></v:shape><v:shape 
+id=_x0000_s1050 
+style="LEFT: 7968px; WIDTH: 457px; POSITION: absolute; TOP: 2753px; HEIGHT: 307px" 
+type = "#_x0000_t32" o:connectortype = "straight" coordsize = 
+"21600,21600"><v:stroke endarrow = "block"></v:stroke></v:shape><v:shapetype 
+id=_x0000_t38 coordsize = "21600,21600" o:oned = "t" o:spt = "38" filled = "f" 
+path = 
+" m0,0 c@0,0@1,5400@1,10800@1,16200@2,21600,21600,21600 e"><v:formulas><v:f eqn 
+= "mid #0 0 "></v:f><v:f eqn = "sum #0 0 0 "></v:f><v:f eqn = 
+"mid #0 21600 "></v:f></v:formulas><v:path arrowok = "t" fillok = "f" 
+o:connecttype = "none"></v:path><v:handles><v:h 
+position="#0,center"></v:h></v:handles><o:lock v:ext="edit" 
+shapetype="t"></o:lock></v:shapetype><v:shape id=_x0000_s1051 
+style="LEFT: 7893px; WIDTH: 558px; POSITION: absolute; TOP: 1928px; HEIGHT: 407px; rotation: 90" 
+type = "#_x0000_t38" o:connectortype = "curved" coordsize = "21600,21600" adj = 
+"10800,-98766,-198774"><v:stroke endarrow = "block"></v:stroke></v:shape><v:oval 
+id=_x0000_s1052 
+style="LEFT: 6120px; WIDTH: 649px; POSITION: absolute; TOP: 1440px; HEIGHT: 484px" 
+coordsize = "21600,21600"><v:stroke dashstyle = "dash"></v:stroke>
+        <v:textbox inset="0,,0" 
+            style="MARGIN-TOP: 7.125pt; LEFT: auto; MARGIN-LEFT: 5.75pt; WIDTH: 22.406pt; TOP: auto; HEIGHT: 11.437pt; mso-next-textbox: #_x0000_s1052; mso-fit-shape-to-text: t" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p align="center" class="MsoNormal" style="TEXT-ALIGN: center">
+                            <span style="FONT-SIZE: 10pt">[_F]<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:oval><v:shape 
+id=_x0000_s1053 
+style="LEFT: 6724px; WIDTH: 558px; POSITION: absolute; TOP: 1803px; HEIGHT: 658px; flip: x; rotation: 90" 
+type = "#_x0000_t38" o:connectortype = "curved" coordsize = "21600,21600" adj = 
+"10800,61091,-132929"><v:stroke endarrow = "block"></v:stroke></v:shape><v:shape 
+id=_x0000_s1055 
+style="LEFT: 5905px; WIDTH: 310px; POSITION: absolute; TOP: 1853px; HEIGHT: 1927px; flip: x" 
+type = "#_x0000_t32" o:connectortype = "straight" coordsize = "21600,21600" adj 
+= "10800,-50400,-57252"><v:stroke endarrow = 
+"block"></v:stroke></v:shape><v:shape id=_x0000_s1057 
+style="LEFT: 6445px; WIDTH: 140px; POSITION: absolute; TOP: 1924px; HEIGHT: 1207px" 
+type = "#_x0000_t32" o:connectortype = "straight" coordsize = "21600,21600" adj 
+= "10165,298080,-57355"><v:stroke endarrow = "block" dashstyle = 
+"dash"></v:stroke></v:shape><v:group id=_x0000_s1065 
+style="LEFT: 9900px; WIDTH: 2160px; POSITION: absolute; TOP: 1620px; HEIGHT: 360px" 
+coordsize = "2160,360" coordorigin = "9900,1620"><v:oval id=_x0000_s1058 
+style="LEFT: 9900px; WIDTH: 360px; POSITION: absolute; TOP: 1620px; HEIGHT: 360px" 
+coordsize = "21600,21600"><v:stroke dashstyle = 
+"dash"></v:stroke></v:oval><v:shapetype id=_x0000_t202 coordsize = "21600,21600" 
+o:spt = "202" path = " m0,0 l0,21600,21600,21600,21600,0 xe"><v:stroke joinstyle 
+= "miter"></v:stroke><v:path gradientshapeok = "t" o:connecttype = 
+"rect"></v:path></v:shapetype><v:shape id=_x0000_s1059 
+style="LEFT: 10620px; WIDTH: 1440px; POSITION: absolute; TOP: 1620px; HEIGHT: 360px" 
+type = "#_x0000_t202" coordsize = "21600,21600" stroked = "f">
+        <v:textbox style="MARGIN-TOP: 3.593pt; LEFT: auto; MARGIN-LEFT: 7.187pt; WIDTH: 57.625pt; TOP: auto; HEIGHT: 10.812pt" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p class="MsoNormal">
+                            <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Def node<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:shape></v:group><v:group 
+id=_x0000_s1066 
+style="LEFT: 9900px; WIDTH: 2160px; POSITION: absolute; TOP: 2088px; HEIGHT: 360px" 
+coordsize = "2160,360" coordorigin = "9900,2340"><v:oval id=_x0000_s1061 
+style="LEFT: 9900px; WIDTH: 360px; POSITION: absolute; TOP: 2340px; HEIGHT: 360px" 
+coordsize = "21600,21600"></v:oval><v:shape id=_x0000_s1062 
+style="LEFT: 10620px; WIDTH: 1440px; POSITION: absolute; TOP: 2340px; HEIGHT: 360px" 
+type = "#_x0000_t202" coordsize = "21600,21600" stroked = "f">
+        <v:textbox style="MARGIN-TOP: 3.718pt; LEFT: auto; MARGIN-LEFT: 7.187pt; WIDTH: 57.625pt; TOP: auto; HEIGHT: 10.812pt" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p class="MsoNormal">
+                            <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Use node<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:shape></v:group><v:group 
+id=_x0000_s1067 
+style="LEFT: 9900px; WIDTH: 2160px; POSITION: absolute; TOP: 2556px; HEIGHT: 360px" 
+coordsize = "2160,360" coordorigin = "9900,2880"><v:oval id=_x0000_s1063 
+style="LEFT: 9900px; WIDTH: 360px; POSITION: absolute; TOP: 2880px; HEIGHT: 360px" 
+coordsize = "21600,21600" fillcolor = "silver"></v:oval><v:shape id=_x0000_s1064 
+style="LEFT: 10620px; WIDTH: 1440px; POSITION: absolute; TOP: 2880px; HEIGHT: 360px" 
+type = "#_x0000_t202" coordsize = "21600,21600" stroked = "f">
+        <v:textbox style="MARGIN-TOP: 3.875pt; LEFT: auto; MARGIN-LEFT: 7.187pt; WIDTH: 57.625pt; TOP: auto; HEIGHT: 10.812pt" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p class="MsoNormal">
+                            <span class="SpellE"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Expr</span></span><span 
+                                style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> node<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:shape></v:group><v:group 
+id=_x0000_s1072 
+style="LEFT: 9900px; WIDTH: 2520px; POSITION: absolute; TOP: 3024px; HEIGHT: 360px" 
+coordsize = "2520,360" coordorigin = "9900,3420"><v:line id=_x0000_s1068 
+style="POSITION: absolute" from = "9900,3600" to = "10260,3601"><v:stroke 
+endarrow = "block"></v:stroke></v:line><v:shape id=_x0000_s1070 
+style="LEFT: 10620px; WIDTH: 1800px; POSITION: absolute; TOP: 3420px; HEIGHT: 360px" 
+type = "#_x0000_t202" coordsize = "21600,21600" o:regroupid = "1" stroked = 
+"f">
+        <v:textbox style="MARGIN-TOP: 4.031pt; LEFT: auto; MARGIN-LEFT: 7.187pt; WIDTH: 75.625pt; TOP: auto; HEIGHT: 10.812pt" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p class="MsoNormal">
+                            <span class="SpellE"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">ValueDef</span></span><span 
+                                style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> edge<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:shape></v:group><v:group 
+id=_x0000_s1075 
+style="LEFT: 9900px; WIDTH: 2520px; POSITION: absolute; TOP: 3492px; HEIGHT: 360px" 
+coordsize = "2520,360" coordorigin = "9900,3420"><v:line id=_x0000_s1076 
+style="POSITION: absolute" from = "9900,3600" to = "10260,3601"><v:stroke 
+endarrow = "block" dashstyle = "dash"></v:stroke></v:line><v:shape 
+id=_x0000_s1077 
+style="LEFT: 10620px; WIDTH: 1800px; POSITION: absolute; TOP: 3420px; HEIGHT: 360px" 
+type = "#_x0000_t202" coordsize = "21600,21600" stroked = "f">
+        <v:textbox style="MARGIN-TOP: 4.187pt; LEFT: auto; MARGIN-LEFT: 7.187pt; WIDTH: 75.625pt; TOP: auto; HEIGHT: 10.812pt" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p class="MsoNormal">
+                            <span class="SpellE"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">OrderDef</span></span><span 
+                                style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> edge<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:shape></v:group><v:group 
+id=_x0000_s1084 
+style="LEFT: 9900px; WIDTH: 2520px; POSITION: absolute; TOP: 3960px; HEIGHT: 360px" 
+coordsize = "2520,360" coordorigin = "9900,4320"><v:shape id=_x0000_s1080 
+style="LEFT: 10620px; WIDTH: 1800px; POSITION: absolute; TOP: 4320px; HEIGHT: 360px" 
+type = "#_x0000_t202" coordsize = "21600,21600" o:regroupid = "2" stroked = 
+"f">
+        <v:textbox style="MARGIN-TOP: 3.593pt; LEFT: auto; MARGIN-LEFT: 7.187pt; WIDTH: 75.625pt; TOP: auto; HEIGHT: 10.812pt" 
+            xmlns:v="urn:schemas-microsoft-com:vml">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <div>
+                        <p class="MsoNormal">
+                            <span class="SpellE"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">AssignDef</span></span><span 
+                                style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> edge<o:p></o:p></span></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </v:textbox>
+        </v:shape><v:shape 
+id=_x0000_s1083 
+style="LEFT: 9900px; WIDTH: 360px; POSITION: absolute; TOP: 4410px; HEIGHT: 180px" 
+type = "#_x0000_t38" o:connectortype = "curved" coordsize = "21600,21600" adj = 
+"10800,-540960,-399600"><v:stroke endarrow = 
+"block"></v:stroke></v:shape></v:group><w:wrap type = 
+"none"></w:wrap><w:anchorlock></w:anchorlock></v:group><o:p></o:p></span>
+    </p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">In this DAG, nodes
+        <i style="mso-bidi-font-style: normal">_F</i>,
+        <i style="mso-bidi-font-style: normal">[_F]</i> (the bottom one) and
+        <i style="mso-bidi-font-style: normal">3 </i>are Use nodes. Node
+        <i style="mso-bidi-font-style: normal">t139</i>,
+        <i style="mso-bidi-font-style: normal">[_F]</i> (the upper one) are Def nodes. 
+        Node <i style="mso-bidi-font-style: normal">ADD</i> is an <span class="SpellE">
+        Expr</span> node. Both <i style="mso-bidi-font-style: normal">[_F]</i> nodes are 
+        also <span class="SpellE">Mem</span> nodes.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">The edges between ADD and 
+        [_F], 3 are <span class="SpellE">ValueDep</span> edges, which means the 
+        computation of ADD depends on [_F] and 3. The edges between the two [_F] nodes 
+        and the _F node are also <span class="SpellE">ValueDep</span> edge, indicating 
+        that _F is the base operand of [_F]. The edges between [_F], t139 and ADD are
+        <span class="SpellE">AssignDep</span> edges, which represents that both [_F] and 
+        t139 are assigned to the result of the ADD node. Finally, the edge between the 
+        two [_F] nodes means the upper [_F] must be evaluated after the bottom one has 
+        be evaluated, which is an <span class="SpellE">OrderDep</span> edge.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">The DAG class provides APIs 
+        for querying and creating <span class="SpellE">DagNodes</span>. The main API of 
+        this class is <span class="SpellE"><i style="mso-bidi-font-style: normal">
+        FindOrCreateNode</i></span>, which first search for <span class="SpellE">DagNode</span> 
+        that matches the given operand or expression. If there is no matching
+        <span class="SpellE">DagNode</span>, a new node will be created. Common 
+        sub-expression matching, copy propagation, and constant propagation are 
+        automatically enabled by this matching process. Evaluation order must be 
+        preserved for some nodes if evaluation of one node may affect the result of the 
+        other one. For example, in the following basic block<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">
+        <span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p>
+        </span>
+    </p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">
+        <span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span class="GramE">x</span> := a[<span class="SpellE">i</span>]<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">
+        <span style="mso-spacerun: yes">&nbsp;</span><span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="GramE">a[</span>j] : = y<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">
+        <span style="mso-spacerun: yes">&nbsp;&nbsp; </span>
+        <span style="mso-tab-count: 1">&nbsp;&nbsp; </span><span class="GramE">z</span> 
+        := a[<span class="SpellE">i</span>]<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Node a[j] must be evaluated 
+        after the first a[<span class="SpellE">i</span>] is evaluated, and the second a[<span 
+            class="SpellE">i</span>] must be evaluated after node a[j]. Similar 
+        situations occur when a call has side effect. API <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">HandleDstOpnd</i></span> and two other 
+        methods <span class="SpellE"><i style="mso-bidi-font-style: normal">
+        EnforceEvlOrderForDef</i></span> and <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">EnforceEvlOrderForUse</i></span> handle 
+        these cases. The Phoenix Alias package is used in these methods to get the 
+        side-effect information of an instruction or an operand. Finally, the 
+        implementation of matching two expressions or operands can be found in methods<i 
+            style="mso-bidi-font-style: normal"> CmpExprNode, <span class="SpellE">
+        CmpMemNode</span>,</i> and <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">CmpOpnd</i></span>.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <i style="mso-bidi-font-style: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></i></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-INDENT: -0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l0 level1 lfo1; tab-stops: list .25in">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol">
+        <span style="mso-list: Ignore">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span></span><span class="SpellE">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">dagwalker.cs</span></b></span><b 
+            style="mso-bidi-font-weight: normal"><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p></o:p></span></b></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></b></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span class="SpellE"><span class="GramE">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">dagwalker.cs</span></span></span><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> implements code regeneration of 
+        a range of instruction based on the DAG constructed. The <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">DagWalker</i></span> class implements a 
+        general recursive depth-first <span class="SpellE">traverser</span> on the given
+        <span class="SpellE">subtree</span> of a DAG. Method <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">PreAction</i></span> will be called 
+        before visiting a node in the tree, and method <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">PostAction</i></span> will be invoked 
+        after the node is evaluated. A subclass of <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">DagWalker</i></span> can override these 
+        two methods to specialize the behavior of the walker.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">The <span class="SpellE">
+        <i style="mso-bidi-font-style: normal">GenCodeWalker</i></span> class is a 
+        derived class from <span class="SpellE">DagWalker</span>. Its
+        <span class="SpellE"><i style="mso-bidi-font-style: normal">PreAction</i></span> 
+        method is used to decide whether we can skip to evaluate certain nodes if 
+        possible, and its <span class="SpellE"><i style="mso-bidi-font-style: normal">
+        PostAction</i></span> method generates code for a given <span class="SpellE">
+        DagNode</span>. Each node is processed based on its node kind. See
+        <span class="SpellE"><i style="mso-bidi-font-style: normal">GenCodeForUseNode</i></span>,
+        <span class="SpellE"><i style="mso-bidi-font-style: normal">GenCodeForDefNode</i></span>, 
+        and <span class="SpellE"><i style="mso-bidi-font-style: normal">
+        GenCodeForExprNode</i></span> for more details.<o:p></o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-INDENT: -0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none; mso-list: l0 level1 lfo1; tab-stops: list .25in">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol">
+        <span style="mso-list: Ignore">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span></span><span class="SpellE">
+        <b style="mso-bidi-font-weight: normal">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">util.cs</span></b></span><b 
+            style="mso-bidi-font-weight: normal"><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p></o:p></span></b></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" 
+        style="TEXT-JUSTIFY: inter-ideograph; MARGIN-LEFT: 0.25in; TEXT-ALIGN: justify; mso-layout-grid-align: none">
+        <span class="SpellE"><span class="GramE">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">util.cs</span></span></span><span 
+            style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"> is a thin wrapper of the
+        <span class="SpellE"><i style="mso-bidi-font-style: normal">
+        System.Collections.Generics.Dictionary</i></span><i 
+            style="mso-bidi-font-style: normal">&lt;<span class="SpellE">TKey</span>,
+        <span class="SpellE">TValue</span>&gt;</i> class. It’s not required to have this 
+        file. However, in the system generic class, if a key to insert is already in the 
+        Dictionary, an <span class="SpellE">ArgumentException</span> will be thrown. In 
+        our case, we often want to replace the value of certain key in the Dictionary. 
+        So we need to either use the try/catch block or check before insert to avoid 
+        unhandled exception every time we need to insert or update an entry in the 
+        table. To simply our code, this file factors out the check-then-insert code 
+        sequence and provide two frequently used operation: Insert and Lookup.<o:p></o:p></span></p>
+    <p class="MsoNormal" style="TEXT-JUSTIFY: inter-ideograph; TEXT-ALIGN: justify">
+        <span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial"><o:p>&nbsp;</o:p></span></p>
+</div>

@@ -1,0 +1,66 @@
+Compiling...
+RuntimeRangeCheck.p
+
+IR after Type Checker (control chktype)
+
+Function Unit #1
+$L1: (references=0)                                                          #0
+                       START _main(T)                                        #0
+_main: (references=1)                                                        #0
+                       ENTERFUNCTION                                         #0
+   input.HANDLE (up32->void).a32 = CALL &_file_get_std_input.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 10(0x0000000a).i32                       #0
+   t143.HANDLE (up32->void) = CALL &_file_get_std_output.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 10(0x0000000a).i32                           #0
+   output.HANDLE (up32->void).a32 = ASSIGN t143.HANDLE (up32->void)          #0
+   [&true.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 1.i32                                                                         #0
+   [&false.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 0.i32                                                                        #0
+                       CALL &_runtime_init.CDecl.Function()->(void)          #0
+                       CALL &RuntimeRangeCheck.CDecl.Function()->(void)      #0
+                       CALL &_runtime_exit.CDecl.Function()->(void)          #0
+                       RETURN 0.i32, $L4(T)                                  #0
+$L4: (references=1)                                                          #0
+                       EXITFUNCTION                                          #0
+$L2: (references=0)                                                          #0
+                       END                                                   #0
+
+IR after Type Checker (control chktype)
+
+Function Unit #2
+$L1: (references=0)                                                          #3
+                       START RuntimeRangeCheck(T)                            #3
+RuntimeRangeCheck: (references=1)                                            #3
+                       ENTERFUNCTION                                         #3
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG105.up32->char (i8), 0.i32, 2.i32, 1.i32, &day.up32->$$unnamed100 (i32)                                                                    #9
+   day.$$unnamed100 (i32).a32 = ASSIGN 1.integer (i32)                       #7
+                       GOTO $L4                                              #8
+$L4: (references=2)                                                          #8
+   t139.i32          = COMPARE(GT) 100(0x00000064).integer (i32), day.$$unnamed100 (i32).a32                                                                 #8
+                       CONDITIONALBRANCH(True) t139.i32, $L5, $L6            #8
+$L5: (references=1)                                                          #8
+   tv142-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32                #8
+                       GOTO $L7                                              #8
+$L6: (references=1)                                                          #8
+   tv142-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32               #8
+                       GOTO $L7                                              #8
+$L7: (references=2)                                                          #8
+                       CONDITIONALBRANCH(True) tv142"$$data"(Boolean (Enum32)+0).i32, $L8, $L9                                                               #8
+$L8: (references=1)                                                          #8
+   day.integer (i32).a32 = ADD 1.integer (i32), day.$$unnamed100 (i32).a32   #9
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 31(0x0000001f).i32, day.$$unnamed100 (i32).a32, 0.i32, 10(0x0000000a).i32                                                          #9
+                       GOTO $L4                                              #9
+$L9: (references=1)                                                          #8
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 2.i32                                                                    #9
+                       RETURN $L10(T)                                       #10
+$L10: (references=1)                                                        #10
+                       EXITFUNCTION                                         #10
+$L2: (references=0)                                                         #10
+                       END                                                  #10
+Writing RuntimeRangeCheck.obj...
+
+RuntimeRangeCheck.p - 0 error(s), 0 warning(s).
+
+Linking...
+
+RuntimeRangeCheck.exe - 0 error(s), 0 warning(s).
+
+
+RuntimeRangeCheck.p(10) : runtime value '32' exceeded legal bounds (1..31). Exiting...

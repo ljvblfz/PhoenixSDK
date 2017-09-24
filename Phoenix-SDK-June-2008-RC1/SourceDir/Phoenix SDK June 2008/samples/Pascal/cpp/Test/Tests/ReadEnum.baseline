@@ -1,0 +1,8 @@
+Compiling...
+ReadEnum.p
+ReadEnum.p(8) error P3013: expected character, integer, real, or string type.
+ReadEnum.p(11) error P3013: expected character, integer, real, or string type.
+ReadEnum.p(12) error P3013: expected Boolean, character, integer, real, or string type.
+
+ReadEnum.p - 3 error(s), 0 warning(s).
+

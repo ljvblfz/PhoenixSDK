@@ -1,0 +1,8 @@
+Compiling...
+With7.p
+With7.p(16) error P3042: 'mo' : invalid field for with clause.
+With7.p(16) error P3042: 'day' : invalid field for with clause.
+With7.p(16) error P3042: 'year' : invalid field for with clause.
+
+With7.p - 3 error(s), 0 warning(s).
+

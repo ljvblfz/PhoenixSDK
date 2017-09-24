@@ -1,0 +1,10 @@
+Compiling...
+Label3.p
+Label3.p(7) error P3020: '654': undeclared label.
+Label3.p(10) error P3020: '654': undeclared label.
+Label3.p(10) warning P3025: label '222' was declared but never defined.
+Label3.p(10) warning P3026: label '111' was declared but never referenced.
+Label3.p(10) warning P3026: label '222' was declared but never referenced.
+
+Label3.p - 2 error(s), 3 warning(s).
+

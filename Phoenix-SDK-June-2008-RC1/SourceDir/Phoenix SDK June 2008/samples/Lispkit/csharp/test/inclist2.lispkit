@@ -1,0 +1,5 @@
+(LAMBDA (x) 
+  (LETREC (map x inc1)
+    (map LAMBDA (x f) 
+      (IF (EQ x (QUOTE NIL)) (QUOTE NIL) (CONS (f (CAR x)) (map (CDR x) f))))
+    (inc1 LAMBDA (z) (ADD z (QUOTE 1)))))

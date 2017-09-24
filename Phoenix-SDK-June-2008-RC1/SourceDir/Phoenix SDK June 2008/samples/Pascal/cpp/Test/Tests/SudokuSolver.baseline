@@ -1,0 +1,917 @@
+Compiling...
+SudokuSolver.p
+
+IR after Type Checker (control chktype)
+
+Function Unit #1
+$L1: (references=0)                                                          #0
+                       START _main(T)                                        #0
+_main: (references=1)                                                        #0
+                       ENTERFUNCTION                                         #0
+   input.HANDLE (up32->void).a32 = CALL &_file_get_std_input.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 211(0x000000d3).i32                      #0
+   t143.HANDLE (up32->void) = CALL &_file_get_std_output.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 211(0x000000d3).i32                          #0
+   output.HANDLE (up32->void).a32 = ASSIGN t143.HANDLE (up32->void)          #0
+   [&true.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 1.i32                                                                         #0
+   [&false.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 0.i32                                                                        #0
+                       CALL &_runtime_init.CDecl.Function()->(void)          #0
+                       CALL &SudokuSolver.CDecl.Function()->(void)           #0
+                       CALL &_runtime_exit.CDecl.Function()->(void)          #0
+                       RETURN 0.i32, $L4(T)                                  #0
+$L4: (references=1)                                                          #0
+                       EXITFUNCTION                                          #0
+$L2: (references=0)                                                          #0
+                       END                                                   #0
+
+IR after Type Checker (control chktype)
+
+Function Unit #2
+$L1: (references=0)                                                         #21
+                       START SudokuSolver(T)                                #21
+SudokuSolver: (references=1)                                                #21
+                       ENTERFUNCTION                                        #21
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 2.i32, 1.i32, &A.up32->$$unnamed100 (UnmgdArr[integer (i32)]2592)                                            #210
+                       CALL &ReadA.CDecl.Function()->(void)                #207
+   output($stdfile (Aggregate2080)+32).up32->char (i8).a32 = ASSIGN &$SG109.up32->char (i8)                                                                #208
+                       CALL &_file_put_string.CDecl.Function(HANDLE (up32->void),up32->i8,i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).up32->char (i8).a32, -1(0xffffffff).i32, 0.i32, 208(0x000000d0).i32                       #208
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 13(0x0d).i8          #208
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 208(0x000000d0).i32                                                                     #208
+   output($stdfile (Aggregate2080)+32).i8.a8 = ASSIGN 10(0x0a).i8          #208
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, output($stdfile (Aggregate2080)+32).i8.a8, 0.i32, 208(0x000000d0).i32                                                                     #208
+                       CALL &PrintA.CDecl.Function()->(void)               #209
+                       CALL &Solve.CDecl.Function(integer (i32))->(void), 0.integer (i32)                                                                  #210
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 2.i32                                                                  #210
+                       RETURN $L4(T)                                       #211
+$L4: (references=1)                                                        #211
+                       EXITFUNCTION                                        #211
+$L2: (references=0)                                                        #211
+                       END                                                 #211
+
+IR after Type Checker (control chktype)
+
+Function Unit #11
+$L1: (references=0)                                                        #150
+                       START Solve(T)                                      #150
+Solve: (references=1)                                                      #150
+   p.integer (i32).a32 = ENTERFUNCTION                                     #150
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 11(0x0000000b).i32, 4.i32, &p.up32->integer (i32), &i.up32->index9 (i32), &j.up32->index9 (i32), &try.up32->integer (i32)                                                                    #203
+   t141.i32          = COMPARE(GT) 81(0x00000051).integer (i32), p.integer (i32).a32                                                                       #182
+                       CONDITIONALBRANCH(True) t141.i32, $L4, $L5          #182
+$L4: (references=1)                                                        #182
+   tv144-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #182
+                       GOTO $L6                                            #182
+$L5: (references=1)                                                        #182
+   tv144-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #182
+                       GOTO $L6                                            #182
+$L6: (references=2)                                                        #182
+                       CONDITIONALBRANCH(True) tv144"$$data"(Boolean (Enum32)+0).i32, $L7, $L8                                                             #182
+$L7: (references=1)                                                        #182
+   i.index9 (i32).a32 = CALL &ConvertToRow.CDecl.Function(integer (i32))->(index9 (i32)), p.integer (i32).a32                                              #184
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 184(0x000000b8).i32 #184
+   t146.index9 (i32) = CALL &ConvertToCol.CDecl.Function(integer (i32))->(index9 (i32)), p.integer (i32).a32                                               #185
+   j.index9 (i32).a32 = ASSIGN t146.index9 (i32)                           #185
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 185(0x000000b9).i32 #185
+   t147.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                           #186
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 186(0x000000ba).i32 #186
+   t148.i32          = SUBTRACT j.index9 (i32).a32, 0.i32                  #186
+   t149.i32          = MULTIPLY 1.i32, t148.i32                            #186
+   t150.i32          = ADD t149.i32, 0.i32                                 #186
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 186(0x000000ba).i32 #186
+   t151.i32          = SUBTRACT i.index9 (i32).a32, 0.i32                  #186
+   t152.i32          = MULTIPLY 9.i32, t151.i32                            #186
+   t153.i32          = ADD t152.i32, t150.i32                              #186
+   tv154-.i32        = MULTIPLY 4.i32, t153.i32                            #186
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv154-.i32, 0.i32, 186(0x000000ba).i32                                                                      #186
+   t155.i32          = COMPARE(NE) [t147.up32->void+tv154-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.integer (i32)         #186
+                       CONDITIONALBRANCH(True) t155.i32, $L10, $L11        #186
+$L10: (references=1)                                                       #186
+   tv156-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #186
+                       GOTO $L12                                           #186
+$L11: (references=1)                                                       #186
+   tv156-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #186
+                       GOTO $L12                                           #186
+$L12: (references=2)                                                       #186
+                       CONDITIONALBRANCH(True) tv156"$$data"(Boolean (Enum32)+0).i32, $L13, $L14                                                           #186
+$L13: (references=1)                                                       #186
+   t157.integer (i32) = ADD p.integer (i32).a32, 1.integer (i32)           #187
+                       CALL &Solve.CDecl.Function(integer (i32))->(void), t157.integer (i32)                                                               #187
+                       GOTO $L15                                           #187
+$L14: (references=1)                                                       #186
+   try.integer (i32).a32 = ASSIGN 1.integer (i32)                          #190
+   tv158-.integer (i32) = ASSIGN try.integer (i32).a32                     #190
+                       GOTO $L16                                           #190
+$L16: (references=2)                                                       #190
+   t159.i32          = COMPARE(GT) tv158-.integer (i32), 9.integer (i32)   #190
+                       CONDITIONALBRANCH(True) t159.i32, $L17, $L18        #190
+$L17: (references=1)                                                       #190
+   tv160-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #190
+                       GOTO $L19                                           #190
+$L18: (references=1)                                                       #190
+   tv160-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #190
+                       GOTO $L19                                           #190
+$L19: (references=2)                                                       #190
+                       CONDITIONALBRANCH(True) tv160"$$data"(Boolean (Enum32)+0).i32, $L20, $L21                                                           #190
+$L21: (references=1)                                                       #190
+   try.integer (i32).a32 = ASSIGN tv158-.integer (i32)                     #190
+   t161.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                           #192
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 192(0x000000c0).i32 #192
+   t162.i32          = SUBTRACT j.index9 (i32).a32, 0.i32                  #192
+   t163.i32          = MULTIPLY 1.i32, t162.i32                            #192
+   t164.i32          = ADD t163.i32, 0.i32                                 #192
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 192(0x000000c0).i32 #192
+   t165.i32          = SUBTRACT i.index9 (i32).a32, 0.i32                  #192
+   t166.i32          = MULTIPLY 9.i32, t165.i32                            #192
+   t167.i32          = ADD t166.i32, t164.i32                              #192
+   tv168-.i32        = MULTIPLY 4.i32, t167.i32                            #192
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv168-.i32, 0.i32, 192(0x000000c0).i32                                                                      #192
+   [t161.up32->void+tv168-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096 = ASSIGN try.integer (i32).a32                           #192
+   tv169.Boolean (Enum32) = CALL &Legal.CDecl.Function(index9 (i32),index9 (i32))->(Boolean (Enum32)), i.index9 (i32).a32, j.index9 (i32).a32              #193
+                       CONDITIONALBRANCH(True) tv169"$$data"(Boolean (Enum32)+0).i32, $L22, $L23                                                           #193
+$L22: (references=1)                                                       #193
+   t170.integer (i32) = ADD p.integer (i32).a32, 1.integer (i32)           #194
+                       CALL &Solve.CDecl.Function(integer (i32))->(void), t170.integer (i32)                                                               #194
+                       GOTO $L23                                           #194
+$L23: (references=2)                                                       #193
+   t171.integer (i32) = ADD try.integer (i32).a32, 1.integer (i32)         #194
+   tv158-.integer (i32) = ASSIGN t171.integer (i32)                        #194
+                       GOTO $L16                                           #194
+$L20: (references=1)                                                       #190
+   t172.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                           #196
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 196(0x000000c4).i32 #196
+   t173.i32          = SUBTRACT j.index9 (i32).a32, 0.i32                  #196
+   t174.i32          = MULTIPLY 1.i32, t173.i32                            #196
+   t175.i32          = ADD t174.i32, 0.i32                                 #196
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 196(0x000000c4).i32 #196
+   t176.i32          = SUBTRACT i.index9 (i32).a32, 0.i32                  #196
+   t177.i32          = MULTIPLY 9.i32, t176.i32                            #196
+   t178.i32          = ADD t177.i32, t175.i32                              #196
+   tv179-.i32        = MULTIPLY 4.i32, t178.i32                            #196
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv179-.i32, 0.i32, 196(0x000000c4).i32                                                                      #196
+   [t172.up32->void+tv179-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096 = ASSIGN 0.integer (i32)                                 #196
+                       GOTO $L15                                           #196
+$L15: (references=2)                                                       #186
+                       GOTO $L9                                            #196
+$L8: (references=1)                                                        #182
+   [&output.up32->$stdfile (Aggregate2080)+4].up32->char (i8).a32 = ASSIGN &$SG108.up32->char (i8)                                                         #201
+                       CALL &_file_put_string.CDecl.Function(HANDLE (up32->void),up32->i8,i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].up32->char (i8).a32, -1(0xffffffff).i32, 0.i32, 201(0x000000c9).i32                #201
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8   #201
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 201(0x000000c9).i32                                                              #201
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8   #201
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 201(0x000000c9).i32                                                              #201
+                       CALL &PrintA.CDecl.Function()->(void)               #203
+                       GOTO $L9                                            #203
+$L9: (references=2)                                                        #182
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 11(0x0000000b).i32                                                     #203
+                       RETURN $L24(T)                                      #204
+$L24: (references=1)                                                       #204
+                       EXITFUNCTION                                        #204
+$L2: (references=0)                                                        #204
+                       END                                                 #204
+
+IR after Type Checker (control chktype)
+
+Function Unit #13
+$L1: (references=0)                                                        #176
+                       START ConvertToCol(T)                               #176
+ConvertToCol: (references=1)                                               #176
+   p.integer (i32).a32 = ENTERFUNCTION                                     #176
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 13(0x0000000d).i32, 2.i32, &p.up32->integer (i32), &ConvertToCol.up32->index9 (i32)                          #178
+   ConvertToCol.i32.a32 = CALL &_mod.CDecl.Function(i32,i32)->(i32), p.integer (i32).a32, 9.integer (i32)                                                  #178
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, ConvertToCol.index9 (i32).a32, 0.i32, 179(0x000000b3).i32                                                                 #178
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 13(0x0000000d).i32                                                     #178
+                       RETURN ConvertToCol.index9 (i32).a32, $L4(T)        #179
+$L4: (references=1)                                                        #179
+                       EXITFUNCTION                                        #179
+$L2: (references=0)                                                        #179
+                       END                                                 #179
+
+IR after Type Checker (control chktype)
+
+Function Unit #12
+$L1: (references=0)                                                        #171
+                       START ConvertToRow(T)                               #171
+ConvertToRow: (references=1)                                               #171
+   p.integer (i32).a32 = ENTERFUNCTION                                     #171
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 12(0x0000000c).i32, 2.i32, &p.up32->integer (i32), &ConvertToRow.up32->index9 (i32)                          #173
+   ConvertToRow.integer (i32).a32 = DIVIDE p.integer (i32).a32, 9.integer (i32) #173
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, ConvertToRow.index9 (i32).a32, 0.i32, 174(0x000000ae).i32                                                                 #173
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 12(0x0000000c).i32                                                     #173
+                       RETURN ConvertToRow.index9 (i32).a32, $L4(T)        #174
+$L4: (references=1)                                                        #174
+                       EXITFUNCTION                                        #174
+$L2: (references=0)                                                        #174
+                       END                                                 #174
+
+IR after Type Checker (control chktype)
+
+Function Unit #5
+$L1: (references=0)                                                         #54
+                       START Legal(T)                                       #54
+Legal: (references=1)                                                       #54
+   i.index9 (i32).a32, j.index9 (i32).a32 = ENTERFUNCTION                   #54
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 5.i32, 3.i32, &i.up32->index9 (i32), &j.up32->index9 (i32), &Legal.up32->Boolean (Enum32)                    #148
+   tv140.Boolean (Enum32) = CALL &LegalRow.CDecl.Function(index9 (i32))->(Boolean (Enum32)), i.index9 (i32).a32                                            #147
+   tv141.Boolean (Enum32) = CALL &LegalCol.CDecl.Function(index9 (i32))->(Boolean (Enum32)), j.index9 (i32).a32                                            #147
+   t142.i32          = BITAND tv140"$$data"(Boolean (Enum32)+0).i32, tv141"$$data"(Boolean (Enum32)+0).i32                                                 #147
+                       CONDITIONALBRANCH(True) t142.i32, $L4, $L5          #147
+$L4: (references=1)                                                        #147
+   tv145-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #147
+                       GOTO $L6                                            #147
+$L5: (references=1)                                                        #147
+   tv145-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #147
+                       GOTO $L6                                            #147
+$L6: (references=2)                                                        #147
+   tv146.Boolean (Enum32) = CALL &Legal3x3.CDecl.Function(index9 (i32),index9 (i32))->(Boolean (Enum32)), i.index9 (i32).a32, j.index9 (i32).a32           #147
+   t147.i32          = BITAND tv145"$$data"(Boolean (Enum32)+0).i32, tv146"$$data"(Boolean (Enum32)+0).i32                                                 #147
+                       CONDITIONALBRANCH(True) t147.i32, $L7, $L8          #147
+$L7: (references=1)                                                        #147
+   tv148-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #147
+                       GOTO $L9                                            #147
+$L8: (references=1)                                                        #147
+   tv148-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #147
+                       GOTO $L9                                            #147
+$L9: (references=2)                                                        #147
+   Legal.Boolean (Enum32).a32 = ASSIGN tv148-.Boolean (Enum32)             #147
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 5.i32                                                                  #148
+                       RETURN Legal.Boolean (Enum32).a32, $L10(T)          #148
+$L10: (references=1)                                                       #148
+                       EXITFUNCTION                                        #148
+$L2: (references=0)                                                        #148
+                       END                                                 #148
+
+IR after Type Checker (control chktype)
+
+Function Unit #8
+$L1: (references=0)                                                        #104
+                       START Legal3x3(T)                                   #104
+Legal3x3: (references=1)                                                   #104
+   i.index9 (i32).a32, j.index9 (i32).a32 = ENTERFUNCTION                  #104
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 8.i32, 7.i32, &i.up32->index9 (i32), &j.up32->index9 (i32), &Legal3x3.up32->Boolean (Enum32), &exists.up32->$$unnamed104 (UnmgdArr[Boolean (Enum32)]288), &k.up32->index9 (i32), &n.up32->integer (i32), &retval.up32->Boolean (Enum32)                                      #144
+   n.integer (i32).a32 = ASSIGN 1.integer (i32)                            #132
+   tv146-.integer (i32) = ASSIGN n.integer (i32).a32                       #132
+                       GOTO $L4                                            #132
+$L4: (references=2)                                                        #132
+   t147.i32          = COMPARE(LT) 9.integer (i32), tv146-.integer (i32)   #132
+                       CONDITIONALBRANCH(True) t147.i32, $L5, $L6          #132
+$L5: (references=1)                                                        #132
+   tv150-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #132
+                       GOTO $L7                                            #132
+$L6: (references=1)                                                        #132
+   tv150-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #132
+                       GOTO $L7                                            #132
+$L7: (references=2)                                                        #132
+                       CONDITIONALBRANCH(True) tv150"$$data"(Boolean (Enum32)+0).i32, $L8, $L9                                                             #132
+$L9: (references=1)                                                        #132
+   n.integer (i32).a32 = ASSIGN tv146-.integer (i32)                       #132
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, n.integer (i32).a32, 0.i32, 133(0x00000085).i32                                                                           #133
+   t152.i32          = SUBTRACT n.integer (i32).a32, 1.i32                 #133
+   t153.i32          = ADD t152.i32, 0.i32                                 #133
+   tv154-.i32        = MULTIPLY 4.i32, t153.i32                            #133
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv154-.i32, 0.i32, 133(0x00000085).i32                                                                       #133
+   [&exists.up32->$$unnamed104 (UnmgdArr[Boolean (Enum32)]288)+tv154-.i32].Boolean (Enum32).a32 = ASSIGN false.Boolean (Enum32).a32                        #133
+   t155.integer (i32) = ADD n.integer (i32).a32, 1.integer (i32)           #133
+   tv146-.integer (i32) = ASSIGN t155.integer (i32)                        #133
+                       GOTO $L4                                            #133
+$L8: (references=1)                                                        #132
+   retval.Boolean (Enum32).a32 = ASSIGN true.Boolean (Enum32).a32          #134
+   t156.integer (i32) = DIVIDE i.index9 (i32).a32, 3.integer (i32)         #135
+   t157.integer (i32) = MULTIPLY t156.integer (i32), 3.integer (i32)       #135
+   i.index9 (i32).a32 = ASSIGN t157.integer (i32)                          #135
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 135(0x00000087).i32 #135
+   t158.integer (i32) = DIVIDE j.index9 (i32).a32, 3.integer (i32)         #136
+   t159.integer (i32) = MULTIPLY t158.integer (i32), 3.integer (i32)       #136
+   j.index9 (i32).a32 = ASSIGN t159.integer (i32)                          #136
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 136(0x00000088).i32 #136
+   k.index9 (i32).a32 = ASSIGN 0.integer (i32)                             #137
+   tv160-.integer (i32) = ASSIGN k.index9 (i32).a32                        #137
+                       GOTO $L10                                           #137
+$L10: (references=2)                                                       #137
+   t161.i32          = COMPARE(GT) tv160-.integer (i32), 8.integer (i32)   #137
+                       CONDITIONALBRANCH(True) t161.i32, $L11, $L12        #137
+$L11: (references=1)                                                       #137
+   tv162-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #137
+                       GOTO $L13                                           #137
+$L12: (references=1)                                                       #137
+   tv162-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #137
+                       GOTO $L13                                           #137
+$L13: (references=2)                                                       #137
+                       CONDITIONALBRANCH(True) tv162"$$data"(Boolean (Enum32)+0).i32, $L14, $L15                                                           #137
+$L15: (references=1)                                                       #137
+   k.index9 (i32).a32 = ASSIGN tv160-.integer (i32)                        #137
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 142(0x0000008e).i32 #137
+   t163.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                           #138
+   tv164-.integer (i32) = CALL &C.CDecl.Function(index9 (i32))->(integer (i32)), k.index9 (i32).a32                                                        #138
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv164-.integer (i32), 0.i32, 138(0x0000008a).i32                                                                          #138
+   t165.i32          = SUBTRACT tv164-.integer (i32), 0.i32                #138
+   t166.i32          = MULTIPLY 1.i32, t165.i32                            #138
+   t167.i32          = ADD t166.i32, 0.i32                                 #138
+   tv168-.integer (i32) = CALL &R.CDecl.Function(index9 (i32))->(integer (i32)), k.index9 (i32).a32                                                        #138
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv168-.integer (i32), 0.i32, 138(0x0000008a).i32                                                                          #138
+   t169.i32          = SUBTRACT tv168-.integer (i32), 0.i32                #138
+   t170.i32          = MULTIPLY 9.i32, t169.i32                            #138
+   t171.i32          = ADD t170.i32, t167.i32                              #138
+   tv172-.i32        = MULTIPLY 4.i32, t171.i32                            #138
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv172-.i32, 0.i32, 138(0x0000008a).i32                                                                      #138
+   t173.i32          = COMPARE(NE) [t163.up32->void+tv172-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.integer (i32)         #138
+                       CONDITIONALBRANCH(True) t173.i32, $L16, $L17        #138
+$L16: (references=1)                                                       #138
+   tv174-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #138
+                       GOTO $L18                                           #138
+$L17: (references=1)                                                       #138
+   tv174-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #138
+                       GOTO $L18                                           #138
+$L18: (references=2)                                                       #138
+                       CONDITIONALBRANCH(True) tv174"$$data"(Boolean (Enum32)+0).i32, $L19, $L20                                                           #138
+$L19: (references=1)                                                       #138
+   tv175-.up32->void = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                           #140
+   tv176-.integer (i32) = CALL &C.CDecl.Function(index9 (i32))->(integer (i32)), k.index9 (i32).a32                                                        #140
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv176-.integer (i32), 0.i32, 140(0x0000008c).i32                                                                          #140
+   t177.i32          = SUBTRACT tv176-.integer (i32), 0.i32                #140
+   t178.i32          = MULTIPLY 1.i32, t177.i32                            #140
+   t179.i32          = ADD t178.i32, 0.i32                                 #140
+   tv180-.integer (i32) = CALL &R.CDecl.Function(index9 (i32))->(integer (i32)), k.index9 (i32).a32                                                        #140
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv180-.integer (i32), 0.i32, 140(0x0000008c).i32                                                                          #140
+   t181.i32          = SUBTRACT tv180-.integer (i32), 0.i32                #140
+   t182.i32          = MULTIPLY 9.i32, t181.i32                            #140
+   t183.i32          = ADD t182.i32, t179.i32                              #140
+   tv184-.i32        = MULTIPLY 4.i32, t183.i32                            #140
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv184-.i32, 0.i32, 140(0x0000008c).i32                                                                      #140
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, [tv175-.up32->void+tv184-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.i32, 140(0x0000008c).i32 #140
+   t185.i32          = SUBTRACT [tv175-.up32->void+tv184-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 1.i32                    #140
+   t186.i32          = MULTIPLY 1.i32, t185.i32                            #140
+   t187.i32          = ADD t186.i32, 0.i32                                 #140
+   tv188-.i32        = MULTIPLY 4.i32, t187.i32                            #140
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv188-.i32, 0.i32, 140(0x0000008c).i32                                                                       #140
+   t189.i32          = NOT [&exists.up32->$$unnamed104 (UnmgdArr[Boolean (Enum32)]288)+tv188-.i32]"$$data"(Boolean (Enum32)+0).i32.a32                     #140
+                       CONDITIONALBRANCH(True) t189.i32, $L21, $L22        #140
+$L21: (references=1)                                                       #140
+   tv190-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #140
+                       GOTO $L23                                           #140
+$L22: (references=1)                                                       #140
+   tv190-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #140
+                       GOTO $L23                                           #140
+$L23: (references=2)                                                       #140
+   t191.i32          = BITAND retval"$$data"(Boolean (Enum32)+0).i32.a32, tv190"$$data"(Boolean (Enum32)+0).i32                                            #140
+                       CONDITIONALBRANCH(True) t191.i32, $L24, $L25        #140
+$L24: (references=1)                                                       #140
+   tv192-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32              #140
+                       GOTO $L26                                           #140
+$L25: (references=1)                                                       #140
+   tv192-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32             #140
+                       GOTO $L26                                           #140
+$L26: (references=2)                                                       #140
+   retval.Boolean (Enum32).a32 = ASSIGN tv192-.Boolean (Enum32)            #140
+   tv193-.up32->void = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                           #141
+   tv194-.integer (i32) = CALL &C.CDecl.Function(index9 (i32))->(integer (i32)), k.index9 (i32).a32                                                        #141
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv194-.integer (i32), 0.i32, 141(0x0000008d).i32                                                                          #141
+   t195.i32          = SUBTRACT tv194-.integer (i32), 0.i32                #141
+   t196.i32          = MULTIPLY 1.i32, t195.i32                            #141
+   t197.i32          = ADD t196.i32, 0.i32                                 #141
+   tv198-.integer (i32) = CALL &R.CDecl.Function(index9 (i32))->(integer (i32)), k.index9 (i32).a32                                                        #141
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, tv198-.integer (i32), 0.i32, 141(0x0000008d).i32                                                                          #141
+   t199.i32          = SUBTRACT tv198-.integer (i32), 0.i32                #141
+   t200.i32          = MULTIPLY 9.i32, t199.i32                            #141
+   t201.i32          = ADD t200.i32, t197.i32                              #141
+   tv202-.i32        = MULTIPLY 4.i32, t201.i32                            #141
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv202-.i32, 0.i32, 141(0x0000008d).i32                                                                      #141
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, [tv193-.up32->void+tv202-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.i32, 141(0x0000008d).i32 #141
+   t203.i32          = SUBTRACT [tv193-.up32->void+tv202-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 1.i32                    #141
+   t204.i32          = MULTIPLY 1.i32, t203.i32                            #141
+   t205.i32          = ADD t204.i32, 0.i32                                 #141
+   tv206-.i32        = MULTIPLY 4.i32, t205.i32                            #141
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv206-.i32, 0.i32, 141(0x0000008d).i32                                                                       #141
+   [&exists.up32->$$unnamed104 (UnmgdArr[Boolean (Enum32)]288)+tv206-.i32].Boolean (Enum32).a32 = ASSIGN true.Boolean (Enum32).a32                         #141
+                       GOTO $L20                                           #142
+$L20: (references=2)                                                       #138
+   t207.integer (i32) = ADD k.index9 (i32).a32, 1.integer (i32)            #142
+   tv160-.integer (i32) = ASSIGN t207.integer (i32)                        #142
+                       GOTO $L10                                           #142
+$L14: (references=1)                                                       #137
+   Legal3x3.Boolean (Enum32).a32 = ASSIGN retval.Boolean (Enum32).a32      #144
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 8.i32                                                                  #144
+                       RETURN Legal3x3.Boolean (Enum32).a32, $L27(T)       #144
+$L27: (references=1)                                                       #144
+                       EXITFUNCTION                                        #144
+$L2: (references=0)                                                        #144
+                       END                                                 #144
+
+IR after Type Checker (control chktype)
+
+Function Unit #10
+$L1: (references=0)                                                        #126
+                       START C(T)                                          #126
+C: (references=1)                                                          #126
+   k.index9 (i32).a32 = ENTERFUNCTION                                      #126
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 10(0x0000000a).i32, 2.i32, &k.up32->index9 (i32), &C.up32->integer (i32)                                     #129
+   t139.i32          = CALL &_mod.CDecl.Function(i32,i32)->(i32), k.index9 (i32).a32, 3.integer (i32)                                                      #128
+   t140.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 8.i32, 1.i32                                           #129
+   C.integer (i32).a32 = ADD t139.i32, [t140.up32->void].index9 (i32).a32  #129
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 10(0x0000000a).i32                                                     #129
+                       RETURN C.integer (i32).a32, $L4(T)                  #129
+$L4: (references=1)                                                        #129
+                       EXITFUNCTION                                        #129
+$L2: (references=0)                                                        #129
+                       END                                                 #129
+
+IR after Type Checker (control chktype)
+
+Function Unit #9
+$L1: (references=0)                                                        #121
+                       START R(T)                                          #121
+R: (references=1)                                                          #121
+   k.index9 (i32).a32 = ENTERFUNCTION                                      #121
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 9.i32, 2.i32, &k.up32->index9 (i32), &R.up32->integer (i32)                                                  #124
+   t139.integer (i32) = DIVIDE k.index9 (i32).a32, 3.integer (i32)         #123
+   t140.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 8.i32, 0.i32                                           #124
+   R.integer (i32).a32 = ADD t139.integer (i32), [t140.up32->void].index9 (i32).a32                                                                        #124
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 9.i32                                                                  #124
+                       RETURN R.integer (i32).a32, $L4(T)                  #124
+$L4: (references=1)                                                        #124
+                       EXITFUNCTION                                        #124
+$L2: (references=0)                                                        #124
+                       END                                                 #124
+
+IR after Type Checker (control chktype)
+
+Function Unit #7
+$L1: (references=0)                                                         #82
+                       START LegalCol(T)                                    #82
+LegalCol: (references=1)                                                    #82
+   j.index9 (i32).a32 = ENTERFUNCTION                                       #82
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 7.i32, 6.i32, &j.up32->index9 (i32), &LegalCol.up32->Boolean (Enum32), &exists.up32->$$unnamed103 (UnmgdArr[Boolean (Enum32)]288), &k.up32->index9 (i32), &n.up32->integer (i32), &retval.up32->Boolean (Enum32)                                                             #102
+   n.integer (i32).a32 = ASSIGN 1.integer (i32)                             #92
+   tv145-.integer (i32) = ASSIGN n.integer (i32).a32                        #92
+                       GOTO $L4                                             #92
+$L4: (references=2)                                                         #92
+   t146.i32          = COMPARE(LT) 9.integer (i32), tv145-.integer (i32)    #92
+                       CONDITIONALBRANCH(True) t146.i32, $L5, $L6           #92
+$L5: (references=1)                                                         #92
+   tv149-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #92
+                       GOTO $L7                                             #92
+$L6: (references=1)                                                         #92
+   tv149-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #92
+                       GOTO $L7                                             #92
+$L7: (references=2)                                                         #92
+                       CONDITIONALBRANCH(True) tv149"$$data"(Boolean (Enum32)+0).i32, $L8, $L9                                                              #92
+$L9: (references=1)                                                         #92
+   n.integer (i32).a32 = ASSIGN tv145-.integer (i32)                        #92
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, n.integer (i32).a32, 0.i32, 93(0x0000005d).i32 #93
+   t151.i32          = SUBTRACT n.integer (i32).a32, 1.i32                  #93
+   t152.i32          = ADD t151.i32, 0.i32                                  #93
+   tv153-.i32        = MULTIPLY 4.i32, t152.i32                             #93
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv153-.i32, 0.i32, 93(0x0000005d).i32                                                                         #93
+   [&exists.up32->$$unnamed103 (UnmgdArr[Boolean (Enum32)]288)+tv153-.i32].Boolean (Enum32).a32 = ASSIGN false.Boolean (Enum32).a32                         #93
+   t154.integer (i32) = ADD n.integer (i32).a32, 1.integer (i32)            #93
+   tv145-.integer (i32) = ASSIGN t154.integer (i32)                         #93
+                       GOTO $L4                                             #93
+$L8: (references=1)                                                         #92
+   retval.Boolean (Enum32).a32 = ASSIGN true.Boolean (Enum32).a32           #94
+   k.index9 (i32).a32 = ASSIGN 0.integer (i32)                              #95
+   tv155-.integer (i32) = ASSIGN k.index9 (i32).a32                         #95
+                       GOTO $L10                                            #95
+$L10: (references=2)                                                        #95
+   t156.i32          = COMPARE(GT) tv155-.integer (i32), 8.integer (i32)    #95
+                       CONDITIONALBRANCH(True) t156.i32, $L11, $L12         #95
+$L11: (references=1)                                                        #95
+   tv157-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #95
+                       GOTO $L13                                            #95
+$L12: (references=1)                                                        #95
+   tv157-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #95
+                       GOTO $L13                                            #95
+$L13: (references=2)                                                        #95
+                       CONDITIONALBRANCH(True) tv157"$$data"(Boolean (Enum32)+0).i32, $L14, $L15                                                            #95
+$L15: (references=1)                                                        #95
+   k.index9 (i32).a32 = ASSIGN tv155-.integer (i32)                         #95
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 100(0x00000064).i32 #95
+   t158.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #96
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 96(0x00000060).i32 #96
+   t159.i32          = SUBTRACT j.index9 (i32).a32, 0.i32                   #96
+   t160.i32          = MULTIPLY 1.i32, t159.i32                             #96
+   t161.i32          = ADD t160.i32, 0.i32                                  #96
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 96(0x00000060).i32 #96
+   t162.i32          = SUBTRACT k.index9 (i32).a32, 0.i32                   #96
+   t163.i32          = MULTIPLY 9.i32, t162.i32                             #96
+   t164.i32          = ADD t163.i32, t161.i32                               #96
+   tv165-.i32        = MULTIPLY 4.i32, t164.i32                             #96
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv165-.i32, 0.i32, 96(0x00000060).i32                                                                        #96
+   t166.i32          = COMPARE(NE) [t158.up32->void+tv165-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.integer (i32)          #96
+                       CONDITIONALBRANCH(True) t166.i32, $L16, $L17         #96
+$L16: (references=1)                                                        #96
+   tv167-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #96
+                       GOTO $L18                                            #96
+$L17: (references=1)                                                        #96
+   tv167-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #96
+                       GOTO $L18                                            #96
+$L18: (references=2)                                                        #96
+                       CONDITIONALBRANCH(True) tv167"$$data"(Boolean (Enum32)+0).i32, $L19, $L20                                                            #96
+$L19: (references=1)                                                        #96
+   tv168-.up32->void = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #98
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 98(0x00000062).i32 #98
+   t169.i32          = SUBTRACT j.index9 (i32).a32, 0.i32                   #98
+   t170.i32          = MULTIPLY 1.i32, t169.i32                             #98
+   t171.i32          = ADD t170.i32, 0.i32                                  #98
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 98(0x00000062).i32 #98
+   t172.i32          = SUBTRACT k.index9 (i32).a32, 0.i32                   #98
+   t173.i32          = MULTIPLY 9.i32, t172.i32                             #98
+   t174.i32          = ADD t173.i32, t171.i32                               #98
+   tv175-.i32        = MULTIPLY 4.i32, t174.i32                             #98
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv175-.i32, 0.i32, 98(0x00000062).i32                                                                        #98
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, [tv168-.up32->void+tv175-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.i32, 98(0x00000062).i32 #98
+   t176.i32          = SUBTRACT [tv168-.up32->void+tv175-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 1.i32                     #98
+   t177.i32          = MULTIPLY 1.i32, t176.i32                             #98
+   t178.i32          = ADD t177.i32, 0.i32                                  #98
+   tv179-.i32        = MULTIPLY 4.i32, t178.i32                             #98
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv179-.i32, 0.i32, 98(0x00000062).i32                                                                         #98
+   t180.i32          = NOT [&exists.up32->$$unnamed103 (UnmgdArr[Boolean (Enum32)]288)+tv179-.i32]"$$data"(Boolean (Enum32)+0).i32.a32                      #98
+                       CONDITIONALBRANCH(True) t180.i32, $L21, $L22         #98
+$L21: (references=1)                                                        #98
+   tv181-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #98
+                       GOTO $L23                                            #98
+$L22: (references=1)                                                        #98
+   tv181-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #98
+                       GOTO $L23                                            #98
+$L23: (references=2)                                                        #98
+   t182.i32          = BITAND retval"$$data"(Boolean (Enum32)+0).i32.a32, tv181"$$data"(Boolean (Enum32)+0).i32                                             #98
+                       CONDITIONALBRANCH(True) t182.i32, $L24, $L25         #98
+$L24: (references=1)                                                        #98
+   tv183-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #98
+                       GOTO $L26                                            #98
+$L25: (references=1)                                                        #98
+   tv183-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #98
+                       GOTO $L26                                            #98
+$L26: (references=2)                                                        #98
+   retval.Boolean (Enum32).a32 = ASSIGN tv183-.Boolean (Enum32)             #98
+   tv184-.up32->void = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #99
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 99(0x00000063).i32 #99
+   t185.i32          = SUBTRACT j.index9 (i32).a32, 0.i32                   #99
+   t186.i32          = MULTIPLY 1.i32, t185.i32                             #99
+   t187.i32          = ADD t186.i32, 0.i32                                  #99
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 99(0x00000063).i32 #99
+   t188.i32          = SUBTRACT k.index9 (i32).a32, 0.i32                   #99
+   t189.i32          = MULTIPLY 9.i32, t188.i32                             #99
+   t190.i32          = ADD t189.i32, t187.i32                               #99
+   tv191-.i32        = MULTIPLY 4.i32, t190.i32                             #99
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv191-.i32, 0.i32, 99(0x00000063).i32                                                                        #99
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, [tv184-.up32->void+tv191-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.i32, 99(0x00000063).i32 #99
+   t192.i32          = SUBTRACT [tv184-.up32->void+tv191-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 1.i32                     #99
+   t193.i32          = MULTIPLY 1.i32, t192.i32                             #99
+   t194.i32          = ADD t193.i32, 0.i32                                  #99
+   tv195-.i32        = MULTIPLY 4.i32, t194.i32                             #99
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv195-.i32, 0.i32, 99(0x00000063).i32                                                                         #99
+   [&exists.up32->$$unnamed103 (UnmgdArr[Boolean (Enum32)]288)+tv195-.i32].Boolean (Enum32).a32 = ASSIGN true.Boolean (Enum32).a32                          #99
+                       GOTO $L20                                           #100
+$L20: (references=2)                                                        #96
+   t196.integer (i32) = ADD k.index9 (i32).a32, 1.integer (i32)            #100
+   tv155-.integer (i32) = ASSIGN t196.integer (i32)                        #100
+                       GOTO $L10                                           #100
+$L14: (references=1)                                                        #95
+   LegalCol.Boolean (Enum32).a32 = ASSIGN retval.Boolean (Enum32).a32      #102
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 7.i32                                                                  #102
+                       RETURN LegalCol.Boolean (Enum32).a32, $L27(T)       #102
+$L27: (references=1)                                                       #102
+                       EXITFUNCTION                                        #102
+$L2: (references=0)                                                        #102
+                       END                                                 #102
+
+IR after Type Checker (control chktype)
+
+Function Unit #6
+$L1: (references=0)                                                         #60
+                       START LegalRow(T)                                    #60
+LegalRow: (references=1)                                                    #60
+   i.index9 (i32).a32 = ENTERFUNCTION                                       #60
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 6.i32, 6.i32, &i.up32->index9 (i32), &LegalRow.up32->Boolean (Enum32), &exists.up32->$$unnamed102 (UnmgdArr[Boolean (Enum32)]288), &k.up32->index9 (i32), &n.up32->integer (i32), &retval.up32->Boolean (Enum32)                                                              #80
+   n.integer (i32).a32 = ASSIGN 1.integer (i32)                             #70
+   tv145-.integer (i32) = ASSIGN n.integer (i32).a32                        #70
+                       GOTO $L4                                             #70
+$L4: (references=2)                                                         #70
+   t146.i32          = COMPARE(LT) 9.integer (i32), tv145-.integer (i32)    #70
+                       CONDITIONALBRANCH(True) t146.i32, $L5, $L6           #70
+$L5: (references=1)                                                         #70
+   tv149-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #70
+                       GOTO $L7                                             #70
+$L6: (references=1)                                                         #70
+   tv149-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #70
+                       GOTO $L7                                             #70
+$L7: (references=2)                                                         #70
+                       CONDITIONALBRANCH(True) tv149"$$data"(Boolean (Enum32)+0).i32, $L8, $L9                                                              #70
+$L9: (references=1)                                                         #70
+   n.integer (i32).a32 = ASSIGN tv145-.integer (i32)                        #70
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, n.integer (i32).a32, 0.i32, 71(0x00000047).i32 #71
+   t151.i32          = SUBTRACT n.integer (i32).a32, 1.i32                  #71
+   t152.i32          = ADD t151.i32, 0.i32                                  #71
+   tv153-.i32        = MULTIPLY 4.i32, t152.i32                             #71
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv153-.i32, 0.i32, 71(0x00000047).i32                                                                         #71
+   [&exists.up32->$$unnamed102 (UnmgdArr[Boolean (Enum32)]288)+tv153-.i32].Boolean (Enum32).a32 = ASSIGN false.Boolean (Enum32).a32                         #71
+   t154.integer (i32) = ADD n.integer (i32).a32, 1.integer (i32)            #71
+   tv145-.integer (i32) = ASSIGN t154.integer (i32)                         #71
+                       GOTO $L4                                             #71
+$L8: (references=1)                                                         #70
+   retval.Boolean (Enum32).a32 = ASSIGN true.Boolean (Enum32).a32           #72
+   k.index9 (i32).a32 = ASSIGN 0.integer (i32)                              #73
+   tv155-.integer (i32) = ASSIGN k.index9 (i32).a32                         #73
+                       GOTO $L10                                            #73
+$L10: (references=2)                                                        #73
+   t156.i32          = COMPARE(GT) tv155-.integer (i32), 8.integer (i32)    #73
+                       CONDITIONALBRANCH(True) t156.i32, $L11, $L12         #73
+$L11: (references=1)                                                        #73
+   tv157-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #73
+                       GOTO $L13                                            #73
+$L12: (references=1)                                                        #73
+   tv157-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #73
+                       GOTO $L13                                            #73
+$L13: (references=2)                                                        #73
+                       CONDITIONALBRANCH(True) tv157"$$data"(Boolean (Enum32)+0).i32, $L14, $L15                                                            #73
+$L15: (references=1)                                                        #73
+   k.index9 (i32).a32 = ASSIGN tv155-.integer (i32)                         #73
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 78(0x0000004e).i32 #73
+   t158.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #74
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 74(0x0000004a).i32 #74
+   t159.i32          = SUBTRACT k.index9 (i32).a32, 0.i32                   #74
+   t160.i32          = MULTIPLY 1.i32, t159.i32                             #74
+   t161.i32          = ADD t160.i32, 0.i32                                  #74
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 74(0x0000004a).i32 #74
+   t162.i32          = SUBTRACT i.index9 (i32).a32, 0.i32                   #74
+   t163.i32          = MULTIPLY 9.i32, t162.i32                             #74
+   t164.i32          = ADD t163.i32, t161.i32                               #74
+   tv165-.i32        = MULTIPLY 4.i32, t164.i32                             #74
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv165-.i32, 0.i32, 74(0x0000004a).i32                                                                        #74
+   t166.i32          = COMPARE(NE) [t158.up32->void+tv165-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.integer (i32)          #74
+                       CONDITIONALBRANCH(True) t166.i32, $L16, $L17         #74
+$L16: (references=1)                                                        #74
+   tv167-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #74
+                       GOTO $L18                                            #74
+$L17: (references=1)                                                        #74
+   tv167-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #74
+                       GOTO $L18                                            #74
+$L18: (references=2)                                                        #74
+                       CONDITIONALBRANCH(True) tv167"$$data"(Boolean (Enum32)+0).i32, $L19, $L20                                                            #74
+$L19: (references=1)                                                        #74
+   tv168-.up32->void = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #76
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 76(0x0000004c).i32 #76
+   t169.i32          = SUBTRACT k.index9 (i32).a32, 0.i32                   #76
+   t170.i32          = MULTIPLY 1.i32, t169.i32                             #76
+   t171.i32          = ADD t170.i32, 0.i32                                  #76
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 76(0x0000004c).i32 #76
+   t172.i32          = SUBTRACT i.index9 (i32).a32, 0.i32                   #76
+   t173.i32          = MULTIPLY 9.i32, t172.i32                             #76
+   t174.i32          = ADD t173.i32, t171.i32                               #76
+   tv175-.i32        = MULTIPLY 4.i32, t174.i32                             #76
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv175-.i32, 0.i32, 76(0x0000004c).i32                                                                        #76
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, [tv168-.up32->void+tv175-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.i32, 76(0x0000004c).i32 #76
+   t176.i32          = SUBTRACT [tv168-.up32->void+tv175-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 1.i32                     #76
+   t177.i32          = MULTIPLY 1.i32, t176.i32                             #76
+   t178.i32          = ADD t177.i32, 0.i32                                  #76
+   tv179-.i32        = MULTIPLY 4.i32, t178.i32                             #76
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv179-.i32, 0.i32, 76(0x0000004c).i32                                                                         #76
+   t180.i32          = NOT [&exists.up32->$$unnamed102 (UnmgdArr[Boolean (Enum32)]288)+tv179-.i32]"$$data"(Boolean (Enum32)+0).i32.a32                      #76
+                       CONDITIONALBRANCH(True) t180.i32, $L21, $L22         #76
+$L21: (references=1)                                                        #76
+   tv181-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #76
+                       GOTO $L23                                            #76
+$L22: (references=1)                                                        #76
+   tv181-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #76
+                       GOTO $L23                                            #76
+$L23: (references=2)                                                        #76
+   t182.i32          = BITAND retval"$$data"(Boolean (Enum32)+0).i32.a32, tv181"$$data"(Boolean (Enum32)+0).i32                                             #76
+                       CONDITIONALBRANCH(True) t182.i32, $L24, $L25         #76
+$L24: (references=1)                                                        #76
+   tv183-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #76
+                       GOTO $L26                                            #76
+$L25: (references=1)                                                        #76
+   tv183-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #76
+                       GOTO $L26                                            #76
+$L26: (references=2)                                                        #76
+   retval.Boolean (Enum32).a32 = ASSIGN tv183-.Boolean (Enum32)             #76
+   tv184-.up32->void = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #77
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, k.index9 (i32).a32, 0.i32, 77(0x0000004d).i32 #77
+   t185.i32          = SUBTRACT k.index9 (i32).a32, 0.i32                   #77
+   t186.i32          = MULTIPLY 1.i32, t185.i32                             #77
+   t187.i32          = ADD t186.i32, 0.i32                                  #77
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 77(0x0000004d).i32 #77
+   t188.i32          = SUBTRACT i.index9 (i32).a32, 0.i32                   #77
+   t189.i32          = MULTIPLY 9.i32, t188.i32                             #77
+   t190.i32          = ADD t189.i32, t187.i32                               #77
+   tv191-.i32        = MULTIPLY 4.i32, t190.i32                             #77
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv191-.i32, 0.i32, 77(0x0000004d).i32                                                                        #77
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 1.i32, 9.i32, [tv184-.up32->void+tv191-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.i32, 77(0x0000004d).i32 #77
+   t192.i32          = SUBTRACT [tv184-.up32->void+tv191-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 1.i32                     #77
+   t193.i32          = MULTIPLY 1.i32, t192.i32                             #77
+   t194.i32          = ADD t193.i32, 0.i32                                  #77
+   tv195-.i32        = MULTIPLY 4.i32, t194.i32                             #77
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 32(0x00000020).i32, tv195-.i32, 0.i32, 77(0x0000004d).i32                                                                         #77
+   [&exists.up32->$$unnamed102 (UnmgdArr[Boolean (Enum32)]288)+tv195-.i32].Boolean (Enum32).a32 = ASSIGN true.Boolean (Enum32).a32                          #77
+                       GOTO $L20                                            #78
+$L20: (references=2)                                                        #74
+   t196.integer (i32) = ADD k.index9 (i32).a32, 1.integer (i32)             #78
+   tv155-.integer (i32) = ASSIGN t196.integer (i32)                         #78
+                       GOTO $L10                                            #78
+$L14: (references=1)                                                        #73
+   LegalRow.Boolean (Enum32).a32 = ASSIGN retval.Boolean (Enum32).a32       #80
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 6.i32                                                                   #80
+                       RETURN LegalRow.Boolean (Enum32).a32, $L27(T)        #80
+$L27: (references=1)                                                        #80
+                       EXITFUNCTION                                         #80
+$L2: (references=0)                                                         #80
+                       END                                                  #80
+
+IR after Type Checker (control chktype)
+
+Function Unit #4
+$L1: (references=0)                                                         #39
+                       START PrintA(T)                                      #39
+PrintA: (references=1)                                                      #39
+                       ENTERFUNCTION                                        #39
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 4.i32, 2.i32, &i.up32->index9 (i32), &j.up32->index9 (i32)                                                    #51
+   i.index9 (i32).a32 = ASSIGN 0.integer (i32)                              #43
+   tv139-.integer (i32) = ASSIGN i.index9 (i32).a32                         #43
+                       GOTO $L4                                             #43
+$L4: (references=2)                                                         #43
+   t140.i32          = COMPARE(LT) 8.integer (i32), tv139-.integer (i32)    #43
+                       CONDITIONALBRANCH(True) t140.i32, $L5, $L6           #43
+$L5: (references=1)                                                         #43
+   tv143-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #43
+                       GOTO $L7                                             #43
+$L6: (references=1)                                                         #43
+   tv143-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #43
+                       GOTO $L7                                             #43
+$L7: (references=2)                                                         #43
+                       CONDITIONALBRANCH(True) tv143"$$data"(Boolean (Enum32)+0).i32, $L8, $L9                                                              #43
+$L9: (references=1)                                                         #43
+   i.index9 (i32).a32 = ASSIGN tv139-.integer (i32)                         #43
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 51(0x00000033).i32 #43
+   j.index9 (i32).a32 = ASSIGN 0.integer (i32)                              #45
+   tv144-.integer (i32) = ASSIGN j.index9 (i32).a32                         #45
+                       GOTO $L10                                            #45
+$L10: (references=2)                                                        #45
+   t145.i32          = COMPARE(LT) 8.integer (i32), tv144-.integer (i32)    #45
+                       CONDITIONALBRANCH(True) t145.i32, $L11, $L12         #45
+$L11: (references=1)                                                        #45
+   tv146-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #45
+                       GOTO $L13                                            #45
+$L12: (references=1)                                                        #45
+   tv146-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #45
+                       GOTO $L13                                            #45
+$L13: (references=2)                                                        #45
+                       CONDITIONALBRANCH(True) tv146"$$data"(Boolean (Enum32)+0).i32, $L14, $L15                                                            #45
+$L15: (references=1)                                                        #45
+   j.index9 (i32).a32 = ASSIGN tv144-.integer (i32)                         #45
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 49(0x00000031).i32 #45
+   t147.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #46
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 46(0x0000002e).i32 #46
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 46(0x0000002e).i32 #46
+   t172.i32          = MULTIPLY 36(0x00000024).i32, i.index9 (i32).a32      #46
+   t173.i32          = MULTIPLY 4.i32, j.index9 (i32).a32                   #46
+   tv154-.i32        = ADD t172.i32, t173.i32                               #46
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv154-.i32, 0.i32, 46(0x0000002e).i32                                                                        #46
+   t155.i32          = COMPARE(NE) [t147.up32->void+tv154-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096, 0.integer (i32)          #46
+                       CONDITIONALBRANCH(True) t155.i32, $L16, $L17         #46
+$L16: (references=1)                                                        #46
+   tv156-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #46
+                       GOTO $L18                                            #46
+$L17: (references=1)                                                        #46
+   tv156-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #46
+                       GOTO $L18                                            #46
+$L18: (references=2)                                                        #46
+                       CONDITIONALBRANCH(True) tv156"$$data"(Boolean (Enum32)+0).i32, $L19, $L20                                                            #46
+$L19: (references=1)                                                        #46
+   t157.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #47
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 47(0x0000002f).i32 #47
+   t158.i32          = SUBTRACT j.index9 (i32).a32, 0.i32                   #47
+   t159.i32          = MULTIPLY 1.i32, t158.i32                             #47
+   t160.i32          = ADD t159.i32, 0.i32                                  #47
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 47(0x0000002f).i32 #47
+   t161.i32          = SUBTRACT i.index9 (i32).a32, 0.i32                   #47
+   t162.i32          = MULTIPLY 9.i32, t161.i32                             #47
+   t163.i32          = ADD t162.i32, t160.i32                               #47
+   tv164-.i32        = MULTIPLY 4.i32, t163.i32                             #47
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv164-.i32, 0.i32, 47(0x0000002f).i32                                                                        #47
+   [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32 = ASSIGN [t157.up32->void+tv164-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096                                                                     #47
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 47(0x0000002f).i32                                                    #47
+   [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8 = ASSIGN 32(0x20).char (i8)                                                                      #47
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8, 0.i32, 47(0x0000002f).i32                                                         #47
+                       GOTO $L21                                            #47
+$L20: (references=1)                                                        #46
+   [&output.up32->$stdfile (Aggregate2080)+4].up32->char (i8).a32 = ASSIGN &$SG107.up32->char (i8)                                                          #49
+                       CALL &_file_put_string.CDecl.Function(HANDLE (up32->void),up32->i8,i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].up32->char (i8).a32, -1(0xffffffff).i32, 0.i32, 49(0x00000031).i32                  #49
+                       GOTO $L21                                            #49
+$L21: (references=2)                                                        #46
+   t167.integer (i32) = ADD j.index9 (i32).a32, 1.integer (i32)             #49
+   tv144-.integer (i32) = ASSIGN t167.integer (i32)                         #49
+                       GOTO $L10                                            #49
+$L14: (references=1)                                                        #45
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #51
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 51(0x00000033).i32                                                                #51
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #51
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 51(0x00000033).i32                                                                #51
+   t168.integer (i32) = ADD i.index9 (i32).a32, 1.integer (i32)             #51
+   tv139-.integer (i32) = ASSIGN t168.integer (i32)                         #51
+                       GOTO $L4                                             #51
+$L8: (references=1)                                                         #43
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 4.i32                                                                   #51
+                       RETURN $L22(T)                                       #52
+$L22: (references=1)                                                        #52
+                       EXITFUNCTION                                         #52
+$L2: (references=0)                                                         #52
+                       END                                                  #52
+
+IR after Type Checker (control chktype)
+
+Function Unit #3
+$L1: (references=0)                                                         #29
+                       START ReadA(T)                                       #29
+ReadA: (references=1)                                                       #29
+                       ENTERFUNCTION                                        #29
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG106.up32->char (i8), 0.i32, 3.i32, 3.i32, &sudoku.up32->$$unnamed101 (Aggregate64), &i.up32->index9 (i32), &j.up32->index9 (i32)          #36
+   sudoku"$runtime_handle"($$unnamed101 (Aggregate64)+0).HANDLE (up32->void).a32 = CALL &_file_open.CDecl.Function(up32->i8,i32,i32,i32)->(HANDLE (up32->void)), &$SG105.up32->char (i8), 0.i32, 0.i32, 31(0x0000001f).i32                  #31
+   t141.i32          = CALL &_file_get_int.CDecl.Function(HANDLE (up32->void),i32,i32)->(i32), sudoku"$runtime_handle"($$unnamed101 (Aggregate64)+0).HANDLE (up32->void).a32, 0.i32, 31(0x0000001f).i32                                     #31
+   [&sudoku.up32->$$unnamed101 (Aggregate64)+4].integer (i32).a32 = ASSIGN t141.i32                                                                         #31
+   i.index9 (i32).a32 = ASSIGN 0.integer (i32)                              #34
+   tv144-.integer (i32) = ASSIGN i.index9 (i32).a32                         #34
+                       GOTO $L4                                             #34
+$L4: (references=2)                                                         #34
+   t145.i32          = COMPARE(GT) tv144-.integer (i32), 8.integer (i32)    #34
+                       CONDITIONALBRANCH(True) t145.i32, $L5, $L6           #34
+$L5: (references=1)                                                         #34
+   tv148-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #34
+                       GOTO $L7                                             #34
+$L6: (references=1)                                                         #34
+   tv148-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #34
+                       GOTO $L7                                             #34
+$L7: (references=2)                                                         #34
+                       CONDITIONALBRANCH(True) tv148"$$data"(Boolean (Enum32)+0).i32, $L8, $L9                                                              #34
+$L9: (references=1)                                                         #34
+   i.index9 (i32).a32 = ASSIGN tv144-.integer (i32)                         #34
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 36(0x00000024).i32 #34
+   j.index9 (i32).a32 = ASSIGN 0.integer (i32)                              #35
+   tv149-.integer (i32) = ASSIGN j.index9 (i32).a32                         #35
+                       GOTO $L10                                            #35
+$L10: (references=2)                                                        #35
+   t150.i32          = COMPARE(GT) tv149-.integer (i32), 8.integer (i32)    #35
+                       CONDITIONALBRANCH(True) t150.i32, $L11, $L12         #35
+$L11: (references=1)                                                        #35
+   tv151-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #35
+                       GOTO $L13                                            #35
+$L12: (references=1)                                                        #35
+   tv151-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #35
+                       GOTO $L13                                            #35
+$L13: (references=2)                                                        #35
+                       CONDITIONALBRANCH(True) tv151"$$data"(Boolean (Enum32)+0).i32, $L14, $L15                                                            #35
+$L15: (references=1)                                                        #35
+   j.index9 (i32).a32 = ASSIGN tv149-.integer (i32)                         #35
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 36(0x00000024).i32 #35
+   t152.up32->void   = CALL &_display_get_address.CDecl.Function(i32,i32,i32)->(up32->void), 0.i32, 2.i32, 0.i32                                            #36
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, j.index9 (i32).a32, 0.i32, 36(0x00000024).i32 #36
+   t153.i32          = SUBTRACT j.index9 (i32).a32, 0.i32                   #36
+   t154.i32          = MULTIPLY 1.i32, t153.i32                             #36
+   t155.i32          = ADD t154.i32, 0.i32                                  #36
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 8.i32, i.index9 (i32).a32, 0.i32, 36(0x00000024).i32 #36
+   t156.i32          = SUBTRACT i.index9 (i32).a32, 0.i32                   #36
+   t157.i32          = MULTIPLY 9.i32, t156.i32                             #36
+   t158.i32          = ADD t157.i32, t155.i32                               #36
+   tv159-.i32        = MULTIPLY 4.i32, t158.i32                             #36
+                       CALL &_runtime_check_int_range.CDecl.Function(i32,i32,i32,i32,i32)->(void), 0.i32, 320(0x00000140).i32, tv159-.i32, 0.i32, 36(0x00000024).i32                                                                        #36
+   [t152.up32->void+tv159-.i32]($$unnamed100 (UnmgdArr[integer (i32)]2592)+0).integer (i32).a4096 = ASSIGN sudoku"$current_value"($$unnamed101 (Aggregate64)+32).integer (i32).a32                                                          #36
+   t160.i32          = CALL &_file_get_int.CDecl.Function(HANDLE (up32->void),i32,i32)->(i32), sudoku"$runtime_handle"($$unnamed101 (Aggregate64)+0).HANDLE (up32->void).a32, 0.i32, 36(0x00000024).i32                                     #36
+   [&sudoku.up32->$$unnamed101 (Aggregate64)+4].integer (i32).a32 = ASSIGN t160.i32                                                                         #36
+   t161.integer (i32) = ADD j.index9 (i32).a32, 1.integer (i32)             #36
+   tv149-.integer (i32) = ASSIGN t161.integer (i32)                         #36
+                       GOTO $L10                                            #36
+$L14: (references=1)                                                        #35
+   t162.integer (i32) = ADD i.index9 (i32).a32, 1.integer (i32)             #36
+   tv144-.integer (i32) = ASSIGN t162.integer (i32)                         #36
+                       GOTO $L4                                             #36
+$L8: (references=1)                                                         #34
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 3.i32                                                                   #36
+                       RETURN $L16(T)                                       #37
+$L16: (references=1)                                                        #37
+                       EXITFUNCTION                                         #37
+$L2: (references=0)                                                         #37
+                       END                                                  #37
+Writing SudokuSolver.obj...
+
+SudokuSolver.p - 0 error(s), 0 warning(s).
+
+Linking...
+
+SudokuSolver.exe - 0 error(s), 0 warning(s).
+
+Puzzle:
+1 4 9 6 - - 7 - 2 
+- - - 3 - 7 4 8 - 
+- 8 - - 1 - 9 - - 
+- - 4 - 2 9 - 5 - 
+- 1 - 8 4 3 - 7 - 
+- 7 - 5 6 - 3 - - 
+- - 6 - 3 - - 4 - 
+- 5 1 9 - 6 - - - 
+8 - 3 - - 4 6 1 7 
+Solution:
+1 4 9 6 8 5 7 3 2 
+5 6 2 3 9 7 4 8 1 
+3 8 7 4 1 2 9 6 5 
+6 3 4 7 2 9 1 5 8 
+9 1 5 8 4 3 2 7 6 
+2 7 8 5 6 1 3 9 4 
+7 2 6 1 3 8 5 4 9 
+4 5 1 9 7 6 8 2 3 
+8 9 3 2 5 4 6 1 7 

@@ -1,0 +1,4 @@
+(LETREC calc-fib
+  (calc-fib LAMBDA(n a b)
+    (IF (EQ n (QUOTE 0)) a
+      (calc-fib (SUB n (QUOTE 1)) b (ADD a b)))))

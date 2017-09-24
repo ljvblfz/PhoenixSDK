@@ -1,0 +1,6 @@
+Compiling...
+BadVarDecl.p
+BadVarDecl.p(6) error P3051: 'a' already declared as type 'integer'.
+
+BadVarDecl.p - 1 error(s), 0 warning(s).
+

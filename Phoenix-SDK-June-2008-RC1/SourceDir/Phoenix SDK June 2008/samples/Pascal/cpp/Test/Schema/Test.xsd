@@ -1,0 +1,16 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:test-schema" elementFormDefault="qualified" targetNamespace="urn:test-schema">
+  <xsd:element name="configuration" type="configurationType" />
+  <xsd:complexType name="fileListType">
+    <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+      <xsd:element name="file-name" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="configurationType">
+    <xsd:sequence>
+      <xsd:element name="files" type="fileListType" />
+      <xsd:element name="custom-action" type="xsd:string" />
+      <xsd:element name="command-line" type="xsd:string" />
+      <xsd:element name="exe-file" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "addnop-plug-in", "addnop-plug-in.csproj", "{945CE999-13F8-4994-8670-E04D344F6807}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{945CE999-13F8-4994-8670-E04D344F6807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945CE999-13F8-4994-8670-E04D344F6807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945CE999-13F8-4994-8670-E04D344F6807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945CE999-13F8-4994-8670-E04D344F6807}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

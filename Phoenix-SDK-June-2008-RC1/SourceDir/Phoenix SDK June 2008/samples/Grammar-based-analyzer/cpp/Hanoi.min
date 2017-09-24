@@ -1,0 +1,17 @@
+
+Hanoi(int n, string src, string tmp, string target)
+{
+   if (n < 1)
+      return;
+
+   Hanoi(n - 1, src, target, tmp);
+   Print("Disk ", n, ": ", src, " -> ", target);
+   Hanoi(n - 1, tmp, src, target);
+}
+
+
+Main()
+{
+   Hanoi(4, "left  ", "middle", "right ");
+}
+

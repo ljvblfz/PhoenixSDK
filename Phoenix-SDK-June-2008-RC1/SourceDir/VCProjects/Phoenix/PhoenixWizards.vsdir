@@ -1,0 +1,3 @@
+PhoenixBackendPhase.vsz|0|c2 Phase|10|Creates a new Phoenix c2 backend phase|0|0|0|c2Phase
+PhoenixTool.vsz|0|Analysis/Instrumentation Tool|20|Creates a new Phoenix static analysis/instrumentation tool|0|0|0|PhoenixTool
+PhoenixVSAddin.vsz|0|VS Addin|05|Creates a VS Addin based on Phoenix|0|0|0|VS Addin

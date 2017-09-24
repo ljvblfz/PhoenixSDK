@@ -1,0 +1,9 @@
+Compiling...
+WidthParameters2.p
+WidthParameters2.p(8) error P3060: invalid width specifier.
+WidthParameters2.p(10) error P3060: invalid width specifier.
+WidthParameters2.p(12) error P3060: invalid width specifier.
+WidthParameters2.p(14) error P3060: invalid width specifier.
+
+WidthParameters2.p - 4 error(s), 0 warning(s).
+

@@ -1,0 +1,7 @@
+Compiling...
+Record2.p
+error P3012: type 'rec' not found.
+fatal error P1005: unable to recover from previous error(s); stopping compilation.
+
+Record2.p - 1 error(s), 0 warning(s).
+

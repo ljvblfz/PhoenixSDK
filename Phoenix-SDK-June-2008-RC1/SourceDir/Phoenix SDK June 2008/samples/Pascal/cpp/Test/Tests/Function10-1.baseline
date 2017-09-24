@@ -1,0 +1,26 @@
+Compiling...
+Function10-1.p
+
+IR after Type Checker (control chktype)
+
+Function Unit #1
+$L1: (references=0)                                                          #7
+                       START _e(T)                                           #7
+_e: (references=1)                                                           #7
+   x.integer (i32).a32, y.integer (i32).a32, z.integer (i32).a32 = ENTERFUNCTION                                                                             #7
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG103.up32->char (i8), 0.i32, 1.i32, 4.i32, &x.up32->integer (i32), &y.up32->integer (i32), &z.up32->integer (i32), &_e.up32->integer (i32)  #9
+   t145.integer (i32) = ADD x.integer (i32).a32, y.integer (i32).a32         #9
+   _e.integer (i32).a32 = ADD t145.integer (i32), z.integer (i32).a32        #9
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 1.i32                                                                    #9
+                       RETURN _e.integer (i32).a32, $L4(T)                   #9
+$L4: (references=1)                                                          #9
+                       EXITFUNCTION                                          #9
+$L2: (references=0)                                                          #9
+                       END                                                   #9
+Writing Function10-1.obj...
+
+Function10-1.p - 0 error(s), 0 warning(s).
+
+Function10-2.c
+
+6

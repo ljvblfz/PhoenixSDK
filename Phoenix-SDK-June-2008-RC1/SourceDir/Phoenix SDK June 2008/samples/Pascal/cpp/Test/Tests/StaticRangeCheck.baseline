@@ -1,0 +1,7 @@
+Compiling...
+StaticRangeCheck.p
+StaticRangeCheck.p(7) error P3016: value '0' exceeded legal bounds (1..31).
+StaticRangeCheck.p(13) error P3016: value '32' exceeded legal bounds (1..31).
+
+StaticRangeCheck.p - 2 error(s), 0 warning(s).
+

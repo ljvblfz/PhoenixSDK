@@ -1,0 +1,2 @@
+(LAMBDA (x y)
+  (MUL (ADD x y) (ADD x y)))

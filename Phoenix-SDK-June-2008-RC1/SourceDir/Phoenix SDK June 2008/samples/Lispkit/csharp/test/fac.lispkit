@@ -1,0 +1,3 @@
+(LETREC fac
+  (fac LAMBDA (n)
+    (IF (EQ n (QUOTE 0)) (QUOTE 1) (MUL n (fac (SUB n (QUOTE 1)))))))

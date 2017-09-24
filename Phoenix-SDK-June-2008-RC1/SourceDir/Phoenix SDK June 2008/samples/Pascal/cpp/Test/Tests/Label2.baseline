@@ -1,0 +1,6 @@
+Compiling...
+Label2.p
+Label2.p(8) error P3023: '999': label refinition.
+
+Label2.p - 1 error(s), 0 warning(s).
+

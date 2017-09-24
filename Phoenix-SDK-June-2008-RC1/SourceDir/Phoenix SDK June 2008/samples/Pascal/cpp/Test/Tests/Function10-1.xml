@@ -1,0 +1,8 @@
+<configuration xmlns="urn:test-schema">
+  <files>
+    <file-name>Function10-1.p</file-name>
+  </files>
+  <custom-action>cl.exe Function10-2.c /link Function10-1.obj mspvcrt.lib Kernel32.lib User32.lib /NODEFAULTLIB:LIBCMT /NOLOGO /OUT:Function10.exe</custom-action>
+  <command-line>/c /Oe /d -dumpchktype</command-line>
+  <exe-file>Function10.exe</exe-file>
+</configuration>

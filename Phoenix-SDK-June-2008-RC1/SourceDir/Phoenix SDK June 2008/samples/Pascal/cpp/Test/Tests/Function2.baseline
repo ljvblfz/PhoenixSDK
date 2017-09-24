@@ -1,0 +1,103 @@
+Compiling...
+Function2.p
+
+IR after Type Checker (control chktype)
+
+Function Unit #1
+$L1: (references=0)                                                          #0
+                       START _main(T)                                        #0
+_main: (references=1)                                                        #0
+                       ENTERFUNCTION                                         #0
+   input.HANDLE (up32->void).a32 = CALL &_file_get_std_input.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 20(0x00000014).i32                       #0
+   t143.HANDLE (up32->void) = CALL &_file_get_std_output.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 20(0x00000014).i32                           #0
+   output.HANDLE (up32->void).a32 = ASSIGN t143.HANDLE (up32->void)          #0
+   [&true.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 1.i32                                                                         #0
+   [&false.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 0.i32                                                                        #0
+                       CALL &_runtime_init.CDecl.Function()->(void)          #0
+                       CALL &Function2.CDecl.Function()->(void)              #0
+                       CALL &_runtime_exit.CDecl.Function()->(void)          #0
+                       RETURN 0.i32, $L4(T)                                  #0
+$L4: (references=1)                                                          #0
+                       EXITFUNCTION                                          #0
+$L2: (references=0)                                                          #0
+                       END                                                   #0
+
+IR after Type Checker (control chktype)
+
+Function Unit #2
+$L1: (references=0)                                                          #3
+                       START Function2(T)                                    #3
+Function2: (references=1)                                                    #3
+                       ENTERFUNCTION                                         #3
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG105.up32->char (i8), 0.i32, 2.i32, 0.i32                  #19
+   output($stdfile (Aggregate2080)+32).integer (i32).a32 = CALL &f2.CDecl.Function()->(integer (i32))                                                       #19
+                       CALL &_file_put_int.CDecl.Function(HANDLE (up32->void),i32,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].integer (i32).a32, 0.i32, 19(0x00000013).i32                                                    #19
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #19
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 19(0x00000013).i32                                                                #19
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #19
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].i8.a8, 0.i32, 19(0x00000013).i32                                                                #19
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 2.i32                                                                   #19
+                       RETURN $L4(T)                                        #20
+$L4: (references=1)                                                         #20
+                       EXITFUNCTION                                         #20
+$L2: (references=0)                                                         #20
+                       END                                                  #20
+
+IR after Type Checker (control chktype)
+
+Function Unit #5
+$L1: (references=0)                                                          #6
+                       START f2(T)                                           #6
+f2: (references=1)                                                           #6
+                       ENTERFUNCTION                                         #6
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG105.up32->char (i8), 0.i32, 5.i32, 1.i32, &f2.up32->integer (i32)                                                                          #7
+   t138.integer (i32) = CALL &f1.CDecl.Function(integer (i32))->(integer (i32)), 7.integer (i32)                                                             #7
+   t139.integer (i32) = CALL &f0.CDecl.Function()->(integer (i32))           #7
+   f2.integer (i32).a32 = ADD t139.integer (i32), t138.integer (i32)         #7
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 5.i32                                                                    #7
+                       RETURN f2.integer (i32).a32, $L4(T)                   #8
+$L4: (references=1)                                                          #8
+                       EXITFUNCTION                                          #8
+$L2: (references=0)                                                          #8
+                       END                                                   #8
+
+IR after Type Checker (control chktype)
+
+Function Unit #4
+$L1: (references=0)                                                          #5
+                       START f1(T)                                           #5
+f1: (references=1)                                                           #5
+   n.integer (i32).a32 = ENTERFUNCTION                                       #5
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG105.up32->char (i8), 0.i32, 4.i32, 2.i32, &n.up32->integer (i32), &f1.up32->integer (i32)                                                  #5
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 4.i32                                                                    #5
+   f1.integer (i32).a32 = MULTIPLY 2.integer (i32), n.integer (i32).a32     #18
+                       RETURN f1.integer (i32).a32, $L4(T)                   #5
+$L4: (references=1)                                                          #5
+                       EXITFUNCTION                                          #5
+$L2: (references=0)                                                          #5
+                       END                                                   #5
+
+IR after Type Checker (control chktype)
+
+Function Unit #3
+$L1: (references=0)                                                          #4
+                       START f0(T)                                           #4
+f0: (references=1)                                                           #4
+                       ENTERFUNCTION                                         #4
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG105.up32->char (i8), 0.i32, 3.i32, 1.i32, &f0.up32->integer (i32)                                                                          #4
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 3.i32                                                                    #4
+   f0.integer (i32).a32 = ASSIGN 5.integer (i32)                            #12
+                       RETURN f0.integer (i32).a32, $L4(T)                   #4
+$L4: (references=1)                                                          #4
+                       EXITFUNCTION                                          #4
+$L2: (references=0)                                                          #4
+                       END                                                   #4
+Writing Function2.obj...
+
+Function2.p - 0 error(s), 0 warning(s).
+
+Linking...
+
+Function2.exe - 0 error(s), 0 warning(s).
+
+19

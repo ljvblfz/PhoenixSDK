@@ -1,0 +1,10 @@
+Compiling...
+String2.p
+String2.p(17) error P3003: variable 'd' of type 'string20' is being assigned an expression of type '(unnamed) array of char'.
+String2.p(21) error P3009: 'string10 = string15': operand types are not compatible.
+String2.p(23) error P3009: 'string10 < string15': operand types are not compatible.
+String2.p(25) error P3009: 'string10 >= string15': operand types are not compatible.
+String2.p(32) error P3041: 'pack': mismatched array sizes.
+
+String2.p - 5 error(s), 0 warning(s).
+

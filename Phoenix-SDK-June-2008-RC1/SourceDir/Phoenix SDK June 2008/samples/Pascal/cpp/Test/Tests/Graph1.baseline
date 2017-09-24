@@ -1,0 +1,148 @@
+Compiling...
+Graph1.p
+
+IR after Type Checker (control chktype)
+
+Function Unit #1
+$L1: (references=0)                                                          #0
+                       START _main(T)                                        #0
+_main: (references=1)                                                        #0
+                       ENTERFUNCTION                                         #0
+   input.HANDLE (up32->void).a32 = CALL &_file_get_std_input.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 20(0x00000014).i32                       #0
+   t143.HANDLE (up32->void) = CALL &_file_get_std_output.CDecl.Function(i32,i32)->(HANDLE (up32->void)), 0.i32, 20(0x00000014).i32                           #0
+   output.HANDLE (up32->void).a32 = ASSIGN t143.HANDLE (up32->void)          #0
+   [&true.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 1.i32                                                                         #0
+   [&false.up32->Boolean (Enum32)]"$$data"(Boolean (Enum32)+0).i32.a32 = ASSIGN 0.i32                                                                        #0
+                       CALL &_runtime_init.CDecl.Function()->(void)          #0
+                       CALL &Graph1.CDecl.Function()->(void)                 #0
+                       CALL &_runtime_exit.CDecl.Function()->(void)          #0
+                       RETURN 0.i32, $L4(T)                                  #0
+$L4: (references=1)                                                          #0
+                       EXITFUNCTION                                          #0
+$L2: (references=0)                                                          #0
+                       END                                                   #0
+
+IR after Type Checker (control chktype)
+
+Function Unit #2
+$L1: (references=0)                                                          #5
+                       START Graph1(T)                                       #5
+Graph1: (references=1)                                                       #5
+                       ENTERFUNCTION                                         #5
+                       CALL &_display_enter.CDecl.Function(up32->i8,i32,i32,i32,...)->(void), &$SG105.up32->char (i8), 0.i32, 2.i32, 9.i32, &d.up32->real (f64), &s.up32->integer (i32), &h.up32->integer (i32), &c.up32->real (f64), &lim.up32->integer (i32), &x.up32->real (f64), &y.up32->real (f64), &i.up32->integer (i32), &n.up32->integer (i32)                                                    #19
+   d.real (f64).a64  = ASSIGN 0.0625.real (f64)                              #7
+   s.integer (i32).a32 = ASSIGN 32(0x00000020).integer (i32)                 #8
+   h.integer (i32).a32 = ASSIGN 34(0x00000022).integer (i32)                 #9
+   c.real (f64).a64  = ASSIGN 6.28318.real (f64)                            #10
+   lim.integer (i32).a32 = ASSIGN 32(0x00000020).integer (i32)              #10
+   i.integer (i32).a32 = ASSIGN 0.integer (i32)                             #13
+   tv146-.integer (i32) = ASSIGN i.integer (i32).a32                        #13
+                       GOTO $L4                                             #13
+$L4: (references=2)                                                         #13
+   t147.i32          = COMPARE(LT) lim.integer (i32).a32, tv146-.integer (i32) #13
+                       CONDITIONALBRANCH(True) t147.i32, $L5, $L6           #13
+$L5: (references=1)                                                         #13
+   tv150-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #13
+                       GOTO $L7                                             #13
+$L6: (references=1)                                                         #13
+   tv150-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #13
+                       GOTO $L7                                             #13
+$L7: (references=2)                                                         #13
+                       CONDITIONALBRANCH(True) tv150"$$data"(Boolean (Enum32)+0).i32, $L8, $L9                                                              #13
+$L9: (references=1)                                                         #13
+   i.integer (i32).a32 = ASSIGN tv146-.integer (i32)                        #13
+   t151.real (f64)   = CONVERT i.integer (i32).a32                          #14
+   x.real (f64).a64  = MULTIPLY d.real (f64).a64, t151.real (f64)           #14
+   tv153.real (f64)  = NEGATE x.real (f64).a64                              #14
+   tv154.real (f64)  = MULTIPLY c.real (f64).a64, x.real (f64).a64          #14
+   t155.real (f64)   = NEGATE x.real (f64).a64                              #14
+   t156.f64          = CALL &_exp.CDecl.Function(f64)->(f64), t155.real (f64) #14
+   t157.real (f64)   = MULTIPLY c.real (f64).a64, x.real (f64).a64          #14
+   t158.f64          = CALL &_sin.CDecl.Function(f64)->(f64), t157.real (f64) #14
+   tv159.real (f64)  = NEGATE x.real (f64).a64                              #14
+   tv160.real (f64)  = MULTIPLY c.real (f64).a64, x.real (f64).a64          #14
+   t161.real (f64)   = MULTIPLY t156.f64, t158.f64                          #14
+   y.real (f64).a64  = ASSIGN t161.real (f64)                               #14
+   t162.real (f64)   = CONVERT s.integer (i32).a32                          #15
+   tv163.real (f64)  = MULTIPLY t162.real (f64), y.real (f64).a64           #15
+   t164.real (f64)   = CONVERT s.integer (i32).a32                          #15
+   t165.real (f64)   = MULTIPLY t164.real (f64), y.real (f64).a64           #15
+   t166.i32          = CALL &_round.CDecl.Function(f64)->(i32), t165.real (f64) #15
+   t167.real (f64)   = CONVERT s.integer (i32).a32                          #15
+   tv168.real (f64)  = MULTIPLY t167.real (f64), y.real (f64).a64           #15
+   t169.integer (i32) = ADD t166.i32, h.integer (i32).a32                   #15
+   n.integer (i32).a32 = ASSIGN t169.integer (i32)                          #15
+                       GOTO $L10                                            #17
+$L10: (references=2)                                                        #17
+   [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8 = ASSIGN 32(0x20).char (i8)                                                                      #16
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8, 0.i32, 16(0x00000010).i32                                                         #16
+   t171.integer (i32) = SUBTRACT n.integer (i32).a32, 1.integer (i32)       #16
+   n.integer (i32).a32 = ASSIGN t171.integer (i32)                          #16
+   t172.i32          = COMPARE(EQ) n.integer (i32).a32, 0.integer (i32)     #17
+                       CONDITIONALBRANCH(True) t172.i32, $L11, $L12         #17
+$L11: (references=1)                                                        #17
+   tv173-.Boolean (Enum32) = ASSIGN true.Boolean (Enum32).a32               #17
+                       GOTO $L13                                            #17
+$L12: (references=1)                                                        #17
+   tv173-.Boolean (Enum32) = ASSIGN false.Boolean (Enum32).a32              #17
+                       GOTO $L13                                            #17
+$L13: (references=2)                                                        #17
+                       CONDITIONALBRANCH(True) tv173"$$data"(Boolean (Enum32)+0).i32, $L14, $L10                                                            #17
+$L14: (references=1)                                                        #17
+   [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8 = ASSIGN 42(0x2a).char (i8)                                                                      #18
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8, 0.i32, 18(0x00000012).i32                                                         #18
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 13(0x0d).i8    #18
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8, 0.i32, 18(0x00000012).i32                                                         #18
+   [&output.up32->$stdfile (Aggregate2080)+4].i8.a8 = ASSIGN 10(0x0a).i8    #18
+                       CALL &_file_put_char.CDecl.Function(HANDLE (up32->void),i8,i32,i32)->(void), output"$runtime_handle"($stdfile (Aggregate2080)+0).HANDLE (up32->void).a32, [&output.up32->$stdfile (Aggregate2080)+4].char (i8).a8, 0.i32, 18(0x00000012).i32                                                         #18
+   t174.integer (i32) = ADD i.integer (i32).a32, 1.integer (i32)            #19
+   tv146-.integer (i32) = ASSIGN t174.integer (i32)                         #19
+                       GOTO $L4                                             #19
+$L8: (references=1)                                                         #13
+                       CALL &_display_leave.CDecl.Function(i32,i32)->(void), 0.i32, 2.i32                                                                   #19
+                       RETURN $L15(T)                                       #20
+$L15: (references=1)                                                        #20
+                       EXITFUNCTION                                         #20
+$L2: (references=0)                                                         #20
+                       END                                                  #20
+Writing Graph1.obj...
+
+Graph1.p - 0 error(s), 0 warning(s).
+
+Linking...
+
+Graph1.exe - 0 error(s), 0 warning(s).
+
+                                  *
+                                              *
+                                                      *
+                                                           *
+                                                           *
+                                                        *
+                                                  *
+                                          *
+                                  *
+                           *
+                      *
+                   *
+                   *
+                     *
+                         *
+                             *
+                                  *
+                                      *
+                                         *
+                                           *
+                                           *
+                                          *
+                                        *
+                                     *
+                                  *
+                               *
+                              *
+                             *
+                            *
+                             *
+                               *
+                                *
+                                  *

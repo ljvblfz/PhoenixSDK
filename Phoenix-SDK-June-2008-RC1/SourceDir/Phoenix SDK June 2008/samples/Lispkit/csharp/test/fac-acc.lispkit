@@ -1,0 +1,5 @@
+(LAMBDA (n) 
+  (LETREC (fac-acc n (QUOTE 1))
+    (fac-acc LAMBDA (n acc)      
+        (IF (LEQ n (QUOTE 1)) acc 
+          (fac-acc (SUB n (QUOTE 1)) (MUL n acc))))))

@@ -1,0 +1,12 @@
+Compiling...
+Array3.p
+Array3.p(13) error P3040: 'pack': mismatched array element types.
+Array3.p(14) error P3040: 'unpack': mismatched array element types.
+Array3.p(16) error P3013: expected array type.
+Array3.p(18) error P3013: expected array type.
+Array3.p(19) error P3013: expected array type.
+Array3.p(21) error P3041: 'pack': mismatched array sizes.
+Array3.p(22) error P3041: 'unpack': mismatched array sizes.
+
+Array3.p - 7 error(s), 0 warning(s).
+

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IR-Longevity", "IR-Longevity.csproj", "{624D8BD4-35D7-4165-AF50-AA1B30450AB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{624D8BD4-35D7-4165-AF50-AA1B30450AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624D8BD4-35D7-4165-AF50-AA1B30450AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624D8BD4-35D7-4165-AF50-AA1B30450AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624D8BD4-35D7-4165-AF50-AA1B30450AB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
